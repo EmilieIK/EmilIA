@@ -1,0 +1,102 @@
+---
+import { url, isCurrent } from '../lib/paths';
+import ThemeToggle from './ThemeToggle.astro';
+
+const here = Astro.url.pathname;
+const links = [
+  { href: '/',          label: 'Accueil' },
+  { href: '/soutenance', label: 'Soutenance' },
+  { href: '/memoire',    label: 'Mémoire' },
+  { href: '/kit',        label: 'Kit' },
+  { href: '/a-propos',   label: 'À propos' },
+  { href: '/ressources', label: 'Ressources' },
+];
+---
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="wordmark" href={url('/')}>Émilie Icyk</a>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <button
+        type="button"
+        class="nav-toggle"
+        data-nav-toggle
+        aria-expanded="false"
+        aria-controls="nav-menu"
+        aria-label="Ouvrir le menu"
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18"></path>
+        </svg>
+      </button>
+
+      <ul class="nav__list" id="nav-menu" hidden>
+        {links.map((l) => (
+          <li>
+            <a
+              class="nav__link"
+              href={url(l.href)}
+              aria-current={isCurrent(here, l.href) ? 'page' : undefined}
+            >{l.label}</a>
+          </li>
+        ))}
+      </ul>
+
+      <ThemeToggle />
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('[data-nav-toggle]');
+  const menu = document.getElementById('nav-menu');
+  const mq = window.matchMedia('(min-width: 768px)');
+
+  function isMobile() { return !mq.matches; }
+
+  function open() {
+    if (!menu || !toggle) return;
+    menu.hidden = false;
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'Fermer le menu');
+    const first = menu.querySelector<HTMLAnchorElement>('a');
+    first?.focus();
+  }
+
+  function close(returnFocus = true) {
+    if (!menu || !toggle) return;
+    menu.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Ouvrir le menu');
+    if (returnFocus) toggle.focus();
+  }
+
+  toggle?.addEventListener('click', () => {
+    if (toggle.getAttribute('aria-expanded') === 'true') close();
+    else open();
+  });
+
+  // Échap ferme le menu (mobile)
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isMobile() && toggle?.getAttribute('aria-expanded') === 'true') {
+      close();
+    }
+  });
+
+  // Fermer si on clique en dehors (mobile)
+  document.addEventListener('click', (e) => {
+    if (!isMobile()) return;
+    if (toggle?.getAttribute('aria-expanded') !== 'true') return;
+    const target = e.target as Node;
+    if (menu && !menu.contains(target) && toggle && !toggle.contains(target)) close(false);
+  });
+
+  // Au passage desktop, neutraliser l'état mobile (le CSS gère l'affichage)
+  mq.addEventListener('change', () => {
+    if (menu && toggle) {
+      menu.hidden = true;
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Ouvrir le menu');
+    }
+  });
+</script>

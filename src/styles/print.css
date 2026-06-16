@@ -1,0 +1,19 @@
+/* ============================================================
+   Impression — sobre, lisible, N&B. (cf. brief 06 § print)
+   Masquer nav/boutons/animations ; contenu en noir sur blanc.
+   ============================================================ */
+@media print {
+  :root {
+    --c-bg:#fff; --c-surface:#fff; --c-surface-2:#fff;
+    --c-ink:#000; --c-ink-soft:#222; --c-border:#999;
+  }
+  .site-header, .site-footer, .nav, .nav-toggle, .theme-toggle, .skip-link {
+    display: none !important;
+  }
+  body { background: #fff; color: #000; }
+  a { color: #000; text-decoration: underline; }
+  /* Afficher l'URL des liens externes */
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.85em; }
+  main { padding: 0; }
+  .section { padding-block: 0.5cm; }
+}

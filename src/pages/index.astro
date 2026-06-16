@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../lib/paths';
+---
+<Base title="Production écrite en FLE & IA — Émilie Icyk">
+  <section class="section container">
+    <p class="prose"><strong>Master 2 FLES — Université Grenoble Alpes</strong></p>
+    <h1>Production écrite en FLE et intelligence artificielle</h1>
+    <p class="prose" style="font-size: var(--step-1); color: var(--c-ink-soft);">
+      Un scénario pour une autonomie assistée.
+    </p>
+
+    <p class="prose" style="margin-top: var(--space-6); font-family: var(--font-serif); font-size: var(--step-1);">
+      Révélateur · Seconde · Geste
+    </p>
+
+    <div style="display:flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-8);">
+      <a class="btn btn--primary" href={url('/kit')}>Découvrir le kit</a>
+      <a class="btn btn--secondary" href={url('/soutenance')}>La soutenance</a>
+    </div>
+
+    <p class="prose" style="margin-top: var(--space-12); color: var(--c-ink-soft);">
+      <!-- TODO : contenu d'accueil complet (hero, chips, 4 cartes piliers, encart anthropocentré) — Phase 1 du brief. -->
+      Site en cours de construction.
+    </p>
+  </section>
+</Base>

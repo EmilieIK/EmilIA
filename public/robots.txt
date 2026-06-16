@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://emilieik.github.io/EmilIA/sitemap-index.xml

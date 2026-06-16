@@ -1,0 +1,22 @@
+---
+import { url } from '../lib/paths';
+const year = 2026;
+---
+<footer class="site-footer">
+  <div class="container site-footer__grid">
+    <p>
+      © {year} <strong>Émilie Icyk</strong> — auteure unique.
+    </p>
+    <p>
+      Contenus sous licence
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" rel="license">CC&nbsp;BY-SA&nbsp;4.0</a>
+      · Code sous licence MIT.
+    </p>
+    <nav aria-label="Liens de pied de page">
+      <a href={url('/memoire')}>Le mémoire</a> ·
+      <a href={url('/kit')}>Le kit pédagogique</a> ·
+      <a href={url('/ressources')}>Ressources</a>
+    </nav>
+    <p>Site conçu pour être accessible (WCAG&nbsp;2.2&nbsp;AA).</p>
+  </div>
+</footer>
