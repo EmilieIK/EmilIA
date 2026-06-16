@@ -43,9 +43,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
     <!-- TODO Émilie : image OpenGraph dédiée (og:image) -->
     <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Anti-flash : applique le thème avant le premier rendu -->
+    <!-- Anti-flash : applique le thème + marque l'activation de JS avant le premier rendu -->
     <script is:inline>
       (() => {
+        document.documentElement.classList.add('js');
         try {
           const saved = localStorage.getItem('theme');
           if (saved === 'dark' || saved === 'light') {

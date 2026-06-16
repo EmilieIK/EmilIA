@@ -16,9 +16,10 @@
   /* Accent (liens, CTA, focus) */
   --c-accent:    #1F5C63;  /* pétrole / teal profond, sobre */
   --c-accent-ink:#0E3338;
+  --c-on-accent: #FFFFFF;  /* texte sur fond accent (CTA primaire) — AA */
   /* Bordures */
-  --c-border:    #E2DDD3;
-  --c-border-2:  #CFC9BC;
+  --c-border:    #E2DDD3;  /* filets décoratifs (séparateurs, non porteurs de sens) */
+  --c-border-2:  #8A8576;  /* bordures de contrôles UI — ≥ 3:1 (WCAG 1.4.11) */
   /* Codage IA (toujours doublé d'une icône + d'un label, jamais couleur seule) */
   --c-ia-avec:   #1F5C63;  /* « avec IA » */
   --c-ia-sans:   #9A6B2F;  /* « sans IA » (ocre) */
@@ -60,7 +61,8 @@
   --c-bg:#14140F; --c-surface:#1C1C18; --c-surface-2:#23231D;
   --c-ink:#F2EFE9; --c-ink-soft:#C7C2B7;
   --c-accent:#7FC9CF; --c-accent-ink:#BFE8EB;
-  --c-border:#33332B; --c-border-2:#45453B;
+  --c-on-accent:#14140F;  /* sur accent clair en sombre → encre foncée (AA 9.8:1) */
+  --c-border:#33332B; --c-border-2:#6E6E60;  /* contrôles UI ≥ 3:1 en sombre */
   --c-ia-avec:#7FC9CF; --c-ia-sans:#D9A459; --c-focus:#7FC9CF;
 }
 
@@ -69,7 +71,8 @@
     --c-bg:#14140F; --c-surface:#1C1C18; --c-surface-2:#23231D;
     --c-ink:#F2EFE9; --c-ink-soft:#C7C2B7;
     --c-accent:#7FC9CF; --c-accent-ink:#BFE8EB;
-    --c-border:#33332B; --c-border-2:#45453B;
+    --c-on-accent:#14140F;
+    --c-border:#33332B; --c-border-2:#6E6E60;
     --c-ia-avec:#7FC9CF; --c-ia-sans:#D9A459; --c-focus:#7FC9CF;
   }
 }

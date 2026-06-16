@@ -1,27 +1,92 @@
 ---
 import Base from '../layouts/Base.astro';
 import { url } from '../lib/paths';
+
+const chips = ['FLE', 'Production écrite', 'IA générative', "Littératie de l'IA", 'Autonomie assistée'];
+
+const piliers = [
+  {
+    index: '01',
+    titre: 'Soutenance',
+    href: '/soutenance',
+    desc: 'La présentation orale structurée selon les attendus du jury, consultable et projetable en mode plein écran.',
+  },
+  {
+    index: '02',
+    titre: 'Mémoire',
+    href: '/memoire',
+    desc: 'Résumé, plan des trois parties, fil rouge terrain–théorie–expérimentation–résultats et glossaire, avec le PDF.',
+  },
+  {
+    index: '03',
+    titre: 'Kit',
+    href: '/kit',
+    desc: "Un scénario en 8 étapes qui alterne phases sans IA et recours ciblé à l'IA, sous médiation enseignante.",
+  },
+  {
+    index: '04',
+    titre: 'À propos',
+    href: '/a-propos',
+    desc: "Le parcours d'Émilie Icyk, des TICE à l'IA, et une démarche résolument anthropocentrée.",
+  },
+];
 ---
 <Base title="Production écrite en FLE & IA — Émilie Icyk">
-  <section class="section container">
-    <p class="prose"><strong>Master 2 FLES — Université Grenoble Alpes</strong></p>
-    <h1>Production écrite en FLE et intelligence artificielle</h1>
-    <p class="prose" style="font-size: var(--step-1); color: var(--c-ink-soft);">
-      Un scénario pour une autonomie assistée.
-    </p>
+  <section class="section hero">
+    <div class="container">
+      <p class="hero__eyebrow">Master 2 FLES · Université Grenoble Alpes · 2025-2026</p>
+      <h1>Production écrite en FLE et intelligence artificielle</h1>
+      <p class="hero__subtitle">un scénario pour une autonomie assistée</p>
 
-    <p class="prose" style="margin-top: var(--space-6); font-family: var(--font-serif); font-size: var(--step-1);">
-      Révélateur · Seconde · Geste
-    </p>
+      <ul class="signature" aria-label="Fil conducteur du mémoire">
+        <li>Révélateur</li>
+        <li>Seconde</li>
+        <li>Geste</li>
+      </ul>
 
-    <div style="display:flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-8);">
-      <a class="btn btn--primary" href={url('/kit')}>Découvrir le kit</a>
-      <a class="btn btn--secondary" href={url('/soutenance')}>La soutenance</a>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href={url('/kit')}>Découvrir le kit</a>
+        <a class="btn btn--secondary" href={url('/soutenance')}>La soutenance</a>
+      </div>
+
+      <ul class="chips" aria-label="Champs du travail">
+        {chips.map((c) => <li class="chip">{c}</li>)}
+      </ul>
     </div>
+  </section>
 
-    <p class="prose" style="margin-top: var(--space-12); color: var(--c-ink-soft);">
-      <!-- TODO : contenu d'accueil complet (hero, chips, 4 cartes piliers, encart anthropocentré) — Phase 1 du brief. -->
-      Site en cours de construction.
-    </p>
+  <section class="section">
+    <div class="container">
+      <h2>Explorer le site</h2>
+      <ul class="cards">
+        {piliers.map((p) => (
+          <li>
+            <a class="card" href={url(p.href)}>
+              <span class="card__index" aria-hidden="true">{p.index}</span>
+              <h3 class="card__title">{p.titre}</h3>
+              <p class="card__desc">{p.desc}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <aside class="callout" aria-labelledby="anthropo-h">
+        <h2 id="anthropo-h" class="callout__title">Une approche anthropocentrée</h2>
+        <p>
+          Depuis plus de vingt ans, des premiers usages des TICE pour la différenciation
+          jusqu'aux IA génératives, une même conviction guide ce travail : le numérique n'a
+          de valeur que s'il affine l'accompagnement, sans jamais remplacer l'activité de
+          l'apprenant·e ni la médiation de l'enseignant·e. Les IA génératives déplacent
+          pourtant cette question ancienne, car elles ne se contentent plus d'accompagner
+          l'écriture : elles produisent du texte. Tout l'enjeu du scénario est de les garder
+          secondes — un appui révélateur, pour que le geste d'écrire reste celui de
+          l'apprenant·e.
+        </p>
+      </aside>
+    </div>
   </section>
 </Base>
