@@ -64,13 +64,13 @@ const corriges = jetons.filter((j) => j.candidat && j.erreur);
       <p class="ar-text" data-ar-text>
         {jetons.map((j, i) => (
           <>{espace(i, j.texte)}{j.candidat
-            ? <button type="button" class="ar-token" data-ar-token data-answer={j.erreur ? j.erreur.categorie : 'correct'} data-corr={j.erreur ? j.erreur.correction : 'Ce mot est correct.'} data-exp={j.erreur ? j.erreur.explication : ''} aria-pressed="false" aria-label={`${j.texte}, classer dans la catégorie choisie`}>{j.texte}</button>
+            ? <button type="button" class="ar-token" data-ar-token data-answer={j.erreur ? j.erreur.categorie : 'correct'} aria-pressed="false" aria-label={`${j.texte}, classer dans la catégorie choisie`}>{j.texte}</button>
             : <span>{j.texte}</span>}</>
         ))}
       </p>
 
       <p class="ar-statut" id="ar-statut" role="status" aria-live="polite" aria-atomic="true"></p>
-      <p class="ar-score" data-ar-score role="status" aria-live="polite" aria-atomic="true"></p>
+      <p class="ar-score" data-ar-score></p>
 
       <h3>Bingo des erreurs</h3>
       <ul class="ar-bingo" data-ar-bingo>

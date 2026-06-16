@@ -1,4 +1,4 @@
-// Module « copier » partagé (fabrique à prompts, cartes-questions).
+// Module « copier » (fabrique à prompts ; réutilisable sur d'autres pages).
 // Délégation sur [data-copier] ; annonce dans une région live unique par page
 // ([data-copie-live]) ; bascule du libellé « Copier » → « Copié » ~2 s.
 // Auto-init à l'import ; no-op si aucun [data-copier] sur la page.

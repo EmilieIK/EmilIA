@@ -46,7 +46,6 @@ if (root) {
       if (revealed) return;
       const cat = currentCat();
       const juste = cat === tok.dataset.answer;
-      tok.dataset.applied = cat;
       tok.dataset.state = juste ? 'juste' : 'rate';
       tok.setAttribute('aria-pressed', 'true');
       const catLabel = cat === 'correct' ? 'mot correct' : cat;
@@ -65,7 +64,6 @@ if (root) {
     revealed = true;
     tokens.forEach((tok) => {
       tok.setAttribute('aria-disabled', 'true');
-      tok.dataset.revealed = 'true';
     });
     const justes = tokens.filter((t) => t.dataset.state === 'juste').length;
     announce(`Réponses révélées. Score final : ${justes} sur ${total}. Le corrigé détaillé est affiché ci-dessous.`);
@@ -76,13 +74,14 @@ if (root) {
     revealed = false;
     tokens.forEach((tok) => {
       delete tok.dataset.state;
-      delete tok.dataset.applied;
-      delete tok.dataset.revealed;
       tok.setAttribute('aria-pressed', 'false');
       tok.removeAttribute('aria-disabled');
       tok.setAttribute('aria-label', `${tok.textContent}, classer dans la catégorie choisie`);
     });
     fallback?.classList.remove('is-revealed');
+    stopTimer();
+    remaining = 0;
+    if (chrono) chrono.textContent = '--:--';
     updateScore();
     updateBingo();
     announce('Exercice réinitialisé.');
