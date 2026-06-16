@@ -31,10 +31,6 @@ if (wrap && slides.length > 0) {
     liveTimer = window.setTimeout(() => { live.textContent = text; }, 150);
   }
 
-  function titre(i: number): string {
-    return slides[i].querySelector('h2')?.textContent?.trim() || `Diapositive ${i + 1}`;
-  }
-
   function show(i: number) {
     current = Math.max(0, Math.min(total - 1, i));
     slides.forEach((s, idx) => {
@@ -44,7 +40,9 @@ if (wrap && slides.length > 0) {
       if (active) { s.tabIndex = -1; s.focus(); }
     });
     if (progress) progress.textContent = `${current + 1} / ${total}`;
-    announce(`Diapositive ${current + 1} sur ${total} : ${titre(current)}`);
+    // Position seule : le titre est déjà porté par la section focalisée
+    // (aria-labelledby vers son <h2>) — éviter de l'énoncer deux fois.
+    announce(`Diapositive ${current + 1} sur ${total}`);
   }
 
   function enter(start = 0) {
@@ -52,6 +50,8 @@ if (wrap && slides.length > 0) {
     lastTrigger = document.activeElement as HTMLElement;
     presenting = true;
     document.documentElement.classList.add('is-presenting');
+    // inert masque le chrome (focus + arbre d'accessibilité) ; aria-hidden est
+    // un repli volontaire pour les rares navigateurs sans support de `inert`.
     chrome.forEach((el) => { el.setAttribute('inert', ''); el.setAttribute('aria-hidden', 'true'); });
     show(start);
   }
