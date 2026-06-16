@@ -71,13 +71,7 @@ if (allBtn) {
   });
 }
 
-function revealHash() {
-  const hash = location.hash;
-  if (!hash || hash.length < 2) return;
-  const target = document.getElementById(decodeURIComponent(hash.slice(1)));
-  if (!target) return;
-  // Si la cible est masquée par un filtre du kit, réinitialiser d'abord.
-  if (isHidden(target)) document.dispatchEvent(new CustomEvent('kit:reset-filtres'));
+function openTarget(target: HTMLElement) {
   const ownBtn = target.querySelector<HTMLElement>('.disclosure__btn');
   openWithAncestors(target.closest('.disclosure__panel'));
   if (ownBtn) {
@@ -85,6 +79,21 @@ function revealHash() {
     ownBtn.focus();
   }
   syncAll();
+}
+
+function revealHash() {
+  const hash = location.hash;
+  if (!hash || hash.length < 2) return;
+  const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+  if (!target) return;
+  if (isHidden(target)) {
+    // Carte masquée par un filtre : réinitialiser d'abord, puis ouvrir/focus
+    // une fois la carte ré-affichée (le reset s'applique au tick suivant).
+    document.dispatchEvent(new CustomEvent('kit:reset-filtres'));
+    window.setTimeout(() => openTarget(target), 0);
+  } else {
+    openTarget(target);
+  }
 }
 window.addEventListener('hashchange', revealHash);
 window.addEventListener('load', revealHash);

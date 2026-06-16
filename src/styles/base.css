@@ -594,7 +594,8 @@ html:not(.js) .disclosure__chevron { display: none; }
 }
 
 /* ----- Filtres ----- */
-html:not(.js) .filtres { display: none; }
+html:not(.js) .section--filtres,
+html:not(.js) .quicknav__item--filtres { display: none; }
 .filtres { background: var(--c-surface-2); border-radius: var(--radius-lg); padding: var(--space-6); }
 .filtres__groupes { display: flex; flex-wrap: wrap; gap: var(--space-4); }
 .filtre-groupe { border: 1px solid var(--c-border); border-radius: var(--radius); padding: var(--space-2) var(--space-3); min-width: min(100%, 14rem); }

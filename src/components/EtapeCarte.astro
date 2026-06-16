@@ -42,7 +42,9 @@ const btnId = `${anchor}-btn`;
           <span class="chip etape__duree"><span class="visually-hidden">Durée :</span>{e.duree_min} min</span>
           <BadgeIA ia={e.ia === 'avec' ? 'avec' : 'sans'} />
           <span class="visually-hidden">Modalité :</span>
-          {e.modalite.map((m) => <span class="chip">{m}</span>)}
+          {e.modalite.map((m, i) => (
+            <>{i > 0 && <span class="visually-hidden">, </span>}<span class="chip">{m}</span></>
+          ))}
           {e.outil_lie && <span class="chip etape__chip-outil">+ outil</span>}
         </span>
       </span>

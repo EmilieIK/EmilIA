@@ -19,7 +19,7 @@ const composantes = [
 
 const outils = [
   { slug: 'aiguiser-regard', nom: 'Aiguiser son regard', etape: 3, desc: "Développer l'auto-correction et la lecture critique en repérant des erreurs fréquentes avant d'évaluer le texte d'un·e pair." },
-  { slug: 'fabrique-prompts', nom: 'La fabrique à prompts', etape: 4, desc: "Se familiariser avec la formulation de prompts efficaces pour utiliser l'IA comme outil linguistique ciblé." },
+  { slug: 'fabrique-prompts', nom: 'La fabrique à prompts', etape: 4, desc: "Se familiariser avec la formulation de prompts efficaces pour utiliser l'IA comme outil linguistique ciblé, adapté au niveau." },
   { slug: 'cartes-questions', nom: 'Le jeu de cartes-questions', etape: 8, desc: 'Prendre du recul sur son parcours et sa perception, à partir de questions à piocher.' },
 ];
 ---
@@ -43,7 +43,7 @@ const outils = [
           <li><a class="quicknav__link" href="#reperes">Repères</a></li>
           <li><a class="quicknav__link" href="#prerequis">Prérequis</a></li>
           <li><a class="quicknav__link" href="#lire-carte">Lire une carte</a></li>
-          <li><a class="quicknav__link" href="#filtres">Filtrer</a></li>
+          <li class="quicknav__item--filtres"><a class="quicknav__link" href="#filtres">Filtrer</a></li>
           <li><a class="quicknav__link" href="#parcours">Parcours</a></li>
           <li><a class="quicknav__link" href="#outils">Outils</a></li>
         </ul>
@@ -98,7 +98,7 @@ const outils = [
     </div>
   </section>
 
-  <section class="section" aria-labelledby="filtres-h">
+  <section class="section section--filtres" aria-labelledby="filtres-h">
     <div class="container">
       <h2 id="filtres-h">Filtrer le parcours</h2>
       <FiltresKit />
@@ -142,7 +142,9 @@ const outils = [
   import '../scripts/disclosure.ts';
   const printBtn = document.querySelector('[data-print-kit]');
   printBtn?.addEventListener('click', () => {
+    // Imprimer le parcours complet : réinitialiser les filtres puis imprimer
+    // une fois le ré-affichage appliqué (événement explicite, pas de délai fixe).
+    document.addEventListener('kit:filtres-appliques', () => window.print(), { once: true });
     document.dispatchEvent(new CustomEvent('kit:reset-filtres'));
-    window.setTimeout(() => window.print(), 80);
   });
 </script>

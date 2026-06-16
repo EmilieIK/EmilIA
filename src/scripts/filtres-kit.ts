@@ -55,6 +55,7 @@ if (form) {
         : `${visibles} étape${visibles > 1 ? 's' : ''} sur ${total} affichée${visibles > 1 ? 's' : ''}.`
     );
     refreshAll();
+    document.dispatchEvent(new CustomEvent('kit:filtres-appliques'));
   }
 
   form.addEventListener('change', apply);
