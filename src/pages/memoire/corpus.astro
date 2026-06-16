@@ -103,21 +103,23 @@ const niveauLabel: Record<string, string> = { fort: 'fort', moyen: 'moyen', faib
 
       <section aria-labelledby={`grille-${p.id}-h`}>
         <h3 id={`grille-${p.id}-h`}>4 · Grille d'analyse codée</h3>
-        <table class="grille-codee">
-          <thead>
-            <tr><th scope="col">Dimension</th><th scope="col">Code</th><th scope="col">Niveau</th><th scope="col">Observation</th></tr>
-          </thead>
-          <tbody>
-            {p.data.grille.map((g) => (
-              <tr>
-                <th scope="row">{g.dimension}</th>
-                <td><code>{g.code}</code></td>
-                <td>{niveauLabel[g.niveau]}</td>
-                <td>{g.observation}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <div class="table-wrap" role="region" aria-label="Grille d'analyse codée (défilable)" tabindex="0">
+          <table class="grille-codee">
+            <thead>
+              <tr><th scope="col">Dimension</th><th scope="col">Code</th><th scope="col">Niveau</th><th scope="col">Observation</th></tr>
+            </thead>
+            <tbody>
+              {p.data.grille.map((g) => (
+                <tr>
+                  <th scope="row">{g.dimension}</th>
+                  <td><code>{g.code}</code></td>
+                  <td>{niveauLabel[g.niveau]}</td>
+                  <td>{g.observation}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <section aria-labelledby={`syn-${p.id}-h`}>

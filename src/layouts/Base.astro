@@ -18,8 +18,17 @@ interface Props {
 const { title, description = "Soutenance de master 2 FLES d'Émilie Icyk : production écrite en FLE et intelligence artificielle, un scénario pour une autonomie assistée." } = Astro.props;
 
 const siteName = 'Production écrite en FLE & IA — Émilie Icyk';
-const fullTitle = title === siteName ? title : `${title} — ${siteName}`;
+const fullTitle = title === siteName ? title : `${title} — Émilie Icyk`;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const siteUrl = new URL(import.meta.env.BASE_URL, Astro.site).href;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: siteName,
+  url: siteUrl,
+  inLanguage: 'fr',
+  author: { '@type': 'Person', name: 'Émilie Icyk' },
+};
 ---
 
 <!doctype html>
@@ -40,8 +49,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <!-- TODO Émilie : image OpenGraph dédiée (og:image) -->
-    <meta name="twitter:card" content="summary_large_image" />
+    <!-- TODO Émilie : image OpenGraph dédiée (og:image, 1200×630) → repasser twitter:card en summary_large_image -->
+    <meta name="twitter:card" content="summary" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
     <!-- Anti-flash : applique le thème + marque l'activation de JS avant le premier rendu -->
     <script is:inline>

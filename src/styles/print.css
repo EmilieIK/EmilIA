@@ -61,4 +61,5 @@
   .corpus-diff .seg--suppr, .corpus-diff .seg--avant { text-decoration: line-through; }
   .corpus-diff .seg--ajout, .corpus-diff .seg--apres { text-decoration: underline; }
   .grille-codee { break-inside: avoid; }
+  .table-wrap { overflow: visible !important; }
 }
