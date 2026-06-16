@@ -1,12 +1,148 @@
 ---
 import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import FiltresKit from '../components/FiltresKit.astro';
+import EtapeCarte from '../components/EtapeCarte.astro';
+import BadgeIA from '../components/BadgeIA.astro';
+import { url } from '../lib/paths';
+
+const etapes = (await getCollection('etapes')).sort((a, b) => a.data.numero - b.data.numero);
+
+const composantes = [
+  { nom: 'Objectif', def: "Ce que l'étudiant·e doit comprendre, savoir faire ou expérimenter à cette étape.", dest: 'étudiant·e' },
+  { nom: 'Consigne', def: "Les instructions pour réaliser concrètement l'activité.", dest: 'étudiant·e' },
+  { nom: 'À retenir', def: 'Un message essentiel pour ancrer un savoir, une posture ou une stratégie.', dest: 'étudiant·e' },
+  { nom: 'Supports', def: "Documents, outils ou supports visuels utilisés pendant l'activité.", dest: 'étudiant·e et/ou enseignant·e' },
+  { nom: 'Astuce', def: "Un conseil pédagogique à l'enseignant·e pour bien accompagner.", dest: 'enseignant·e' },
+  { nom: 'Bonus', def: "Variante facultative pour prolonger ou enrichir l'activité.", dest: 'enseignant·e ou étudiant·e' },
+];
+
+const outils = [
+  { slug: 'aiguiser-regard', nom: 'Aiguiser son regard', etape: 3, desc: "Développer l'auto-correction et la lecture critique en repérant des erreurs fréquentes avant d'évaluer le texte d'un·e pair." },
+  { slug: 'fabrique-prompts', nom: 'La fabrique à prompts', etape: 4, desc: "Se familiariser avec la formulation de prompts efficaces pour utiliser l'IA comme outil linguistique ciblé." },
+  { slug: 'cartes-questions', nom: 'Le jeu de cartes-questions', etape: 8, desc: 'Prendre du recul sur son parcours et sa perception, à partir de questions à piocher.' },
+];
 ---
 <Base title="Le kit pédagogique">
-  <section class="section container">
-    <h1>Le kit pédagogique</h1>
-    <p class="prose" style="color: var(--c-ink-soft);">
-      <!-- TODO : parcours 8 étapes + 3 outils interactifs — Phases 4 et 5 du brief. -->
-      Cette section sera bientôt disponible.
-    </p>
+  <section class="section">
+    <div class="container">
+      <p class="hero__eyebrow">Kit pédagogique</p>
+      <h1>Production écrite avec l'IA — 8 étapes clés pour gagner en autonomie rédactionnelle</h1>
+      <p class="hero__subtitle">Conçu dans une logique anthropocentrée plutôt que technocentrée, ce kit place les besoins des apprenant·es au centre du processus d'écriture.</p>
+
+      <dl class="kit-meta">
+        <div><dt>Durée</dt><dd>≈ 3 h 30</dd></div>
+        <div><dt>Niveaux</dt><dd>FLE B1 à C2</dd></div>
+        <div><dt>Parcours</dt><dd>8 étapes</dd></div>
+        <div><dt>Approche</dt><dd>anthropocentrée</dd></div>
+      </dl>
+      <p><span class="badge--modulable">Modulable</span> chaque étape est réalisable seule ou combinée ; le kit n'est pas prescriptif.</p>
+
+      <nav class="quicknav" aria-label="Accès rapides">
+        <ul class="quicknav__list">
+          <li><a class="quicknav__link" href="#reperes">Repères</a></li>
+          <li><a class="quicknav__link" href="#prerequis">Prérequis</a></li>
+          <li><a class="quicknav__link" href="#lire-carte">Lire une carte</a></li>
+          <li><a class="quicknav__link" href="#filtres">Filtrer</a></li>
+          <li><a class="quicknav__link" href="#parcours">Parcours</a></li>
+          <li><a class="quicknav__link" href="#outils">Outils</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <section class="section" id="reperes" aria-labelledby="reperes-h">
+    <div class="container">
+      <h2 id="reperes-h">Repères visuels</h2>
+      <ul class="reperes">
+        <li class="repere">
+          <BadgeIA ia="sans" variant="legend" />
+          <span>Phases réalisées sans outil numérique : les ressources propres de l'apprenant·e d'abord.</span>
+        </li>
+        <li class="repere">
+          <BadgeIA ia="avec" variant="legend" />
+          <span>Phases où l'IA est mobilisée ponctuellement, comme appui au service de l'apprentissage, sans se substituer à l'auteur·rice.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="prerequis" aria-labelledby="prerequis-h">
+    <div class="container">
+      <aside class="callout" aria-labelledby="prerequis-h">
+        <h2 id="prerequis-h" class="callout__title">Avant de commencer</h2>
+        <p><strong>L'IA ne rédige pas à la place des étudiant·es.</strong> Elle assiste uniquement la réflexion linguistique :</p>
+        <ul class="prose">
+          <li>pour que chaque production reste personnelle et authentique ;</li>
+          <li>pour permettre des erreurs utiles à analyser ;</li>
+          <li>pour développer une autonomie rédactionnelle réelle, pas une dépendance ;</li>
+          <li>pour favoriser une réflexion critique sur les suggestions reçues.</li>
+        </ul>
+        <p>Le kit part toujours d'un <strong>sujet de production écrite</strong> choisi par l'enseignant·e, adapté au niveau (B1-C2), associé à des <strong>contraintes textuelles</strong> (type de texte, structure, registre, ton) et <strong>linguistiques</strong> (temps verbaux, vocabulaire, connecteurs, pronoms…). Ce cadre est indispensable pour mobiliser l'IA de façon ciblée.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="lire-carte" aria-labelledby="lire-carte-h">
+    <div class="container">
+      <h2 id="lire-carte-h">Comment lire une carte</h2>
+      <p class="prose">Chaque étape est une carte à six composantes :</p>
+      <dl class="composantes composantes--legende">
+        {composantes.map((c) => (
+          <div class="composante">
+            <dt class="composante__titre">{c.nom} <span class="composante__dest">pour l'{c.dest}</span></dt>
+            <dd class="composante__corps">{c.def}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="filtres-h">
+    <div class="container">
+      <h2 id="filtres-h">Filtrer le parcours</h2>
+      <FiltresKit />
+    </div>
+  </section>
+
+  <section class="section" id="parcours" aria-labelledby="parcours-h">
+    <div class="container">
+      <h2 id="parcours-h">Le parcours en 8 étapes</h2>
+      <ol class="parcours">
+        {etapes.map((e) => <EtapeCarte etape={{ id: e.id, ...e.data }} />)}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="outils" aria-labelledby="outils-h">
+    <div class="container">
+      <h2 id="outils-h">Les outils interactifs</h2>
+      <ul class="cards">
+        {outils.map((o) => (
+          <li>
+            <a class="card" href={url(`/kit/${o.slug}`)}>
+              <span class="card__index" aria-hidden="true">Étape {o.etape}</span>
+              <h3 class="card__title">{o.nom}</h3>
+              <p class="card__desc">{o.desc}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <button type="button" class="btn btn--secondary" data-print-kit>Imprimer le parcours complet</button>
+    </div>
   </section>
 </Base>
+
+<script>
+  import '../scripts/disclosure.ts';
+  const printBtn = document.querySelector('[data-print-kit]');
+  printBtn?.addEventListener('click', () => {
+    document.dispatchEvent(new CustomEvent('kit:reset-filtres'));
+    window.setTimeout(() => window.print(), 80);
+  });
+</script>

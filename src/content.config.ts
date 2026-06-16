@@ -26,4 +26,24 @@ const plan = defineCollection({
   }),
 });
 
-export const collections = { glossaire, plan };
+// Kit pédagogique — 8 étapes (carte à 6 composantes).
+const etapes = defineCollection({
+  loader: file('src/data/etapes.json'),
+  schema: z.object({
+    numero: z.number(),
+    nom: z.string(),
+    duree_min: z.number(),
+    modalite: z.array(z.enum(['individuel', 'binôme', 'collectif'])),
+    ia: z.enum(['sans', 'avec', 'mixte']),
+    objectif: z.string(),
+    consigne: z.string(),
+    a_retenir: z.string(),
+    supports: z.array(z.string()),
+    astuce: z.string(),
+    bonus: z.string(),
+    bonus_pour: z.enum(['étudiant·e', 'enseignant·e']).nullable(),
+    outil_lie: z.enum(['aiguiser-regard', 'fabrique-prompts', 'cartes-questions']).nullable(),
+  }),
+});
+
+export const collections = { glossaire, plan, etapes };

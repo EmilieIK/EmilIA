@@ -1,0 +1,39 @@
+---
+import BadgeIA from './BadgeIA.astro';
+---
+<form class="filtres" id="filtres" role="search" aria-label="Filtrer les étapes" data-filtres>
+  <div class="filtres__groupes">
+    <fieldset class="filtre-groupe">
+      <legend>Usage de l'IA</legend>
+      <label class="filtre"><input type="checkbox" name="ia" value="avec" /> <BadgeIA ia="avec" /></label>
+      <label class="filtre"><input type="checkbox" name="ia" value="sans" /> <BadgeIA ia="sans" /></label>
+    </fieldset>
+
+    <fieldset class="filtre-groupe">
+      <legend>Durée</legend>
+      <label class="filtre"><input type="checkbox" name="duree" value="court" /> <span>≤ 20 min</span></label>
+      <label class="filtre"><input type="checkbox" name="duree" value="moyen" /> <span>25–30 min</span></label>
+      <label class="filtre"><input type="checkbox" name="duree" value="long" /> <span>40 min</span></label>
+    </fieldset>
+
+    <fieldset class="filtre-groupe">
+      <legend>Modalité</legend>
+      <label class="filtre"><input type="checkbox" name="modalite" value="individuel" /> <span>individuel</span></label>
+      <label class="filtre"><input type="checkbox" name="modalite" value="binôme" /> <span>binôme</span></label>
+      <label class="filtre"><input type="checkbox" name="modalite" value="collectif" /> <span>collectif</span></label>
+    </fieldset>
+  </div>
+
+  <p class="filtre-note">Plusieurs choix possibles : au moins un critère par groupe, tous les groupes combinés.</p>
+
+  <div class="filtres__actions">
+    <button type="reset" class="btn btn--secondary" data-filtres-reset disabled>Réinitialiser les filtres</button>
+    <button type="button" class="btn btn--secondary" data-disclosure-all aria-pressed="false">Tout déplier</button>
+  </div>
+
+  <p class="filtres__compteur" role="status" aria-live="polite" aria-atomic="true">8 étapes sur 8 affichées</p>
+</form>
+
+<script>
+  import '../scripts/filtres-kit.ts';
+</script>

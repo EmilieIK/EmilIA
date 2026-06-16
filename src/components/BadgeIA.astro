@@ -1,0 +1,25 @@
+---
+// Badge « avec IA » / « sans IA ». Encodage triple-redondant (WCAG 1.4.1) :
+// texte + forme d'icône distincte + couleur (renfort seul) + style de bordure
+// (pleine = avec, pointillée = sans) → reste lisible en N&B.
+interface Props {
+  ia: 'sans' | 'avec';
+  variant?: 'legend';
+}
+const { ia, variant } = Astro.props;
+const label = ia === 'avec' ? 'avec IA' : 'sans IA';
+const cls = ['badge-ia', `badge-ia--${ia}`, variant === 'legend' ? 'badge-ia--legend' : ''].filter(Boolean).join(' ');
+---
+<span class={cls}>
+  {ia === 'avec' ? (
+    <svg class="badge-ia__icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 2l1.9 5.6L19.5 9.5l-5.6 1.9L12 17l-1.9-5.6L4.5 9.5l5.6-1.9z" />
+    </svg>
+  ) : (
+    <svg class="badge-ia__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 20h9" />
+      <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z" />
+    </svg>
+  )}
+  <span class="badge-ia__text">{label}</span>
+</span>

@@ -1,0 +1,92 @@
+---
+import { url } from '../lib/paths';
+import BadgeIA from './BadgeIA.astro';
+
+interface Etape {
+  id: string;
+  numero: number;
+  nom: string;
+  duree_min: number;
+  modalite: string[];
+  ia: 'sans' | 'avec' | 'mixte';
+  objectif: string;
+  consigne: string;
+  a_retenir: string;
+  supports: string[];
+  astuce: string;
+  bonus: string;
+  bonus_pour: string | null;
+  outil_lie: 'aiguiser-regard' | 'fabrique-prompts' | 'cartes-questions' | null;
+}
+interface Props { etape: Etape }
+const { etape } = Astro.props;
+const e = etape;
+
+const outils: Record<string, string> = {
+  'aiguiser-regard': 'Aiguiser son regard',
+  'fabrique-prompts': 'La fabrique à prompts',
+  'cartes-questions': 'Le jeu de cartes-questions',
+};
+const anchor = `etape-${e.id}`;
+const panelId = `${anchor}-panel`;
+const btnId = `${anchor}-btn`;
+---
+<li class="etape" id={anchor} data-ia={e.ia} data-duree={e.duree_min} data-modalite={e.modalite.join(' ')}>
+  <span class="etape__rang" aria-hidden="true">{e.numero}</span>
+  <h3 class="etape__heading">
+    <button type="button" class="disclosure__btn etape__btn" id={btnId} aria-controls={panelId}>
+      <span class="etape__head-main">
+        <span class="etape__num">Étape {e.numero}/8</span>
+        <span class="disclosure__label etape__nom">{e.nom}</span>
+        <span class="etape__meta">
+          <span class="chip etape__duree"><span class="visually-hidden">Durée :</span>{e.duree_min} min</span>
+          <BadgeIA ia={e.ia === 'avec' ? 'avec' : 'sans'} />
+          <span class="visually-hidden">Modalité :</span>
+          {e.modalite.map((m) => <span class="chip">{m}</span>)}
+          {e.outil_lie && <span class="chip etape__chip-outil">+ outil</span>}
+        </span>
+      </span>
+      <svg class="disclosure__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="m9 6 6 6-6 6"></path>
+      </svg>
+    </button>
+  </h3>
+
+  <div id={panelId} class="disclosure__panel etape__corps">
+    <dl class="composantes">
+      <div class="composante">
+        <dt class="composante__titre">Objectif</dt>
+        <dd class="composante__corps">{e.objectif}</dd>
+      </div>
+      <div class="composante">
+        <dt class="composante__titre">Consigne</dt>
+        <dd class="composante__corps">{e.consigne}</dd>
+      </div>
+      <div class="composante composante--a-retenir">
+        <dt class="composante__titre">À retenir</dt>
+        <dd class="composante__corps">{e.a_retenir}</dd>
+      </div>
+      <div class="composante">
+        <dt class="composante__titre">Supports</dt>
+        <dd class="composante__corps">
+          <ul class="composante__liste">
+            {e.supports.map((s) => <li>{s}</li>)}
+          </ul>
+          {e.outil_lie && (
+            <p class="etape__outil">
+              <a class="btn btn--secondary" href={url(`/kit/${e.outil_lie}`)}>Ouvrir l'outil : {outils[e.outil_lie]}</a>
+            </p>
+          )}
+        </dd>
+      </div>
+      <div class="composante">
+        <dt class="composante__titre">Astuce <span class="composante__dest">pour l'enseignant·e</span></dt>
+        <dd class="composante__corps">{e.astuce}</dd>
+      </div>
+      <div class="composante">
+        <dt class="composante__titre">Bonus{e.bonus_pour && <span class="composante__dest">pour l'{e.bonus_pour}</span>}</dt>
+        <dd class="composante__corps">{e.bonus}</dd>
+      </div>
+    </dl>
+  </div>
+</li>

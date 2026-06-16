@@ -486,6 +486,138 @@ html:not(.js) .disclosure__chevron { display: none; }
 .sigles { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); list-style: none; padding: 0; }
 .sigles li { max-width: none; }
 
+/* ============================================================
+   Page Kit — méta, badge IA, repères, composantes, timeline, filtres.
+   ============================================================ */
+
+/* ----- Méta de l'en-tête kit ----- */
+.kit-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  margin-block-start: var(--space-6);
+}
+.kit-meta div { display: inline-flex; gap: var(--space-1); align-items: baseline; }
+.kit-meta dt { color: var(--c-ink-soft); }
+.kit-meta dt::after { content: " :"; }
+.kit-meta dd { margin: 0; font-weight: 700; }
+.badge--modulable {
+  display: inline-block;
+  padding: 2px var(--space-2);
+  border: 1px solid var(--c-accent);
+  border-radius: 999px;
+  color: var(--c-accent-ink);
+  font-weight: 700;
+  font-size: var(--step--1);
+}
+
+/* ----- Badge IA (icône + texte + bordure pleine/pointillée) ----- */
+.badge-ia {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 2px var(--space-2);
+  border: 1px solid var(--c-border-2);
+  border-radius: 999px;
+  background: var(--c-surface);
+  color: var(--c-ink);
+  font-size: var(--step--1);
+  line-height: 1.3;
+  max-width: none;
+}
+.badge-ia__icon { flex: none; }
+.badge-ia--avec { border-style: solid; border-color: var(--c-ia-avec); }
+.badge-ia--avec .badge-ia__icon { color: var(--c-ia-avec); }
+.badge-ia--sans { border-style: dashed; border-color: var(--c-ia-sans); }
+.badge-ia--sans .badge-ia__icon { color: var(--c-ia-sans); }
+.badge-ia--legend { font-size: var(--step-0); padding: var(--space-1) var(--space-3); }
+
+/* ----- Repères visuels (légende) ----- */
+.reperes { list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-4); }
+.repere { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+.repere span { color: var(--c-ink-soft); max-width: var(--measure); }
+
+/* ----- Composantes (carte + légende « comment lire ») ----- */
+.composantes { margin: 0; }
+.composante { padding-block: var(--space-3); }
+.composante + .composante { border-block-start: 1px solid var(--c-border); }
+.composante__titre { font-weight: 700; color: var(--c-ink); }
+.composante__corps { margin-inline-start: 0; margin-block-start: var(--space-1); color: var(--c-ink); max-width: var(--measure); }
+.composante__dest { font-weight: 400; font-size: var(--step--1); color: var(--c-ink-soft); }
+.composante__liste { color: var(--c-ink-soft); padding-inline-start: var(--space-6); }
+.composante--a-retenir { border-inline-start: 3px solid var(--c-accent); padding-inline-start: var(--space-3); }
+.composantes--legende .composante__corps { color: var(--c-ink-soft); }
+
+/* ----- Timeline du parcours ----- */
+.parcours { list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-6); }
+.etape { position: relative; padding-inline-start: calc(1.75rem + var(--space-4)); max-width: none; }
+.etape__rang {
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: var(--space-3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem; height: 1.75rem;
+  border-radius: 999px;
+  background: var(--c-accent);
+  color: var(--c-on-accent);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+}
+.etape::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: calc(1.75rem / 2 - 1px);
+  inset-block-start: calc(1.75rem + var(--space-3));
+  bottom: calc(-1 * var(--space-6));
+  width: 2px;
+  background: var(--c-border);
+}
+.etape:last-child::before { display: none; }
+.etape__heading { margin: 0; font-family: var(--font-sans); font-weight: 400; }
+.etape__btn { align-items: flex-start; }
+.etape__head-main { display: flex; flex-direction: column; gap: var(--space-2); align-items: flex-start; }
+.etape__num { font-family: var(--font-mono); font-size: var(--step--1); color: var(--c-ink-soft); }
+.etape__nom { font-size: var(--step-1); }
+.etape__meta { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; }
+.etape__chip-outil { border-color: var(--c-accent); color: var(--c-accent-ink); }
+.etape__corps { border-inline-start: none; margin-inline-start: 0; padding: var(--space-4) 0 0; }
+.etape__outil { margin-block-start: var(--space-3); }
+@media (min-width: 768px) {
+  .etape__corps .composantes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: var(--space-2) var(--space-8);
+  }
+  .etape__corps .composante + .composante { border-block-start: none; }
+}
+
+/* ----- Filtres ----- */
+html:not(.js) .filtres { display: none; }
+.filtres { background: var(--c-surface-2); border-radius: var(--radius-lg); padding: var(--space-6); }
+.filtres__groupes { display: flex; flex-wrap: wrap; gap: var(--space-4); }
+.filtre-groupe { border: 1px solid var(--c-border); border-radius: var(--radius); padding: var(--space-2) var(--space-3); min-width: min(100%, 14rem); }
+.filtre-groupe legend { font-weight: 700; padding-inline: var(--space-2); }
+.filtre {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.filtre input { inline-size: 1.15rem; block-size: 1.15rem; accent-color: var(--c-accent); }
+.filtre:has(input:checked) { background: var(--c-surface); outline: 2px solid var(--c-accent); }
+.filtre-note { font-size: var(--step--1); color: var(--c-ink-soft); margin-block-start: var(--space-3); max-width: var(--measure); }
+.filtres__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-block-start: var(--space-4); }
+.filtres__compteur { margin-block-start: var(--space-3); font-weight: 700; color: var(--c-ink); }
+.btn:disabled { opacity: .55; cursor: not-allowed; }
+@media (min-width: 1024px) {
+  .filtres { position: sticky; top: 4rem; z-index: 40; }
+}
+
 /* ----- Nav mobile ----- */
 @media (max-width: 767px) {
   /* JS actif : le menu est un panneau déroulant repliable (piloté par .is-open) */

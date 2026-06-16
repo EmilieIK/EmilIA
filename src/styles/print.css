@@ -21,4 +21,14 @@
   .disclosure__panel { display: block !important; }
   .disclosure__chevron, [data-disclosure-all], .quicknav { display: none !important; }
   .disclosure__btn { border: none; padding-inline: 0; }
+
+  /* Kit : 1 carte = 1 page, masquer filtres et contrôles */
+  .filtres, .filtres__compteur, [data-print-kit] { display: none !important; }
+  .etape { break-before: page; page-break-before: always; break-inside: avoid; padding-inline-start: 0; }
+  .etape:first-child { break-before: auto; page-break-before: auto; }
+  .etape::before, .etape__rang { display: none !important; }
+  .composante { break-inside: avoid; }
+  /* Badges lisibles en niveaux de gris (icône + texte + bordure noire) */
+  .badge-ia, .badge--modulable { border-color: #000 !important; color: #000 !important; }
+  .badge-ia__icon { color: #000 !important; }
 }
