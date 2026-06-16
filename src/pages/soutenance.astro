@@ -5,7 +5,7 @@ import { getCollection } from 'astro:content';
 const diapos = (await getCollection('soutenance')).sort((a, b) => a.data.numero - b.data.numero);
 const total = diapos.length;
 ---
-<Base title="La soutenance">
+<Base title="La soutenance" description="La soutenance de master 2 FLES : trame, sept diapositives et un mode présentation projetable au clavier.">
   <section class="section container" id="intro-soutenance">
     <h1>La soutenance</h1>
     <p class="prose">

@@ -1,12 +1,66 @@
 ---
 import Base from '../layouts/Base.astro';
+import { url } from '../lib/paths';
+
+// Fiches imprimables disponibles : ce sont des pages du site avec une mise en
+// page d'impression propre (Ctrl/Cmd + P).
+const fiches = [
+  { titre: 'Le parcours complet (8 étapes)', desc: 'Une carte par page, badges « avec / sans IA » lisibles en noir et blanc.', href: '/kit' },
+  { titre: 'La fiche des 6 prompts', desc: 'Les six fonctions et leurs prompts types pour mobiliser l’IA de façon ciblée.', href: '/kit/fabrique-prompts' },
+  { titre: 'Aiguiser son regard (texte + corrigé)', desc: 'Le texte d’exercice et son corrigé, prêts à distribuer.', href: '/kit/aiguiser-regard' },
+  { titre: 'Le jeu de cartes-questions', desc: 'Les 10 cartes du bilan, en planche à découper.', href: '/kit/cartes-questions' },
+];
 ---
-<Base title="Ressources">
+<Base title="Ressources" description="Ressources ouvertes : fiches imprimables du kit, comment citer, et licence CC BY-SA 4.0.">
   <section class="section container">
     <h1>Ressources</h1>
-    <p class="prose" style="color: var(--c-ink-soft);">
-      <!-- TODO : téléchargements (kit PDF, diaporama, fiches) + « comment citer » — Phase 8 du brief. -->
-      Cette section sera bientôt disponible.
+    <p class="prose">
+      Ce kit est une ressource ouverte, pensée pour être réutilisée et adaptée en classe. Les
+      fiches ci-dessous s’impriment directement depuis le site ; les documents complets seront
+      ajoutés au fur et à mesure.
     </p>
+
+    <section aria-labelledby="fiches-h">
+      <h2 id="fiches-h">Fiches imprimables</h2>
+      <p class="prose">Ouvrez une fiche, puis utilisez l’impression du navigateur (Ctrl ou Cmd + P).</p>
+      <ul class="cards">
+        {fiches.map((f) => (
+          <li>
+            <a class="card" href={url(f.href)}>
+              <h3 class="card__title">{f.titre}</h3>
+              <p class="card__desc">{f.desc}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section aria-labelledby="docs-h">
+      <h2 id="docs-h">Documents à télécharger</h2>
+      {/* TODO Émilie : ajouter les fichiers (kit en PDF, diaporama de soutenance, PDF du mémoire)
+          dans public/ puis remplacer cette note par les liens de téléchargement. */}
+      <p class="prose">Le kit en PDF, le diaporama de la soutenance et le PDF du mémoire seront mis à disposition prochainement.</p>
+    </section>
+
+    <section aria-labelledby="citer-h">
+      <h2 id="citer-h">Comment citer ce kit</h2>
+      <aside class="callout">
+        <p class="prose">
+          Icyk, É. <em>Production écrite avec l’IA — 8 étapes clés pour gagner en autonomie
+          rédactionnelle.</em> Université Grenoble Alpes, 2025-2026. Sous licence CC&nbsp;BY-SA&nbsp;4.0.
+        </p>
+      </aside>
+    </section>
+
+    <section aria-labelledby="licence-h">
+      <h2 id="licence-h">Licence</h2>
+      <p class="prose">
+        Les contenus (textes, kit, fiches) sont diffusés comme ressource éducative libre, sous licence
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" rel="license">Creative Commons Attribution&nbsp;– Partage dans les Mêmes Conditions 4.0 International (CC&nbsp;BY-SA&nbsp;4.0)</a> :
+        vous êtes libre de les partager et de les adapter, y compris à des fins commerciales, à
+        condition de créditer Émilie Icyk et de partager vos adaptations sous la même licence.
+      </p>
+      <p class="prose">Le code source du site est, lui, distribué sous licence MIT.</p>
+    </section>
   </section>
 </Base>

@@ -7,7 +7,7 @@ const questions = (await getCollection('questions')).sort(
   (a, b) => parseInt(a.id.slice(1), 10) - parseInt(b.id.slice(1), 10)
 );
 ---
-<Base title="Le jeu de cartes-questions">
+<Base title="Le jeu de cartes-questions" description="Dix cartes-questions à piocher pour prendre du recul sur l'usage de l'IA dans l'écriture (étape bilan du kit).">
   <section class="section container">
     <nav aria-label="Fil d'Ariane" class="kw-label">
       <a href={url('/kit')}>Le kit</a> · <a href={url('/kit#etape-cap-sur-le-bilan')}>Étape 8</a> · Le jeu de cartes-questions

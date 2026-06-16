@@ -18,7 +18,7 @@ const isPunct = (t: string) => /^[,.;:!?…]$/.test(t);
 const espace = (i: number, t: string) => (i > 0 && !isPunct(t) ? ' ' : '');
 const corriges = jetons.filter((j) => j.candidat && j.erreur);
 ---
-<Base title="Aiguiser son regard">
+<Base title="Aiguiser son regard" description="Un exercice interactif pour développer l'auto-correction et la lecture critique en repérant des erreurs fréquentes.">
   <section class="section container">
     <nav aria-label="Fil d'Ariane" class="kw-label">
       <a href={url('/kit')}>Le kit</a> · <a href={url('/kit#etape-regards-croises')}>Étape 3</a> · Aiguiser son regard

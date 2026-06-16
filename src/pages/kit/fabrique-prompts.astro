@@ -6,7 +6,7 @@ import BoutonCopier from '../../components/BoutonCopier.astro';
 
 const prompts = (await getCollection('prompts')).sort((a, b) => a.id.localeCompare(b.id));
 ---
-<Base title="La fabrique à prompts">
+<Base title="La fabrique à prompts" description="Six fonctions et leurs prompts types pour mobiliser l'IA comme outil linguistique ciblé en production écrite FLE.">
   <section class="section container">
     <nav aria-label="Fil d'Ariane" class="kw-label">
       <a href={url('/kit')}>Le kit</a> · <a href={url('/kit#etape-boite-a-outils-ia')}>Étape 4</a> · La fabrique à prompts
