@@ -1,0 +1,27 @@
+# Dépendances / build
+node_modules/
+dist/
+.astro/
+.cache/
+
+# Fichiers de configuration interne (non publiés)
+CLAUDE.md
+
+# Sources privées — sécurité supplémentaire (elles vivent hors de ce dépôt)
+_conception-site/
+Mémoire/
+*.docx
+*_annexes.pdf
+brouillons/
+notes/
+
+# Données sensibles
+.env
+.env.*
+src/data/corpus-reel/
+
+# OS / éditeurs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
