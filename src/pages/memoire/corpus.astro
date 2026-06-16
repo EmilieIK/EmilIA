@@ -74,7 +74,7 @@ const niveauLabel: Record<string, string> = { fort: 'fort', moyen: 'moyen', faib
           <button type="button" class="btn btn--secondary" data-vue-btn="final" aria-pressed="false">Version finale</button>
           <button type="button" class="btn btn--secondary" data-vue-btn="diff" aria-pressed="true">Voir les changements</button>
         </div>
-        <p class="diff-legende">Changements : <span class="diff-leg diff-leg--ajout">ajout (souligné)</span>, <span class="diff-leg diff-leg--suppr">suppression (barré)</span>, <span class="diff-leg diff-leg--modif">reformulation</span>.</p>
+        <p class="diff-legende">Changements : <span class="diff-leg diff-leg--ajout">ajout ou nouvelle formulation (souligné)</span>, <span class="diff-leg diff-leg--suppr">suppression ou version remplacée (barré)</span>.</p>
         <p class="corpus-texte corpus-diff" data-corpus-diff data-vue="diff">
           {p.data.reecriture.map((seg) => {
             if (seg.t === 'ajout') return <span class="seg seg--ajout"><span class="seg__tag visually-hidden">ajouté : </span>{seg.texte}</span>;

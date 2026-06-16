@@ -806,6 +806,9 @@ html.is-presenting .present__bar {
    ============================================================ */
 html:not(.js) .corpus-selecteur,
 html:not(.js) .diff-toggle { display: none; }
+/* Avec JS : un seul cas visible (évite le flash de tous les parcours au chargement) */
+html.js [data-cas-panel] { display: none; }
+html.js [data-cas-panel].is-active { display: block; }
 
 .corpus-fictif { border-inline-start-color: var(--c-ia-sans); }
 .corpus-selecteur { background: var(--c-surface-2); border-radius: var(--radius-lg); padding: var(--space-6); margin-block: var(--space-6); }
@@ -841,7 +844,6 @@ html:not(.js) .diff-toggle { display: none; }
 .diff-legende { font-size: var(--step--1); color: var(--c-ink-soft); margin-block-end: var(--space-2); }
 .diff-leg--ajout { text-decoration: underline; text-decoration-color: var(--c-ia-avec); text-decoration-thickness: 2px; }
 .diff-leg--suppr { text-decoration: line-through; }
-.diff-leg--modif { border-block-end: 2px dotted var(--c-accent); }
 
 /* Vues : montrer/masquer les segments selon data-vue */
 .corpus-diff[data-vue="jet"] .seg--ajout,
@@ -864,6 +866,7 @@ html:not(.js) .diff-toggle { display: none; }
 .ia-echange__suite { color: var(--c-ink-soft); margin-block-start: var(--space-2); }
 .chip--refusee { border-color: var(--c-ia-sans); }
 .chip--reprise { border-color: var(--c-ia-avec); }
+.chip--adaptee { border-color: var(--c-accent); }
 
 /* Grille codée */
 .grille-codee { width: 100%; border-collapse: collapse; font-size: var(--step--1); margin-block-start: var(--space-2); }

@@ -18,7 +18,7 @@ if (select && panels.length > 0) {
   const panelFor = (id: string) => panels.find((p) => p.dataset.casId === id);
 
   function showPanel(id: string, focusHeading: boolean) {
-    panels.forEach((p) => { p.hidden = p.dataset.casId !== id; });
+    panels.forEach((p) => { p.classList.toggle('is-active', p.dataset.casId === id); });
     const p = panelFor(id);
     if (p && focusHeading) p.querySelector<HTMLElement>('h2')?.focus();
     const niveau = p?.querySelector('.cas-niveau')?.textContent?.trim() || '';
@@ -28,7 +28,7 @@ if (select && panels.length > 0) {
   const wanted = new URLSearchParams(location.search).get('etudiant');
   const initial = wanted && panelFor(wanted) ? wanted : panels[0].dataset.casId!;
   select.value = initial;
-  panels.forEach((p) => { p.hidden = p.dataset.casId !== initial; });
+  panels.forEach((p) => { p.classList.toggle('is-active', p.dataset.casId === initial); });
   select.addEventListener('change', () => showPanel(select.value, true));
 }
 

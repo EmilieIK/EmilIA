@@ -51,4 +51,14 @@
   .present__stage { display: block !important; }
   .diapo, .diapo[hidden] { display: block !important; break-before: page; break-inside: avoid; }
   .diapo:first-of-type { break-before: auto; }
+
+  /* Corpus : imprimer TOUS les parcours, en vue « changements » complète */
+  .corpus-selecteur, .diff-toggle, .diff-legende { display: none !important; }
+  .cas { display: block !important; break-before: page; break-inside: avoid; }
+  .cas:first-of-type { break-before: auto; }
+  .corpus-diff .seg--egal, .corpus-diff .seg--ajout, .corpus-diff .seg--apres,
+  .corpus-diff .seg--suppr, .corpus-diff .seg--avant { display: inline !important; }
+  .corpus-diff .seg--suppr, .corpus-diff .seg--avant { text-decoration: line-through; }
+  .corpus-diff .seg--ajout, .corpus-diff .seg--apres { text-decoration: underline; }
+  .grille-codee { break-inside: avoid; }
 }
