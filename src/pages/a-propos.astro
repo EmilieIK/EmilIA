@@ -1,12 +1,78 @@
 ---
 import Base from '../layouts/Base.astro';
+import { url } from '../lib/paths';
 ---
 <Base title="À propos">
-  <section class="section container">
-    <h1>À propos</h1>
-    <p class="prose" style="color: var(--c-ink-soft);">
-      <!-- TODO : bio, démarche, contact mailto, photo optionnelle — Phase 2 du brief. -->
-      Cette section sera bientôt disponible.
-    </p>
+  <section class="section">
+    <div class="container">
+      <h1>À propos</h1>
+      {/* TODO Émilie : photo optionnelle (intégrer ici une <figure> avec un alt descriptif). */}
+      <div class="prose">
+        <p>
+          Le parcours d'Émilie Icyk s'ouvre en 2001 par un double diplôme : une maîtrise de
+          FLE à l'Université Lyon II et un <span lang="en">PGCE in Modern Languages</span> à
+          l'Université de Nottingham. Dès cette
+          première année, elle travaille les <abbr title="Technologies de l'information et de la communication pour l'enseignement">TICE</abbr>
+          — les technologies numériques au service de l'enseignement — pour la différenciation
+          pédagogique, en concevant des exercices interactifs « Hot Potatoes » destinés à des
+          élèves à besoins éducatifs particuliers.
+        </p>
+        <p>
+          De cette pratique se dégage une conviction qu'elle file depuis une vingtaine d'années :
+          le numérique n'a de valeur que s'il affine l'accompagnement, sans jamais remplacer
+          l'activité de l'apprenant·e ni la médiation de l'enseignant·e. Les IA génératives
+          déplacent cette question ancienne, car elles ne se contentent plus d'accompagner :
+          elles produisent du texte. C'est ce même fil anthropocentré, des TICE à l'IA, qu'elle
+          poursuit aujourd'hui en master 2 mention Didactique des langues, parcours FLES (français
+          langue étrangère et seconde), à l'Université Grenoble Alpes, sous la direction de
+          Thierry Soubrié, avec un terrain de stage au <abbr title="Département d'Enseignement du Français à l'International">DEFI</abbr>
+          auprès d'étudiant·es Erasmus+ de niveaux B1 et B2. Son mémoire, « Production écrite en
+          FLE et intelligence artificielle : un scénario pour une autonomie assistée », en
+          prolonge la réflexion autour de trois mots : Révélateur · Seconde · Geste.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Ma démarche</h2>
+      <div class="prose">
+        <p>
+          Ma démarche reste celle d'une praticienne : je pars de ce que je rencontre en classe.
+          C'est sur mon terrain de stage, au DEFI, auprès d'étudiant·es Erasmus+ de niveaux B1 et
+          B2, que je conduis une recherche-action — une enquête menée depuis l'intérieur de
+          l'enseignement, où concevoir, expérimenter et analyser forment une seule et même
+          activité. Mon souci n'est pas d'évaluer une technologie pour elle-même, mais de
+          comprendre comment elle modifie le geste d'écrire et le rôle de celle ou celui qui enseigne.
+        </p>
+        <p>
+          Cette posture est anthropocentrée : je place l'apprenant·e et l'enseignant·e, et non
+          l'outil, au centre du processus d'écriture. L'IA y est un appui qui propose sans
+          décider ; elle reste seconde, soutient la production écrite sans s'y substituer, et
+          c'est la médiation enseignante qui en règle les usages. J'y conçois alors l'autonomie
+          non comme un état acquis une fois pour toutes, mais comme un geste : rester celle ou
+          celui qui décide quand on écrit avec de l'aide. C'est tout le sens de l'« autonomie
+          assistée » que je cherche à construire — non pas écrire à la place de l'apprenant·e,
+          mais lui rendre, à chaque étape, la décision d'écrire.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Contact</h2>
+      <div class="prose">
+        <p>
+          Pour échanger autour de ce travail ou du kit pédagogique :
+          <a href="mailto:emilieicyk@outlook.fr">emilieicyk@outlook.fr</a>.
+        </p>
+        <p>
+          {/* TODO Émilie : remplacer par le lien direct vers le PDF quand l'hébergement sera décidé. */}
+          <a href={url('/memoire')}>Lire le mémoire</a>.
+        </p>
+      </div>
+    </div>
   </section>
 </Base>
