@@ -1,16 +1,137 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
 import { url } from '../../lib/paths';
+
+const parcours = (await getCollection('corpus')).sort((a, b) => a.id.localeCompare(b.id));
+
+const repriseLabel: Record<string, string> = {
+  reprise: 'Repris tel quel',
+  adaptee: 'Adapté',
+  ignoree: 'Ignoré',
+  refusee: 'Refusé',
+};
+const niveauLabel: Record<string, string> = { fort: 'fort', moyen: 'moyen', faible: 'faible', na: 'non applicable' };
 ---
 <Base title="Exploration du corpus">
   <section class="section container">
     <nav aria-label="Fil d'Ariane" class="kw-label">
       <a href={url('/memoire')}>Le mémoire</a> · Exploration du corpus
     </nav>
-    <h1>Exploration du corpus</h1>
+    <h1>Exploration du corpus <span class="badge--modulable">exemples fictifs</span></h1>
+
+    <aside class="callout corpus-fictif" role="note" aria-label="Avertissement : données fictives">
+      <p>
+        <strong>Exemples fictifs.</strong> Les parcours présentés ci-dessous sont des
+        illustrations inventées, de niveau B1-B2, destinées à montrer le fonctionnement de
+        l'analyse. Aucune donnée réelle d'étudiant·e n'y figure ; les identifiants sont neutres.
+        {/* TODO Émilie : remplacer par le corpus vierge anonymisé (jamais de prénom ni d'élément ré-identifiant). */}
+      </p>
+    </aside>
+
     <p class="prose">
-      {/* TODO : sélecteur d'étudiant·e anonymisé·e, jet → réécritures → interactions IA → grille codée, bascule avant/après — Phase 7 du brief, alimentée par le corpus vierge anonymisé d'Émilie. */}
-      Cette exploration sera bientôt disponible, à partir d'un corpus entièrement anonymisé.
+      Le mémoire montre des progrès souvent locaux, une appropriation inégale et le risque du
+      <a class="terme" href={url('/memoire#glo-texte-lisse')}>texte lissé</a>. Ces parcours rendent
+      ces résultats tangibles : du premier jet à la version finale, en passant par les interactions
+      avec l'IA.
     </p>
+
+    <div class="corpus-selecteur" role="region" aria-labelledby="sel-h">
+      <h2 id="sel-h">Choisir un parcours à explorer</h2>
+      <p class="corpus-selecteur__row">
+        <label for="cas-select">Étudiant·e anonymisé·e</label>
+        <select id="cas-select" data-cas-select>
+          {parcours.map((p) => <option value={p.id}>{p.id} — niveau {p.data.niveau}</option>)}
+        </select>
+      </p>
+      <p class="corpus-selecteur__note">Identifiants neutres, sans prénom (anonymisation).</p>
+      <p class="visually-hidden" role="status" aria-live="polite" aria-atomic="true" data-cas-live></p>
+    </div>
+  </section>
+
+  {parcours.map((p) => (
+    <article class="section container cas" data-cas-panel data-cas-id={p.id} aria-labelledby={`cas-${p.id}-h`}>
+      <header class="cas-entete">
+        <p class="card__index" aria-hidden="true">{p.id}</p>
+        <h2 id={`cas-${p.id}-h`} tabindex="-1">Parcours {p.id} <span class="cas-niveau">niveau {p.data.niveau}</span></h2>
+        <p class="prose">Tâche : {p.data.tache}.</p>
+        <dl class="stats">
+          <div class="stat"><dt class="stat__label">Réécritures</dt><dd class="stat__num">{p.data.synthese_tete.nb_reecritures}</dd></div>
+          <div class="stat"><dt class="stat__label">Interactions IA</dt><dd class="stat__num">{p.data.synthese_tete.nb_interactions}</dd></div>
+          <div class="stat stat--wide"><dt class="stat__label">Type de progrès</dt><dd class="stat__text">{p.data.synthese_tete.type_progres}</dd></div>
+        </dl>
+      </header>
+
+      <section aria-labelledby={`jet-${p.id}-h`}>
+        <h3 id={`jet-${p.id}-h`}>1 · Premier jet</h3>
+        <p class="corpus-texte">{p.data.premier_jet}</p>
+      </section>
+
+      <section aria-labelledby={`rew-${p.id}-h`}>
+        <h3 id={`rew-${p.id}-h`}>2 · Réécritures : du jet à la version finale</h3>
+        <div class="diff-toggle" role="group" aria-label="Affichage du texte">
+          <button type="button" class="btn btn--secondary" data-vue-btn="jet" aria-pressed="false">Premier jet</button>
+          <button type="button" class="btn btn--secondary" data-vue-btn="final" aria-pressed="false">Version finale</button>
+          <button type="button" class="btn btn--secondary" data-vue-btn="diff" aria-pressed="true">Voir les changements</button>
+        </div>
+        <p class="diff-legende">Changements : <span class="diff-leg diff-leg--ajout">ajout (souligné)</span>, <span class="diff-leg diff-leg--suppr">suppression (barré)</span>, <span class="diff-leg diff-leg--modif">reformulation</span>.</p>
+        <p class="corpus-texte corpus-diff" data-corpus-diff data-vue="diff">
+          {p.data.reecriture.map((seg) => {
+            if (seg.t === 'ajout') return <span class="seg seg--ajout"><span class="seg__tag visually-hidden">ajouté : </span>{seg.texte}</span>;
+            if (seg.t === 'suppr') return <span class="seg seg--suppr"><span class="seg__tag visually-hidden">supprimé : </span>{seg.texte}</span>;
+            if (seg.t === 'modif') return <><span class="seg seg--avant"><span class="seg__tag visually-hidden">remplacé : </span>{seg.avant}</span><span class="seg seg--apres"><span class="seg__tag visually-hidden">par : </span>{seg.apres}</span></>;
+            return <span class="seg seg--egal">{seg.texte}</span>;
+          })}
+        </p>
+        {p.data.versions_intermediaires.length > 0 && (
+          <p class="corpus-note">{p.data.versions_intermediaires.map((v) => <span><strong>{v.label} :</strong> {v.texte}</span>)}</p>
+        )}
+      </section>
+
+      <section aria-labelledby={`ia-${p.id}-h`}>
+        <h3 id={`ia-${p.id}-h`}>3 · Interactions avec l'IA</h3>
+        <ol class="ia-echanges">
+          {p.data.interactions.map((it) => (
+            <li class="ia-echange">
+              <p class="ia-echange__prompt"><span class="ia-echange__role">Étudiant·e :</span> {it.prompt}</p>
+              <p class="ia-echange__reponse"><span class="ia-echange__role">IA :</span> {it.reponse}</p>
+              <p class="ia-echange__suite"><span class={`chip chip--${it.reprise}`}>{repriseLabel[it.reprise]}</span> {it.commentaire}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section aria-labelledby={`grille-${p.id}-h`}>
+        <h3 id={`grille-${p.id}-h`}>4 · Grille d'analyse codée</h3>
+        <table class="grille-codee">
+          <thead>
+            <tr><th scope="col">Dimension</th><th scope="col">Code</th><th scope="col">Niveau</th><th scope="col">Observation</th></tr>
+          </thead>
+          <tbody>
+            {p.data.grille.map((g) => (
+              <tr>
+                <th scope="row">{g.dimension}</th>
+                <td><code>{g.code}</code></td>
+                <td>{niveauLabel[g.niveau]}</td>
+                <td>{g.observation}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+
+      <section aria-labelledby={`syn-${p.id}-h`}>
+        <h3 id={`syn-${p.id}-h`}>Ce que ce cas illustre</h3>
+        <p class="prose">{p.data.synthese}</p>
+      </section>
+    </article>
+  ))}
+
+  <section class="section container">
+    <p class="prose"><a href={url('/memoire')}>Revenir au mémoire</a></p>
   </section>
 </Base>
+
+<script>
+  import '../../scripts/corpus.ts';
+</script>

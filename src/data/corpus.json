@@ -1,0 +1,73 @@
+[
+  {
+    "id": "B1-01",
+    "niveau": "B1",
+    "fictif": true,
+    "tache": "Raconter un souvenir de voyage (80-100 mots)",
+    "synthese_tete": { "nb_reecritures": 2, "nb_interactions": 2, "type_progres": "surtout local (accord, conjugaison)" },
+    "premier_jet": "L'année dernier, je suis allé à la mer avec mes amis. Il faisait très chaud et nous avons nagé tout le jour. Le soir on a mangé du poisson dans un petit restaurant. C'était une journée que je oublierai jamais.",
+    "reecriture": [
+      { "t": "egal", "texte": "L'année " },
+      { "t": "modif", "avant": "dernier", "apres": "dernière", "origine": "ia-reprise", "ref_ia": "ia-b1-01-1" },
+      { "t": "egal", "texte": ", je suis allé à la mer avec mes amis. Il faisait très chaud et nous avons nagé " },
+      { "t": "modif", "avant": "tout le jour", "apres": "toute la journée", "origine": "ia-reprise", "ref_ia": "ia-b1-01-1" },
+      { "t": "egal", "texte": ". Le soir" },
+      { "t": "ajout", "texte": "," },
+      { "t": "egal", "texte": " on a mangé du poisson dans un petit restaurant. C'était une journée que je " },
+      { "t": "modif", "avant": "oublierai", "apres": "n'oublierai", "origine": "ia-reprise", "ref_ia": "ia-b1-01-1" },
+      { "t": "egal", "texte": " jamais." }
+    ],
+    "versions_intermediaires": [],
+    "interactions": [
+      { "id": "ia-b1-01-1", "prompt": "corrige les fautes de mon texte stp", "reponse": "Voici votre texte corrigé : « L'année dernière… toute la journée… je n'oublierai jamais. »", "reprise": "reprise", "commentaire": "Reprise intégrale sans vérifier le détail des corrections : correction subie plus qu'analysée (recul critique faible)." },
+      { "id": "ia-b1-01-2", "prompt": "pourquoi dernière et pas dernier ?", "reponse": "« Année » est un nom féminin : l'adjectif s'accorde au féminin → « dernière ».", "reprise": "adaptee", "commentaire": "Question métalinguistique : amorce d'une littératie de l'IA, l'étudiant·e cherche la règle, pas seulement le résultat." }
+    ],
+    "grille": [
+      { "dimension": "Nature des modifications", "code": "local", "niveau": "fort", "observation": "Corrections ponctuelles (accord, conjugaison) ; structure et contenu inchangés." },
+      { "dimension": "Reprise des suggestions IA", "code": "reprise-large", "niveau": "fort", "observation": "Quasi toutes les suggestions reprises, souvent sans reformulation propre." },
+      { "dimension": "Recul critique", "code": "fragile", "niveau": "faible", "observation": "Une seule demande d'explication ; le reste appliqué tel quel." },
+      { "dimension": "Préservation de la voix", "code": "voix-stable", "niveau": "moyen", "observation": "Texte court : peu lissé, la voix initiale reste perceptible." },
+      { "dimension": "Littératie de l'IA", "code": "emergente", "niveau": "moyen", "observation": "Le prompt est vague mais une question de règle apparaît." },
+      { "dimension": "Autonomie du geste", "code": "assistee", "niveau": "moyen", "observation": "Décide de demander une explication : geste d'auteur·rice naissant." }
+    ],
+    "synthese": "Cas typique d'un progrès surtout local : l'IA corrige, le texte se stabilise, mais l'appropriation reste partielle — l'IA agit ici comme révélateur d'un besoin de cadrage."
+  },
+  {
+    "id": "B2-01",
+    "niveau": "B2",
+    "fictif": true,
+    "tache": "Donner son avis dans un courrier de lecteur (150 mots)",
+    "synthese_tete": { "nb_reecritures": 3, "nb_interactions": 3, "type_progres": "global (registre) avec sélection critique" },
+    "premier_jet": "À mon avis, les réseaux sociaux nous volent beaucoup de temps, mais ils ont aussi du bon. Moi, je trouve qu'on apprend plein de choses, sauf qu'on oublie de parler aux gens en vrai. Bref, il faut faire attention mais pas tout jeter.",
+    "reecriture": [
+      { "t": "modif", "avant": "À mon avis, les réseaux sociaux nous volent beaucoup de temps", "apres": "Les réseaux sociaux représentent une part considérable de notre temps quotidien", "origine": "ia-reprise", "ref_ia": "ia-b2-01-1" },
+      { "t": "egal", "texte": ", mais ils " },
+      { "t": "modif", "avant": "ont aussi du bon", "apres": "présentent également des avantages indéniables", "origine": "ia-reprise", "ref_ia": "ia-b2-01-1" },
+      { "t": "egal", "texte": ". Moi, je trouve qu'on apprend " },
+      { "t": "modif", "avant": "plein de", "apres": "de nombreuses", "origine": "ia-reprise", "ref_ia": "ia-b2-01-1" },
+      { "t": "egal", "texte": " choses" },
+      { "t": "modif", "avant": ", sauf qu'", "apres": ", même si ", "origine": "ia-reprise", "ref_ia": "ia-b2-01-1" },
+      { "t": "egal", "texte": "on oublie de parler aux gens " },
+      { "t": "modif", "avant": "en vrai", "apres": "en personne", "origine": "ia-reprise", "ref_ia": "ia-b2-01-1" },
+      { "t": "egal", "texte": ". " },
+      { "t": "modif", "avant": "Bref, il faut faire attention mais pas tout jeter.", "apres": "Bref, il faut rester vigilant sans pour autant tout rejeter.", "origine": "ia-reprise", "ref_ia": "ia-b2-01-1" }
+    ],
+    "versions_intermediaires": [
+      { "label": "Trace de refus (conservée volontairement)", "texte": "L'étudiant·e a refusé de supprimer « Moi, je trouve » : conservé tel quel pour garder sa voix (cf. échange ia-b2-01-2)." }
+    ],
+    "interactions": [
+      { "id": "ia-b2-01-1", "prompt": "Peux-tu rendre mon texte plus formel pour un courrier de lecteur ?", "reponse": "Version reformulée : « Les réseaux sociaux représentent une part considérable de notre temps… des avantages indéniables… rester vigilant sans tout rejeter. »", "reprise": "adaptee", "commentaire": "Reprend le registre soutenu mais réintroduit ses propres marqueurs : co-agentivité maîtrisée." },
+      { "id": "ia-b2-01-2", "prompt": "Tu as enlevé « Moi, je trouve », je veux le garder, c'est mon avis.", "reponse": "Compris, je conserve « je trouve » pour marquer votre point de vue personnel.", "reprise": "refusee", "commentaire": "Refus argumenté d'une suggestion : posture d'auteur·rice affirmée (agentivité)." },
+      { "id": "ia-b2-01-3", "prompt": "« indéniables » ça veut dire quoi exactement ?", "reponse": "« Indéniable » : qu'on ne peut pas nier, évident. Synonyme : incontestable.", "reprise": "adaptee", "commentaire": "Vérifie le lexique avant d'accepter : évaluation critique de la proposition." }
+    ],
+    "grille": [
+      { "dimension": "Nature des modifications", "code": "global", "niveau": "moyen", "observation": "Reformulations de registre et de syntaxe, au-delà du local." },
+      { "dimension": "Reprise des suggestions IA", "code": "selective", "niveau": "moyen", "observation": "Reprend le registre, en écarte une partie pour garder son intention." },
+      { "dimension": "Recul critique", "code": "actif", "niveau": "fort", "observation": "Vérifie un mot, refuse une suppression, argumente ses choix." },
+      { "dimension": "Préservation de la voix", "code": "voix-menacee", "niveau": "faible", "observation": "Texte nettement lissé ; sans le refus, la voix s'effaçait (texte lissé)." },
+      { "dimension": "Littératie de l'IA", "code": "consolidee", "niveau": "fort", "observation": "Prompts précis et ciblés (registre, sens d'un mot)." },
+      { "dimension": "Autonomie du geste", "code": "assistee-non-deleguee", "niveau": "fort", "observation": "L'IA propose, l'étudiant·e décide : autonomie assistée mais non déléguée." }
+    ],
+    "synthese": "Cas où l'IA lisse le texte et menace la voix : la valeur pédagogique tient au geste de refus et de sélection — l'IA reste seconde, un appui qui propose sans décider."
+  }
+]

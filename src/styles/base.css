@@ -801,6 +801,77 @@ html.is-presenting .present__bar {
   @keyframes diapo-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 }
 
+/* ============================================================
+   Page Corpus — sélecteur, étude de cas, diff avant/après.
+   ============================================================ */
+html:not(.js) .corpus-selecteur,
+html:not(.js) .diff-toggle { display: none; }
+
+.corpus-fictif { border-inline-start-color: var(--c-ia-sans); }
+.corpus-selecteur { background: var(--c-surface-2); border-radius: var(--radius-lg); padding: var(--space-6); margin-block: var(--space-6); }
+.corpus-selecteur__row { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-3); align-items: center; }
+.corpus-selecteur__row label { font-weight: 700; }
+.corpus-selecteur select {
+  font: inherit;
+  min-height: 44px;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--c-border-2);
+  border-radius: var(--radius);
+  background: var(--c-surface);
+  color: var(--c-ink);
+}
+.corpus-selecteur__note { color: var(--c-ink-soft); font-size: var(--step--1); margin-block-start: var(--space-2); }
+
+.cas-entete .card__index { font-size: var(--step-1); }
+.cas-niveau { font-family: var(--font-sans); font-size: var(--step--1); font-weight: 400; color: var(--c-ink-soft); }
+
+.corpus-texte {
+  max-width: var(--measure);
+  line-height: 1.7;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+}
+.corpus-note { color: var(--c-ink-soft); font-size: var(--step--1); margin-block-start: var(--space-3); }
+
+/* Bascule avant/après */
+.diff-toggle { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-block: var(--space-4) var(--space-2); }
+.btn[aria-pressed="true"] { border-color: var(--c-accent); background: var(--c-surface-2); }
+.diff-legende { font-size: var(--step--1); color: var(--c-ink-soft); margin-block-end: var(--space-2); }
+.diff-leg--ajout { text-decoration: underline; text-decoration-color: var(--c-ia-avec); text-decoration-thickness: 2px; }
+.diff-leg--suppr { text-decoration: line-through; }
+.diff-leg--modif { border-block-end: 2px dotted var(--c-accent); }
+
+/* Vues : montrer/masquer les segments selon data-vue */
+.corpus-diff[data-vue="jet"] .seg--ajout,
+.corpus-diff[data-vue="jet"] .seg--apres,
+.corpus-diff[data-vue="final"] .seg--suppr,
+.corpus-diff[data-vue="final"] .seg--avant { display: none; }
+.corpus-diff[data-vue="jet"] .seg__tag,
+.corpus-diff[data-vue="final"] .seg__tag { display: none; }
+/* Marques visibles uniquement en vue « changements » (forme + couleur de renfort) */
+.corpus-diff[data-vue="diff"] .seg--ajout,
+.corpus-diff[data-vue="diff"] .seg--apres { text-decoration: underline; text-decoration-color: var(--c-ia-avec); text-decoration-thickness: 2px; }
+.corpus-diff[data-vue="diff"] .seg--suppr,
+.corpus-diff[data-vue="diff"] .seg--avant { text-decoration: line-through; color: var(--c-ia-sans); }
+
+/* Interactions IA */
+.ia-echanges { list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-4); }
+.ia-echange { padding: var(--space-4); border: 1px solid var(--c-border); border-radius: var(--radius); background: var(--c-surface); max-width: none; }
+.ia-echange p { max-width: none; margin-block: var(--space-1); }
+.ia-echange__role { font-weight: 700; }
+.ia-echange__suite { color: var(--c-ink-soft); margin-block-start: var(--space-2); }
+.chip--refusee { border-color: var(--c-ia-sans); }
+.chip--reprise { border-color: var(--c-ia-avec); }
+
+/* Grille codée */
+.grille-codee { width: 100%; border-collapse: collapse; font-size: var(--step--1); margin-block-start: var(--space-2); }
+.grille-codee th, .grille-codee td { text-align: start; padding: var(--space-2) var(--space-3); border-block-end: 1px solid var(--c-border); vertical-align: top; }
+.grille-codee thead th { border-block-end: 2px solid var(--c-border-2); }
+.grille-codee tbody th { font-weight: 700; max-width: none; }
+.grille-codee code { font-family: var(--font-mono); font-size: var(--step--1); }
+
 /* ----- Nav mobile ----- */
 @media (max-width: 767px) {
   /* JS actif : le menu est un panneau déroulant repliable (piloté par .is-open) */
