@@ -1,0 +1,72 @@
+[
+  {
+    "id": "agentivite",
+    "terme": "Agentivité",
+    "definition": "Capacité du sujet à agir intentionnellement sur son environnement (Bandura, 2001 ; Mercer, 2012) ; ici, capacité de l'apprenant·e à agir sur son texte face aux suggestions de l'IA."
+  },
+  {
+    "id": "autonomie-redactionnelle",
+    "terme": "Autonomie rédactionnelle",
+    "definition": "Capacité à conduire son processus d'écriture (planifier, rédiger, réviser, décider du recours à une aide), transposée de l'autonomie d'apprentissage (Holec, 1979). Qualifiée d'« assistée, mais non déléguée »."
+  },
+  {
+    "id": "co-agentivite",
+    "terme": "Co-agentivité",
+    "definition": "Agentivité partagée entre humains et IA dans des boucles itératives requête/réponse/évaluation/reformulation (Soubrié & Nissen, à paraître)."
+  },
+  {
+    "id": "grand-modele-de-langage-llm",
+    "terme": "Grand modèle de langage (LLM)",
+    "definition": "Système d'IA entraîné sur de vastes corpus pour générer du langage en prédisant des suites de mots probables."
+  },
+  {
+    "id": "ia-generative",
+    "terme": "IA générative",
+    "definition": "Systèmes capables de produire des contenus (texte, image, son, code) à partir de régularités statistiques ; sollicités par une instruction en langue naturelle (prompt)."
+  },
+  {
+    "id": "interlangue",
+    "terme": "Interlangue",
+    "definition": "Système linguistique intermédiaire, instable et évolutif, propre à l'apprenant·e d'une langue étrangère (Selinker, 1972 ; Corder, 1967)."
+  },
+  {
+    "id": "litteratie-de-l-ia",
+    "terme": "Littératie de l'IA",
+    "definition": "Compétences pour comprendre, utiliser et évaluer de manière critique les outils d'IA, et interagir efficacement avec eux (Long & Magerko, 2020)."
+  },
+  {
+    "id": "mediation-enseignante",
+    "terme": "Médiation enseignante",
+    "definition": "Interventions par lesquelles l'enseignant·e organise, cadre et ajuste l'usage de l'outil avant/pendant/après l'interaction (perspective vygotskienne, 1985)."
+  },
+  {
+    "id": "posture-d-auteur-rice",
+    "terme": "Posture d'auteur·rice",
+    "definition": "Rapport subjectif au texte : se reconnaître dans la version finale et en assumer la responsabilité énonciative (Barré-De Miniac, 2015)."
+  },
+  {
+    "id": "prompt-prompting",
+    "terme": "Prompt / prompting",
+    "definition": "Instruction adressée à une IA générative ; le prompting désigne l'activité de formulation et d'ajustement de ces demandes."
+  },
+  {
+    "id": "recherche-action",
+    "terme": "Recherche-action",
+    "definition": "Démarche associant production de connaissances et transformation des pratiques, par cycles d'action, observation, ajustement (Catroux, 2002)."
+  },
+  {
+    "id": "reecriture",
+    "terme": "Réécriture",
+    "definition": "Reprise du texte par son auteur·rice (réorganiser, reformuler, développer, trancher), par opposition à la simple correction locale (Bucheton et al., 2014)."
+  },
+  {
+    "id": "scenario-pedagogique",
+    "terme": "Scénario pédagogique",
+    "definition": "Enchaînement structuré d'étapes ; ici le parcours en 8 étapes du kit, alternant phases sans IA, médiations humaines et recours ciblé."
+  },
+  {
+    "id": "texte-lisse",
+    "terme": "Texte lissé",
+    "definition": "Texte rendu plus fluide et conforme par les reformulations de l'IA, mais appauvri en marques personnelles (la voix de l'apprenant·e s'efface)."
+  }
+]

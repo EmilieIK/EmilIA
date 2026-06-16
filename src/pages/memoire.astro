@@ -1,12 +1,174 @@
 ---
 import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { url } from '../lib/paths';
+import FilRouge from '../components/FilRouge.astro';
+import Disclosure from '../components/Disclosure.astro';
+import Glossaire from '../components/Glossaire.astro';
+
+const parties = (await getCollection('plan')).sort((a, b) => a.data.numero - b.data.numero);
+
+const motsCles = [
+  'médiation enseignante',
+  'français langue étrangère',
+  'intelligence artificielle générative',
+  'autonomie assistée',
+  "littératie de l'IA",
+];
+const keywords = [
+  'teacher mediation',
+  'French as a foreign language',
+  'generative artificial intelligence',
+  'supported autonomy',
+  'AI literacy',
+];
+
+const stats = [
+  { num: '15', label: 'parcours d’écriture complets analysés' },
+  { num: '2', label: 'groupes : B1 et B2 (étudiant·es Erasmus+, DEFI)' },
+  { num: '8', label: 'étapes du scénario (≈ 3 h 30)' },
+  { num: '14', label: 'chapitres répartis en 3 parties' },
+];
+
+const sigles = [
+  { s: 'B1/B2', t: 'Niveaux du Cadre européen commun de référence pour les langues' },
+  { s: 'CECRL', t: 'Cadre européen commun de référence pour les langues' },
+  { s: 'CRAFT', t: 'Contexte, Rôle, Action, Format, Ton' },
+  { s: 'DALF', t: 'Diplôme approfondi de langue française' },
+  { s: 'DELF', t: "Diplôme d'études en langue française" },
+  { s: 'DEFI', t: "Département d'Enseignement du Français à l'International" },
+  { s: 'FLE', t: 'Français langue étrangère' },
+  { s: 'FLES', t: 'Français langue étrangère et seconde' },
+  { s: 'IA', t: 'Intelligence artificielle' },
+  { s: 'IAG', t: 'Intelligence artificielle générative' },
+  { s: 'L1/L2', t: 'Langue première / langue seconde' },
+  { s: 'LLM', t: 'Large Language Model (grand modèle de langage)' },
+  { s: 'PE', t: 'Production écrite' },
+  { s: 'TICE', t: "Technologies de l'information et de la communication pour l'enseignement" },
+];
 ---
 <Base title="Le mémoire">
-  <section class="section container">
-    <h1>Le mémoire</h1>
-    <p class="prose" style="color: var(--c-ink-soft);">
-      <!-- TODO : résumé, mots-clés, chiffres-clés, plan interactif, fil rouge, glossaire — Phase 3 du brief. -->
-      Cette section sera bientôt disponible.
-    </p>
+  <section class="section">
+    <div class="container">
+      <h1>Le mémoire</h1>
+      <p class="prose">Résumé, plan détaillé, fil rouge et glossaire du travail de recherche.</p>
+      <div class="hero__cta">
+        <a class="btn btn--secondary" href={url('/memoire/corpus')}>Explorer le corpus</a>
+      </div>
+      {/* TODO Émilie : bouton de téléchargement du PDF quand l'hébergement sera décidé. */}
+      <p class="kw-label">Le PDF du mémoire sera mis à disposition prochainement.</p>
+
+      <nav class="quicknav" aria-label="Accès rapides">
+        <ul class="quicknav__list">
+          <li><a class="quicknav__link" href="#resume">Résumé</a></li>
+          <li><a class="quicknav__link" href="#en-bref">En bref</a></li>
+          <li><a class="quicknav__link" href="#fil-rouge">Fil rouge</a></li>
+          <li><a class="quicknav__link" href="#plan">Plan</a></li>
+          <li><a class="quicknav__link" href="#glossaire">Glossaire</a></li>
+          <li><a class="quicknav__link" href="#sigles">Sigles</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <section class="section" id="resume" aria-labelledby="resume-h">
+    <div class="container">
+      <h2 id="resume-h">Résumé</h2>
+      <div class="prose">
+        <p>
+          Que devient le travail d'écriture lorsque l'IA peut corriger, reformuler et suggérer
+          d'un simple clic ? Ce mémoire répond à partir du terrain : un scénario pédagogique de
+          production écrite en FLE, conçu dans une démarche de recherche-action auprès
+          d'étudiant·es Erasmus+ de niveaux B1 et B2. Quinze parcours complets ont été analysés —
+          premiers jets, interactions avec l'IA, réécritures, versions finales — puis croisés avec
+          un questionnaire étudiant et un entretien enseignant. Les résultats montrent moins un
+          impact direct et isolable de l'IA qu'un déplacement du travail d'écriture : les textes se
+          stabilisent, mais l'appropriation reste inégale ; les suggestions sont souvent reprises,
+          tandis que le recul critique demeure fragile. L'IA y apparaît alors comme le révélateur
+          des compétences des apprenant·es et des implicites de l'enseignement. Elle ne devient
+          formatrice qu'à une condition : rester seconde, un appui qui propose sans décider.
+          L'autonomie, dès lors, n'est plus un état mais un geste. Révélateur, seconde, geste : ces
+          trois termes disent une même exigence, celle de rester auteur·rice d'un texte que
+          plusieurs voix contribuent désormais à produire.
+        </p>
+      </div>
+
+      <p class="kw-label" id="mots-cles">Mots-clés</p>
+      <ul class="chips" aria-labelledby="mots-cles">
+        {motsCles.map((m) => <li class="chip">{m}</li>)}
+      </ul>
+      <p class="kw-label" id="keywords-label" lang="en">Keywords</p>
+      <ul class="chips" lang="en" aria-labelledby="keywords-label">
+        {keywords.map((k) => <li class="chip">{k}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="en-bref" aria-labelledby="en-bref-h">
+    <div class="container">
+      <h2 id="en-bref-h">En bref</h2>
+      <dl class="stats">
+        {stats.map((st) => (
+          <div class="stat">
+            <dt class="stat__label">{st.label}</dt>
+            <dd class="stat__num">{st.num}</dd>
+          </div>
+        ))}
+        <div class="stat stat--wide">
+          <dt class="stat__label">Triangulation des données</dt>
+          <dd class="stat__text">corpus de traces · questionnaire étudiant · entretien enseignant</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="fil-rouge-h">
+    <div class="container">
+      <h2 id="fil-rouge-h">Fil rouge</h2>
+      <FilRouge />
+    </div>
+  </section>
+
+  <section class="section" id="plan" aria-labelledby="plan-h">
+    <div class="container">
+      <div class="plan-head">
+        <h2 id="plan-h">Plan du mémoire</h2>
+        <button type="button" class="btn btn--secondary" data-disclosure-all aria-pressed="false">Tout déplier</button>
+      </div>
+
+      <p class="kw-label">Introduction</p>
+
+      {parties.map((p) => (
+        <Disclosure anchor={p.id} level={3} label={`Partie ${p.data.numero} — ${p.data.titre}`}>
+          {p.data.chapitres.map((ch) => (
+            <Disclosure anchor={`ch-${ch.num}`} level={4} label={`Chapitre ${ch.num} — ${ch.titre}`}>
+              <ul class="disclosure__sections">
+                {ch.sections.map((sec) => <li>{sec}</li>)}
+              </ul>
+            </Disclosure>
+          ))}
+        </Disclosure>
+      ))}
+
+      <p class="kw-label">Conclusion · Bibliographie · Sitographie · Table des illustrations · Table des matières</p>
+    </div>
+  </section>
+
+  <section class="section" id="glossaire" aria-labelledby="glossaire-h">
+    <div class="container">
+      <h2 id="glossaire-h">Glossaire</h2>
+      <Glossaire />
+    </div>
+  </section>
+
+  <section class="section" id="sigles" aria-labelledby="sigles-h">
+    <div class="container">
+      <h2 id="sigles-h">Sigles &amp; abréviations</h2>
+      <ul class="sigles">
+        {sigles.map((g) => (
+          <li><abbr title={g.t}>{g.s}</abbr></li>
+        ))}
+      </ul>
+    </div>
   </section>
 </Base>

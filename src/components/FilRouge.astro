@@ -1,0 +1,31 @@
+---
+// Fil rouge du mémoire : 6 jalons (brief 04), liens-ancres vers les chapitres
+// du plan. Vertical sur mobile, horizontal sur desktop. Navigation 100 % en
+// ancres natives (le JS de Disclosure ne fait qu'ouvrir le panneau cible).
+// TODO Émilie : valider le rattachement de chaque jalon au chapitre.
+const jalons = [
+  { nom: 'Terrain', detail: 'DEFI, B1/B2, 1re expérience', ch: 2 },
+  { nom: 'Problématisation', detail: 'usages hétérogènes, absence de cadre', ch: 3 },
+  { nom: 'Cadre théorique', detail: "écriture en FLE · littératie de l'IA · agentivité · médiation", ch: 5 },
+  { nom: 'Expérimentation', detail: 'kit 8 étapes, recherche-action', ch: 4 },
+  { nom: 'Résultats', detail: 'révélateur · seconde · geste', ch: 11 },
+  { nom: 'Recul', detail: 'limites, sobriété, prolongements', ch: 14 },
+];
+---
+<nav class="fil-rouge-wrap" aria-label="Fil rouge du mémoire" id="fil-rouge">
+  <ol class="fil-rouge">
+    {jalons.map((j, i) => (
+      <li class="fil-rouge__step">
+        <a class="fil-rouge__link" href={`#ch-${j.ch}`}>
+          <span class="fil-rouge__rank" aria-hidden="true">{i + 1}</span>
+          <span class="fil-rouge__text">
+            <span class="fil-rouge__name">{j.nom}</span>
+            <span class="fil-rouge__detail">{j.detail}</span>
+            <span class="visually-hidden"> — aller au chapitre {j.ch}</span>
+          </span>
+        </a>
+      </li>
+    ))}
+  </ol>
+  <p class="fil-rouge__note">Ce fil articule terrain, théorisation et intervention.</p>
+</nav>

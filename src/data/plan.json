@@ -1,0 +1,147 @@
+[
+  {
+    "id": "partie-1",
+    "numero": 1,
+    "titre": "Contexte de stage et présentation du projet",
+    "chapitres": [
+      {
+        "num": 1,
+        "titre": "Du terrain au problème : genèse d'une recherche",
+        "sections": [
+          "Le numérique éducatif post-COVID",
+          "De la culture de l'écrit à la littératie numérique",
+          "L'IA en production écrite (émergence d'une littératie de l'IA)"
+        ]
+      },
+      {
+        "num": 2,
+        "titre": "Présentation du terrain de stage",
+        "sections": [
+          "Cadre institutionnel",
+          "Public apprenant",
+          "Enjeux didactiques observés"
+        ]
+      },
+      {
+        "num": 3,
+        "titre": "Missions de stage et genèse du projet",
+        "sections": [
+          "Missions réalisées",
+          "Première expérience et constats",
+          "Émergence du problème",
+          "Problématique et sous-questions"
+        ]
+      },
+      {
+        "num": 4,
+        "titre": "Conception d'un scénario pédagogique pour la PE assistée par l'IA",
+        "sections": [
+          "Nature du projet",
+          "Planification",
+          "Démarche méthodologique"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "partie-2",
+    "numero": 2,
+    "titre": "Cadre théorique",
+    "chapitres": [
+      {
+        "num": 5,
+        "titre": "Écrire en FLE : une activité complexe",
+        "sections": [
+          "Situer l'écriture en FLE",
+          "Penser l'erreur comme trace d'apprentissage",
+          "Préserver le genre, la voix, la posture d'auteur·rice"
+        ]
+      },
+      {
+        "num": 6,
+        "titre": "Du numérique à la littératie de l'IA",
+        "sections": [
+          "De la littératie numérique à l'appropriation de l'IA",
+          "Définir une littératie de l'IA pour l'écriture",
+          "Prompter en FLE (activité langagière et métalinguistique)"
+        ]
+      },
+      {
+        "num": 7,
+        "titre": "Écrire avec l'IA : apports, limites et tensions",
+        "sections": [
+          "Apports dans le processus d'écriture",
+          "Performance textuelle vs apprentissage réel",
+          "Préserver l'agentivité et la voix"
+        ]
+      },
+      {
+        "num": 8,
+        "titre": "Encadrer l'IA : de la médiation à l'autonomie assistée",
+        "sections": [
+          "La médiation enseignante comme condition",
+          "Scénariser les usages et rendre le processus visible",
+          "Évaluer le processus, construire une autonomie assistée"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "partie-3",
+    "numero": 3,
+    "titre": "Analyse du corpus et interprétation des résultats",
+    "chapitres": [
+      {
+        "num": 9,
+        "titre": "Démarche d'analyse du corpus",
+        "sections": [
+          "Un corpus de traces",
+          "Une analyse qualitative et inductive"
+        ]
+      },
+      {
+        "num": 10,
+        "titre": "Du scénario prévu aux usages réels",
+        "sections": [
+          "Un scénario conçu pour éviter la substitution",
+          "Des appropriations contrastées selon niveaux et profils"
+        ]
+      },
+      {
+        "num": 11,
+        "titre": "Ce que l'IA améliore, ce qu'elle déplace",
+        "sections": [
+          "Des progrès surtout locaux",
+          "Les limites de l'amélioration"
+        ]
+      },
+      {
+        "num": 12,
+        "titre": "Formuler, sélectionner, refuser",
+        "sections": [
+          "La formulation de requêtes comme activité langagière",
+          "Rester auteur·rice (agentivité)",
+          "Une littératie de l'IA en construction"
+        ]
+      },
+      {
+        "num": 13,
+        "titre": "Une IA seconde : réponse à la problématique",
+        "sections": [
+          "Réponse à la problématique et aux sous-questions",
+          "Retour sur les hypothèses"
+        ]
+      },
+      {
+        "num": 14,
+        "titre": "Limites, prolongements et portée",
+        "sections": [
+          "Limites de l'expérience",
+          "Prolongements et perspectives",
+          "Synthèse (l'IA comme révélateur)",
+          "Portée"
+        ]
+      }
+    ]
+  }
+]

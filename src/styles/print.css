@@ -16,4 +16,9 @@
   a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.85em; }
   main { padding: 0; }
   .section { padding-block: 0.5cm; }
+
+  /* Plan : tout déplier, masquer les chevrons et les contrôles */
+  .disclosure__panel { display: block !important; }
+  .disclosure__chevron, [data-disclosure-all], .quicknav { display: none !important; }
+  .disclosure__btn { border: none; padding-inline: 0; }
 }

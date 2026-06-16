@@ -1,0 +1,17 @@
+---
+// Glossaire réutilisable, alimenté par la content collection `glossaire`.
+// Rendu en liste de définitions (dl) ; chaque entrée porte l'ancre #glo-<slug>
+// ciblée par l'usage inline site-wide.
+import { getCollection } from 'astro:content';
+const termes = (await getCollection('glossaire')).sort((a, b) =>
+  a.data.terme.localeCompare(b.data.terme, 'fr')
+);
+---
+<dl class="glossaire">
+  {termes.map((t) => (
+    <div class="glossaire__item" id={`glo-${t.id}`}>
+      <dt class="glossaire__term">{t.data.terme}</dt>
+      <dd class="glossaire__def">{t.data.definition}</dd>
+    </div>
+  ))}
+</dl>
