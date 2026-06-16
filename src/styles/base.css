@@ -743,6 +743,64 @@ html.js .ar-fallback.is-revealed { display: block; }
 .ar-bingo li[data-found="true"] { color: var(--c-accent-ink); font-weight: 700; }
 .ar-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-block-start: var(--space-4); }
 
+/* ============================================================
+   Page Soutenance — consultable + mode présentation.
+   ============================================================ */
+.present-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; margin-block: var(--space-6); }
+html:not(.js) [data-present-open] { display: none; }
+.diapo__kicker { font-family: var(--font-mono); font-size: var(--step--1); color: var(--c-ink-soft); }
+.diapo__bloc { margin-block-start: var(--space-6); }
+.diapo__bloc h3 { font-size: var(--step-1); }
+.diapo__liste { color: var(--c-ink); }
+.todo {
+  border-inline-start: 3px solid var(--c-ia-sans);
+  background: var(--c-surface-2);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius);
+  max-width: var(--measure);
+}
+
+/* Contrôles de présentation : masqués en consultation */
+.present__bar { display: none; }
+.present__progress { font-family: var(--font-mono); }
+
+/* ----- Mode présentation (overlay plein écran) ----- */
+html.is-presenting { overflow: hidden; }
+html.is-presenting .diapos {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--c-bg);
+  display: flex;
+  flex-direction: column;
+}
+html.is-presenting .present__stage {
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+html.is-presenting .diapo.is-current { width: 100%; max-width: 60rem; margin-inline: auto; }
+html.is-presenting .diapo.is-current h2 { font-size: var(--step-4); }
+html.is-presenting .diapo.is-current .diapo__bloc h3 { font-size: var(--step-2); }
+html.is-presenting .diapo.is-current li,
+html.is-presenting .diapo.is-current p { font-size: var(--step-1); }
+html.is-presenting .present__bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  border-block-start: 1px solid var(--c-border);
+}
+.diapo:focus:not(:focus-visible) { outline: none; }
+@media (prefers-reduced-motion: no-preference) {
+  html.is-presenting .diapo.is-current { animation: diapo-in var(--dur) var(--ease); }
+  @keyframes diapo-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+}
+
 /* ----- Nav mobile ----- */
 @media (max-width: 767px) {
   /* JS actif : le menu est un panneau déroulant repliable (piloté par .is-open) */

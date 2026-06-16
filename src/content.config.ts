@@ -88,4 +88,19 @@ const exercicesAiguiser = defineCollection({
   }),
 });
 
-export const collections = { glossaire, plan, etapes, prompts, questions, exercicesAiguiser };
+// Soutenance — 7 diapos/sections (talking points), bi-mode consultable + présentation.
+const soutenance = defineCollection({
+  loader: file('src/data/soutenance.json'),
+  schema: z.object({
+    numero: z.number(),
+    titre: z.string(),
+    blocs: z.array(
+      z.object({
+        soustitre: z.string(),
+        items: z.array(z.string()),
+      })
+    ),
+  }),
+});
+
+export const collections = { glossaire, plan, etapes, prompts, questions, exercicesAiguiser, soutenance };

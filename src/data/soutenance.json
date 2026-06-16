@@ -1,0 +1,78 @@
+[
+  {
+    "id": "d1",
+    "numero": 1,
+    "titre": "Thématique & accroche",
+    "blocs": [
+      { "soustitre": "Titre du mémoire", "items": ["Production écrite en FLE et intelligence artificielle : un scénario pour une autonomie assistée."] },
+      { "soustitre": "Accroche", "items": ["« Écrire avec un outil n'a jamais signifié apprendre avec lui. »"] },
+      { "soustitre": "Question vive", "items": ["Comment soutenir les apprentissages sans confisquer l'expérience d'apprendre ?"] },
+      { "soustitre": "Trois mots-fils", "items": ["Révélateur · Seconde · Geste"] }
+    ]
+  },
+  {
+    "id": "d2",
+    "numero": 2,
+    "titre": "Pourquoi ce sujet, et avec quelles notions",
+    "blocs": [
+      { "soustitre": "Motivations et parcours", "items": ["Vingt ans de fil rouge, des TICE (2001) à l'IA, dans une même logique anthropocentrée."] },
+      { "soustitre": "Terrain", "items": ["DEFI, étudiant·es Erasmus+ de niveaux B1 et B2.", "Une première expérience non encadrée a montré que l'IA, seule, ne forme pas."] },
+      { "soustitre": "Notions-clés du cadre théorique", "items": ["L'écriture comme processus récursif et coûteux en L2.", "L'erreur comme trace d'apprentissage (interlangue).", "La littératie de l'IA.", "La médiation enseignante (Vygotski).", "L'agentivité et la posture d'auteur·rice.", "Le risque du texte lissé.", "Le prompting comme activité langagière et métalinguistique."] }
+    ]
+  },
+  {
+    "id": "d3",
+    "numero": 3,
+    "titre": "Problématique, sous-questions et hypothèses",
+    "blocs": [
+      { "soustitre": "Problématique", "items": ["Comment mobiliser l'IA sans qu'elle se substitue au travail d'écriture, tout en développant une littératie de l'IA ?"] },
+      { "soustitre": "Trois sous-questions", "items": ["La médiation enseignante.", "Les connaissances mobilisées (linguistiques, textuelles, discursives).", "Les évolutions observées dans les productions."] },
+      { "soustitre": "Trois hypothèses", "items": ["Un apprentissage spécifique est requis.", "Un scénario structuré est nécessaire.", "Les compétences scripturales peuvent évoluer."] }
+    ]
+  },
+  {
+    "id": "d4",
+    "numero": 4,
+    "titre": "Dispositif & méthodologie",
+    "blocs": [
+      { "soustitre": "Le scénario (le kit)", "items": ["Un parcours en 8 étapes, alternant phases sans IA et recours ciblé, sous médiation."] },
+      { "soustitre": "Type de recherche", "items": ["Une recherche-action (cycles action, observation, ajustement)."] },
+      { "soustitre": "Corpus de traces", "items": ["Premiers jets, prompts, réponses de l'IA, réécritures successives, versions finales."] },
+      { "soustitre": "Triangulation", "items": ["Textes et interactions, questionnaire étudiant, entretien enseignant."] },
+      { "soustitre": "Analyse", "items": ["Qualitative et inductive ; grille codée construite progressivement ; codage manuel et lecture interprétative."] },
+      { "soustitre": "Difficultés et ajustements", "items": ["Guidage différencié entre groupes (B1 : erreurs signalées dès le premier jet ; B2 : repérage par les pairs).", "Traduction d'interactions en japonais, entre autres."] }
+    ]
+  },
+  {
+    "id": "d5",
+    "numero": 5,
+    "titre": "Résultats & regard distancié",
+    "blocs": [
+      { "soustitre": "Réponse à la problématique", "items": ["L'IA est utile si elle reste seconde.", "Le rôle central de la médiation enseignante est un résultat, pas seulement un préalable."] },
+      { "soustitre": "Sort des hypothèses", "items": ["H1 confirmée.", "H2 confirmée.", "H3 partiellement (l'amélioration du texte n'est pas l'apprentissage)."] },
+      { "soustitre": "Nuances", "items": ["Des progrès surtout locaux (correction efficace, explication fragile).", "Une amélioration non linéaire.", "Le cas du texte lissé."] },
+      { "soustitre": "Regard distancié", "items": ["L'IA agit comme révélateur des compétences et des implicites de l'enseignement.", "L'autonomie devient un geste."] }
+    ]
+  },
+  {
+    "id": "d6",
+    "numero": 6,
+    "titre": "Auto-évaluation & prolongements",
+    "blocs": [
+      { "soustitre": "Au regard de la commande de stage", "items": ["De l'enseignement à l'ingénierie pédagogique (conception du kit).", "Ce qui a fonctionné, ce qui a résisté."] },
+      { "soustitre": "Limites", "items": ["Méthodologiques (échelle, durée).", "Didactiques.", "Instrumentales, éthiques et évaluatives."] },
+      { "soustitre": "Prolongements", "items": ["Mieux former au prompting et à l'évaluation des réponses de l'IA.", "Générer des activités de remédiation à partir des erreurs.", "Déplacer l'IA vers la réécriture, la voix et le discours."] },
+      { "soustitre": "Si c'était à refaire", "items": ["À compléter par Émilie : deux ou trois ajustements concrets."] }
+    ]
+  },
+  {
+    "id": "d7",
+    "numero": 7,
+    "titre": "Conclusion : les apports",
+    "blocs": [
+      { "soustitre": "Apports professionnels", "items": ["Une posture d'ingénieure pédagogique.", "La conception d'un dispositif transférable.", "Une médiation outillée."] },
+      { "soustitre": "Apports de la recherche", "items": ["Les conditions d'un usage didactique de l'IA.", "Le prompting comme compétence.", "La sobriété didactique (coût environnemental de l'IA)."] },
+      { "soustitre": "Clôture", "items": ["« Est-ce encore mon texte ? » — rester auteur·rice d'un texte que plusieurs voix contribuent à produire."] }
+    ]
+  }
+]

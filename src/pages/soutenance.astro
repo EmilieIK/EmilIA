@@ -1,12 +1,70 @@
 ---
 import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const diapos = (await getCollection('soutenance')).sort((a, b) => a.data.numero - b.data.numero);
+const total = diapos.length;
 ---
 <Base title="La soutenance">
-  <section class="section container">
+  <section class="section container" id="intro-soutenance">
     <h1>La soutenance</h1>
-    <p class="prose" style="color: var(--c-ink-soft);">
-      <!-- TODO : page consultable (7 sections) + mode présentation — Phase 6 du brief. -->
-      Cette section sera bientôt disponible.
+    <p class="prose">
+      La soutenance dure environ une heure : 15 à 20 minutes d'exposé, puis près de 45 minutes
+      d'échange avec le jury. Elle ne résume pas le mémoire : elle en propose une synthèse
+      réflexive, en {total} diapositives, selon la trame attendue.
     </p>
+    <div class="present-actions">
+      <button type="button" class="btn btn--primary" data-present-open aria-haspopup="dialog">Mode présentation</button>
+      <span class="kw-label">{total} diapositives · navigation au clavier (← →, Échap, F)</span>
+    </div>
+
+    <nav class="quicknav" aria-label="Diapositives">
+      <ul class="quicknav__list">
+        {diapos.map((d) => (
+          <li><a class="quicknav__link" href={`#diapo-${d.data.numero}`}>{d.data.numero}. {d.data.titre}</a></li>
+        ))}
+      </ul>
+    </nav>
   </section>
+
+  <div id="diapos" class="diapos">
+    <div class="present__stage" data-stage>
+      {diapos.map((d) => (
+        <section class="section container diapo" id={`diapo-${d.data.numero}`} data-slide aria-labelledby={`diapo-${d.data.numero}-h`}>
+          <p class="diapo__kicker"><span class="visually-hidden">Diapositive </span>{d.data.numero}<span aria-hidden="true"> / {total}</span></p>
+          <h2 id={`diapo-${d.data.numero}-h`}>{d.data.titre}</h2>
+          {d.data.blocs.map((b) => (
+            <div class="diapo__bloc">
+              <h3>{b.soustitre}</h3>
+              {b.soustitre.includes('mots-fils') ? (
+                <ul class="signature" aria-label="Fil conducteur">
+                  {b.items[0].split(' · ').map((m) => <li>{m}</li>)}
+                </ul>
+              ) : b.soustitre.includes("Si c'était à refaire") ? (
+                <p class="todo"><strong>À compléter :</strong> {b.items[0]}</p>
+              ) : (
+                <ul class="diapo__liste">
+                  {b.items.map((it) => <li>{it}</li>)}
+                </ul>
+              )}
+            </div>
+          ))}
+        </section>
+      ))}
+    </div>
+
+    <p class="visually-hidden" role="status" aria-live="polite" aria-atomic="true" data-present-live></p>
+
+    <div class="present__bar" role="group" aria-label="Contrôles de présentation">
+      <button type="button" class="btn btn--secondary" data-present-prev>Précédent</button>
+      <span class="present__progress" data-present-progress aria-hidden="true">1 / {total}</span>
+      <button type="button" class="btn btn--secondary" data-present-next>Suivant</button>
+      <button type="button" class="btn btn--secondary" data-present-fs>Plein écran (F)</button>
+      <button type="button" class="btn btn--secondary" data-present-quit>Quitter (Échap)</button>
+    </div>
+  </div>
 </Base>
+
+<script>
+  import '../scripts/presentation.ts';
+</script>
