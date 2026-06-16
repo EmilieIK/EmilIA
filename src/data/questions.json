@@ -1,0 +1,12 @@
+[
+  { "id": "q1", "question": "Une chose que j'ai comprise grâce à l'IA ?" },
+  { "id": "q2", "question": "Une aide utile que l'IA m'a apportée ?" },
+  { "id": "q3", "question": "Une proposition de l'IA que j'ai rejetée (et pourquoi) ?" },
+  { "id": "q4", "question": "Un moment où je me suis senti·e plus autonome ?" },
+  { "id": "q5", "question": "Un doute que j'ai eu face à une réponse de l'IA ?" },
+  { "id": "q6", "question": "Une compétence que j'ai renforcée dans ce parcours ?" },
+  { "id": "q7", "question": "Une chose que j'ai préférée faire sans IA ?" },
+  { "id": "q8", "question": "L'IA m'a-t-elle vraiment aidé·e à écrire ?" },
+  { "id": "q9", "question": "Je me sens / ne me sens pas auteur·rice de mon texte parce que…" },
+  { "id": "q10", "question": "Ce que je changerais dans ma manière d'utiliser l'IA la prochaine fois…" }
+]

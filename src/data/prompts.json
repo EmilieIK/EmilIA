@@ -1,0 +1,32 @@
+[
+  {
+    "id": "p1",
+    "fonction": "Enrichir le vocabulaire",
+    "prompt": "Peux-tu me proposer des mots plus précis pour parler d'un lieu marquant ?"
+  },
+  {
+    "id": "p2",
+    "fonction": "Clarifier une règle grammaticale",
+    "prompt": "Peux-tu m'expliquer la différence entre deux temps dans cette phrase ?"
+  },
+  {
+    "id": "p3",
+    "fonction": "Vérifier une conjugaison ou une tournure",
+    "prompt": "Cette phrase est-elle correcte ? Si non, pourquoi ?"
+  },
+  {
+    "id": "p4",
+    "fonction": "Reformuler avec un registre adapté",
+    "prompt": "Comment puis-je reformuler cette phrase en langage plus soutenu ?"
+  },
+  {
+    "id": "p5",
+    "fonction": "Améliorer la structure et la cohérence",
+    "prompt": "As-tu une suggestion pour enchaîner plus naturellement ces deux idées ?"
+  },
+  {
+    "id": "p6",
+    "fonction": "Utiliser des connecteurs",
+    "prompt": "Quels connecteurs puis-je utiliser pour organiser une argumentation ?"
+  }
+]

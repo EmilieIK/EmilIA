@@ -1,16 +1,105 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
 import { url } from '../../lib/paths';
+
+const exos = await getCollection('exercicesAiguiser');
+const exo = exos[0];
+const jetons = exo.data.jetons;
+
+const cats = [
+  { v: 'accord', l: 'Accord' },
+  { v: 'conjugaison', l: 'Conjugaison' },
+  { v: 'lexique', l: 'Lexique' },
+  { v: 'connecteur', l: 'Connecteur' },
+  { v: 'syntaxe', l: 'Syntaxe' },
+];
+const isPunct = (t: string) => /^[,.;:!?…]$/.test(t);
+const espace = (i: number, t: string) => (i > 0 && !isPunct(t) ? ' ' : '');
+const corriges = jetons.filter((j) => j.candidat && j.erreur);
 ---
 <Base title="Aiguiser son regard">
   <section class="section container">
     <nav aria-label="Fil d'Ariane" class="kw-label">
       <a href={url('/kit')}>Le kit</a> · <a href={url('/kit#etape-regards-croises')}>Étape 3</a> · Aiguiser son regard
     </nav>
-    <h1>Aiguiser son regard</h1>
+    <h1>Aiguiser son regard <span class="badge--modulable">exemple fictif</span></h1>
     <p class="prose">
-      {/* TODO : repérage d'erreurs interactif (catégories du brief 05), bingo / défi chrono, statut en texte — Phase 5. */}
-      Cet outil interactif de repérage d'erreurs sera bientôt disponible.
+      Avant de relire le texte d'un·e camarade (étape 3), entraînez-vous à repérer des erreurs
+      fréquentes. Le texte ci-dessous est un <strong>exemple fictif</strong> ;
+      {/* TODO Émilie : remplacer par un ou des textes-exemples réels adaptés au niveau B1-B2. */}
+      il contient plusieurs erreurs à débusquer, réparties en cinq catégories.
     </p>
+
+    <h2>Comment faire</h2>
+    <ul class="prose">
+      <li>Choisissez une catégorie d'erreur, puis cliquez (ou validez au clavier) sur un mot suspect pour le classer.</li>
+      <li>Au clavier : <kbd>Tab</kbd> pour atteindre un mot, <kbd>Entrée</kbd> ou <kbd>Espace</kbd> pour le classer dans la catégorie choisie.</li>
+      <li>Le statut (juste, à revoir) s'affiche en toutes lettres. Vous pouvez reclasser un mot tant que vous n'avez pas révélé les réponses.</li>
+    </ul>
+
+    <div class="ar" data-ar hidden>
+      <fieldset class="ar-cats">
+        <legend>Catégorie à appliquer</legend>
+        {cats.map((c, i) => (
+          <label class="filtre"><input type="radio" name="ar-cat" value={c.v} checked={i === 0} /> <span>{c.l}</span></label>
+        ))}
+        <label class="filtre"><input type="radio" name="ar-cat" value="correct" /> <span>Mot correct</span></label>
+      </fieldset>
+
+      <div class="ar-timer">
+        <label>Minuteur (défi chrono) :
+          <select data-ar-duree>
+            <option value="0">désactivé</option>
+            <option value="300">5 minutes</option>
+            <option value="600">10 minutes</option>
+          </select>
+        </label>
+        <button type="button" class="btn btn--secondary" data-ar-start>Démarrer</button>
+        <button type="button" class="btn btn--secondary" data-ar-pause hidden>Pause</button>
+        <button type="button" class="btn btn--secondary" data-ar-treset>Réinitialiser le minuteur</button>
+        <output class="ar-chrono" data-ar-chrono aria-live="off">--:--</output>
+      </div>
+
+      <p class="ar-text" data-ar-text>
+        {jetons.map((j, i) => (
+          <>{espace(i, j.texte)}{j.candidat
+            ? <button type="button" class="ar-token" data-ar-token data-answer={j.erreur ? j.erreur.categorie : 'correct'} data-corr={j.erreur ? j.erreur.correction : 'Ce mot est correct.'} data-exp={j.erreur ? j.erreur.explication : ''} aria-pressed="false" aria-label={`${j.texte}, classer dans la catégorie choisie`}>{j.texte}</button>
+            : <span>{j.texte}</span>}</>
+        ))}
+      </p>
+
+      <p class="ar-statut" id="ar-statut" role="status" aria-live="polite" aria-atomic="true"></p>
+      <p class="ar-score" data-ar-score role="status" aria-live="polite" aria-atomic="true"></p>
+
+      <h3>Bingo des erreurs</h3>
+      <ul class="ar-bingo" data-ar-bingo>
+        {cats.map((c) => (
+          <li data-bingo={c.v}>{c.l} : <span class="ar-bingo__state" data-bingo-state>pas encore</span></li>
+        ))}
+      </ul>
+
+      <div class="ar-actions">
+        <button type="button" class="btn btn--primary" data-ar-reveal>Révéler les réponses</button>
+        <button type="button" class="btn btn--secondary" data-ar-restart>Recommencer</button>
+      </div>
+    </div>
+
+    <section class="ar-fallback" aria-labelledby="ar-fb-h">
+      <h2 id="ar-fb-h">Texte et corrigé</h2>
+      <p class="prose ar-fallback__texte">{jetons.map((j, i) => `${espace(i, j.texte)}${j.texte}`).join('')}</p>
+      <h3>Corrigé</h3>
+      <ol class="prose">
+        {corriges.map((j) => (
+          <li><strong>« {j.texte} »</strong> — {j.erreur!.categorie} : {j.erreur!.correction}. {j.erreur!.explication}</li>
+        ))}
+      </ol>
+    </section>
+
+    <p class="prose"><a href={url('/kit#etape-regards-croises')}>Revenir à l'étape 3 du kit</a></p>
   </section>
 </Base>
+
+<script>
+  import '../../scripts/aiguiser-regard.ts';
+</script>

@@ -1,0 +1,29 @@
+---
+// Bouton « copier » réutilisable (fabrique à prompts, cartes-questions).
+// Le texte copié vient du DOM (#cible) — source unique, jamais dupliqué.
+// La logique est pilotée par le module délégué src/scripts/copier.ts.
+interface Props {
+  cible: string;
+  etiquette: string;
+  kind?: 'prompt' | 'question';
+  libelle?: string;
+}
+const { cible, etiquette, kind = 'prompt', libelle = 'Copier' } = Astro.props;
+const noun = kind === 'question' ? 'la question' : 'le prompt';
+const aria = `Copier ${noun} : ${etiquette}`;
+---
+<button
+  type="button"
+  class="btn btn--secondary copier"
+  data-copier
+  data-copier-cible={cible}
+  data-copier-etiquette={etiquette}
+  data-copier-kind={kind}
+  aria-label={aria}
+>
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+  </svg>
+  <span class="copier__libelle" data-copier-libelle>{libelle}</span>
+</button>

@@ -31,4 +31,17 @@
   /* Badges lisibles en niveaux de gris (icône + texte + bordure noire) */
   .badge-ia, .badge--modulable { border-color: #000 !important; color: #000 !important; }
   .badge-ia__icon { color: #000 !important; }
+
+  /* Outils interactifs — masquer les contrôles, garder le contenu de référence */
+  [data-copier], [data-print-fiche], [data-cq-print],
+  .cq-controls, .cq-status, .ar, .ar-timer { display: none !important; }
+  .prompt { break-inside: avoid; }
+
+  /* Aiguiser son regard : afficher le texte + corrigé (repli papier) */
+  .ar-fallback { display: block !important; }
+
+  /* Cartes-questions : imprimer le jeu complet en planche à découper */
+  .section--tirage, .cq-scene { display: none !important; }
+  .cq-deck { grid-template-columns: 1fr 1fr !important; }
+  .cq-card--static { break-inside: avoid; border: 1px solid #000 !important; }
 }

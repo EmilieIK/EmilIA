@@ -46,4 +46,46 @@ const etapes = defineCollection({
   }),
 });
 
-export const collections = { glossaire, plan, etapes };
+// Fabrique à prompts — 6 fonctions / prompts types.
+const prompts = defineCollection({
+  loader: file('src/data/prompts.json'),
+  schema: z.object({
+    fonction: z.string(),
+    prompt: z.string(),
+  }),
+});
+
+// Jeu de cartes-questions — 10 questions de bilan.
+const questions = defineCollection({
+  loader: file('src/data/questions.json'),
+  schema: z.object({
+    question: z.string(),
+  }),
+});
+
+// Aiguiser son regard — texte(s) d'exercice avec erreurs annotées par jeton.
+// Données de DÉMONSTRATION FICTIVES (fictif:true) — à remplacer par Émilie.
+const exercicesAiguiser = defineCollection({
+  loader: file('src/data/aiguiser-exemples.json'),
+  schema: z.object({
+    titre: z.string(),
+    fictif: z.literal(true),
+    consigne_niveau: z.string(),
+    jetons: z.array(
+      z.object({
+        texte: z.string(),
+        candidat: z.boolean().optional(),
+        erreur: z
+          .object({
+            categorie: z.enum(['accord', 'conjugaison', 'lexique', 'connecteur', 'syntaxe']),
+            correction: z.string(),
+            explication: z.string(),
+          })
+          .nullable()
+          .optional(),
+      })
+    ),
+  }),
+});
+
+export const collections = { glossaire, plan, etapes, prompts, questions, exercicesAiguiser };

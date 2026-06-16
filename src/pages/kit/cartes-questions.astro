@@ -1,6 +1,11 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
 import { url } from '../../lib/paths';
+
+const questions = (await getCollection('questions')).sort(
+  (a, b) => parseInt(a.id.slice(1), 10) - parseInt(b.id.slice(1), 10)
+);
 ---
 <Base title="Le jeu de cartes-questions">
   <section class="section container">
@@ -9,8 +14,47 @@ import { url } from '../../lib/paths';
     </nav>
     <h1>Le jeu de cartes-questions</h1>
     <p class="prose">
-      {/* TODO : tirage des 10 questions du brief 05 (animation sûre en reduced-motion), pioche sans répétition, impression — Phase 5. */}
-      Ce jeu de cartes-questions interactif sera bientôt disponible.
+      Chaque carte invite à une prise de recul et de parole. Dix questions, à piocher seul·e ou à
+      imprimer pour la classe (étape 8).
     </p>
   </section>
+
+  <section class="section section--tirage container" aria-labelledby="tirage-h">
+    <h2 id="tirage-h">Piocher une carte</h2>
+    <div class="cq-scene" aria-hidden="true">
+      <div class="cq-card cq-card--flip" data-cq-card>
+        <div class="cq-card__inner">
+          <div class="cq-card__face cq-card__face--dos"><span>Carte à piocher</span></div>
+          <div class="cq-card__face cq-card__face--avant">
+            <span class="cq-card__num" data-cq-num></span>
+            <p class="cq-card__q" data-cq-q></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cq-controls">
+      <button type="button" class="btn btn--primary" data-cq-pioche>Piocher une carte</button>
+      <button type="button" class="btn btn--secondary" data-cq-reset hidden>Recommencer le jeu</button>
+      <label class="filtre"><input type="checkbox" data-cq-sansrep checked /> <span>Piocher sans répétition</span></label>
+    </div>
+    <p class="cq-status" role="status" aria-live="polite" aria-atomic="true"></p>
+  </section>
+
+  <section class="section section--jeu container" aria-labelledby="jeu-h">
+    <h2 id="jeu-h">Le jeu complet — 10 cartes</h2>
+    <button type="button" class="btn btn--secondary" data-cq-print>Imprimer le jeu complet</button>
+    <ol class="cq-deck">
+      {questions.map((q, i) => (
+        <li class="cq-card cq-card--static">
+          <span class="cq-card__num" aria-hidden="true">{i + 1}</span>
+          <p class="cq-card__q"><span class="visually-hidden">Carte {i + 1} : </span>{q.data.question}</p>
+        </li>
+      ))}
+    </ol>
+    <p class="prose"><a href={url('/kit#etape-cap-sur-le-bilan')}>Revenir à l'étape 8 du kit</a></p>
+  </section>
 </Base>
+
+<script>
+  import '../../scripts/cartes-questions.ts';
+</script>
