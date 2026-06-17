@@ -1,47 +1,65 @@
 ---
-// Bouton de bascule de thème clair/sombre (respecte prefers-color-scheme,
-// override manuel mémorisé dans localStorage).
+// Bouton de thème à 3 états : automatique (suit le système, par défaut),
+// clair, sombre. Cycle Auto → Clair → Sombre → Auto.
+// La CSS gère « auto » nativement : sans [data-theme], prefers-color-scheme
+// s'applique ; [data-theme="light"|"dark"] force un thème.
 ---
 <button
   type="button"
   class="theme-toggle icon-btn"
   data-theme-toggle
-  aria-label="Changer de thème (clair / sombre)"
-  title="Changer de thème"
+  aria-label="Thème : automatique. Changer de thème."
 >
-  <svg class="theme-toggle__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <svg class="theme-ico theme-ico--auto" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    <circle cx="12" cy="12" r="9"></circle>
+    <path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"></path>
+  </svg>
+  <svg class="theme-ico theme-ico--light" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
     <circle cx="12" cy="12" r="4"></circle>
     <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
   </svg>
-  <span class="visually-hidden" data-theme-label>Thème</span>
+  <svg class="theme-ico theme-ico--dark" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path>
+  </svg>
 </button>
+<span class="visually-hidden" role="status" aria-live="polite" data-theme-live></span>
 
 <script>
   const btn = document.querySelector<HTMLButtonElement>('[data-theme-toggle]');
-  const label = document.querySelector<HTMLElement>('[data-theme-label]');
+  const live = document.querySelector<HTMLElement>('[data-theme-live]');
+  const root = document.documentElement;
+  const modes = ['auto', 'light', 'dark'] as const;
+  const labels: Record<string, string> = {
+    auto: 'automatique (système)',
+    light: 'clair',
+    dark: 'sombre',
+  };
 
-  function effectiveTheme(): 'light' | 'dark' {
-    const attr = document.documentElement.getAttribute('data-theme');
-    if (attr === 'dark' || attr === 'light') return attr;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  function current(): string {
+    try { return localStorage.getItem('theme') || 'auto'; } catch (e) { return 'auto'; }
   }
 
-  function sync() {
-    const t = effectiveTheme();
-    if (label) {
-      label.textContent = t === 'dark' ? 'Passer au thème clair' : 'Passer au thème sombre';
+  function apply(mode: string, announce: boolean) {
+    if (mode === 'auto') {
+      root.removeAttribute('data-theme');
+      try { localStorage.removeItem('theme'); } catch (e) {}
+    } else {
+      root.setAttribute('data-theme', mode);
+      try { localStorage.setItem('theme', mode); } catch (e) {}
     }
-    btn?.setAttribute('aria-label', t === 'dark' ? 'Passer au thème clair' : 'Passer au thème sombre');
+    btn?.setAttribute('data-mode', mode);
+    btn?.setAttribute('aria-label', `Thème : ${labels[mode]}. Changer de thème.`);
+    if (announce && live) {
+      live.textContent = '';
+      window.setTimeout(() => { live.textContent = `Thème : ${labels[mode]}.`; }, 80);
+    }
   }
 
   btn?.addEventListener('click', () => {
-    const next = effectiveTheme() === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    try { localStorage.setItem('theme', next); } catch (e) {}
-    sync();
+    const next = modes[(modes.indexOf(current() as any) + 1) % modes.length];
+    apply(next, true);
   });
 
-  // Si l'utilisateur change sa préférence système et n'a pas d'override
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', sync);
-  sync();
+  // Init : refléter l'état courant sur le bouton (sans annonce).
+  apply(current(), false);
 </script>

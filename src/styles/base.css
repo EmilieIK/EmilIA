@@ -147,8 +147,18 @@ main { flex: 1 0 auto; }
 }
 .icon-btn:hover { background: var(--c-surface-2); }
 
-/* Bascule de thème : toujours visible (mobile ET desktop) */
+/* Bascule de thème : visible mobile ET desktop, mais seulement si JS actif
+   (sans JS, le thème suit automatiquement les préférences système). */
 .theme-toggle { display: inline-flex; }
+html:not(.js) .theme-toggle { display: none; }
+
+/* Icône du thème selon le mode (auto par défaut avant exécution du JS) */
+.theme-ico { display: none; }
+.theme-ico--auto { display: block; }
+.theme-toggle[data-mode="light"] .theme-ico--auto,
+.theme-toggle[data-mode="dark"] .theme-ico--auto { display: none; }
+.theme-toggle[data-mode="light"] .theme-ico--light { display: block; }
+.theme-toggle[data-mode="dark"] .theme-ico--dark { display: block; }
 
 /* Hamburger : masqué par défaut ; affiché en mobile uniquement si JS actif */
 .nav-toggle { display: none; }
