@@ -143,7 +143,7 @@ export const diaposSvg: string[] = [
 <text x="340" y="98" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" letter-spacing="1.5" fill="#79C3B0">RÉVÉLATEUR</text>
 <text x="340" y="122" text-anchor="middle" font-family="Georgia,serif" font-size="17" fill="#EFF5F3">l'IA ne crée rien : elle révèle nos angles morts</text>
 <text x="340" y="170" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" letter-spacing="1.5" fill="#79C3B0">INSTRUMENT SECONDAIRE</text>
-<text x="340" y="194" text-anchor="middle" font-family="Georgia,serif" font-size="17" fill="#EFF5F3">elle propose, l'apprenant·e décide</text>
+<text x="340" y="194" text-anchor="middle" font-family="Georgia,serif" font-size="17" fill="#EFF5F3">l'IA propose, l'enseignant·e accompagne, l'apprenant·e décide</text>
 <text x="340" y="242" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" letter-spacing="1.5" fill="#79C3B0">AUTONOMIE À CONSTRUIRE</text>
 <text x="340" y="266" text-anchor="middle" font-family="Georgia,serif" font-size="17" fill="#EFF5F3">non un état, mais une compétence</text>
 <line x1="250" y1="306" x2="430" y2="306" stroke="#2C4D51"/>
