@@ -78,7 +78,8 @@ export const diaposSvg: string[] = [
 <text x="40" y="91" font-family="Georgia,serif" font-size="15" fill="#1B1B1A">isolable du cadrage</text>
 <circle cx="44" cy="116" r="2.5" fill="#1F5C63"/><text x="54" y="120" font-family="system-ui,sans-serif" font-size="12" fill="#333330">même outil, même scénario → usages opposés</text>
 <circle cx="44" cy="144" r="2.5" fill="#1F5C63"/><text x="54" y="148" font-family="system-ui,sans-serif" font-size="12" fill="#333330">B1, erreurs signalées → corriger</text>
-<circle cx="44" cy="172" r="2.5" fill="#1F5C63"/><text x="54" y="176" font-family="system-ui,sans-serif" font-size="12" fill="#333330">B2, diagnostic confié → formuler la demande</text>
+<circle cx="44" cy="172" r="2.5" fill="#1F5C63"/><text x="54" y="176" font-family="system-ui,sans-serif" font-size="12" fill="#333330">B2, diagnostic laissé à l'apprenant·e</text>
+<text x="54" y="189" font-family="system-ui,sans-serif" font-size="12" fill="#333330">→ formuler la demande</text>
 <text x="40" y="210" font-family="Georgia,serif" font-size="11.5" font-style="italic" fill="#5A7A78">ce que le cadrage met en avant décide de l'usage</text>
 <text x="40" y="250" font-family="Georgia,serif" font-size="11.5" font-style="italic" fill="#8A8A82">(Albero)</text>
 <text x="358" y="44" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#1F5C63">Démenti 2 · Autonomie à construire</text>
