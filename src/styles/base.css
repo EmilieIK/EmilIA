@@ -714,186 +714,87 @@ html:not(.js) [data-cq-print] { display: none; }
 .cq-card--static .cq-card__q { font-family: var(--font-serif); font-size: var(--step-0); }
 
 /* ============================================================
-   Page Soutenance – consultable + mode présentation.
+   Page Soutenance – diaporama (slideshow SVG) + plein écran.
    ============================================================ */
 .present-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; margin-block: var(--space-6); }
-html:not(.js) [data-present-open] { display: none; }
-.diapo__kicker { font-family: var(--font-mono); font-size: var(--step--1); color: var(--c-ink-soft); }
-.diapo__bloc { margin-block-start: var(--space-6); }
-.diapo__bloc h3 { font-size: var(--step-1); }
-.diapo__liste { color: var(--c-ink); }
-.diapo__soustitre { font-family: var(--font-serif); font-style: italic; font-size: var(--step-2); color: var(--c-ink-soft); margin-block-start: var(--space-3); max-width: var(--measure); }
-.diapo__identite { margin-block-start: var(--space-6); color: var(--c-ink-soft); }
-.diapo__identite p { margin: 0; max-width: none; }
-.diapo__transition { font-family: var(--font-serif); font-style: italic; font-size: var(--step-1); color: var(--c-ink-soft); margin-block: var(--space-4); }
+html:not(.js) [data-deck-fs] { display: none; }
 
-/* ----- Diaporama plein écran (consultation) ----- */
-/* --deck-offset suit le scroll-margin global des éléments à id (décalage sous le
-   header collant) ; ne PAS ajouter de scroll-padding ici, cela se cumulerait. */
-html:has(.diapos) { --deck-offset: 5rem; }
-html:has(.diapos):not(.is-presenting) {
-  scroll-snap-type: y proximity;
-}
-.diapo { scroll-snap-align: start; }
-html:not(.is-presenting) .diapo {
-  min-height: calc(100vh - var(--deck-offset));
-  min-height: calc(100svh - var(--deck-offset));
-  display: flex;
-  flex-direction: column;
-  justify-content: safe center;
-  padding-block-start: var(--space-8);
-  padding-block-end: 7rem; /* dégage les contrôles fixés en bas (par défaut) */
-  padding-inline: var(--space-4);
-  border-block-start: 1px solid var(--c-border);
-}
-html:not(.is-presenting) .diapo:first-child { border-block-start: 0; }
-.diapo__inner { width: 100%; max-width: 62rem; margin-inline: auto; }
-html:not(.is-presenting) .diapo__inner {
-  background: var(--c-surface);
-  border: 1px solid var(--c-border);
+.deck { margin-block: var(--space-8); }
+.deck__art { max-width: 62rem; margin-inline: auto; }
+.deck__art svg {
+  width: 100%;
+  height: auto;
+  display: block;
   border-radius: var(--radius-lg);
-  padding: clamp(var(--space-6), 4vw, var(--space-12));
-  box-shadow: 0 1px 2px rgb(0 0 0 / 4%), 0 10px 30px rgb(0 0 0 / 5%);
+  box-shadow: 0 10px 40px rgb(0 0 0 / 16%);
 }
-html:not(.is-presenting) .diapo h2 { font-size: var(--step-3); }
-html:not(.is-presenting) .diapo .diapo__bloc h3 { font-size: var(--step-1); }
-html:not(.is-presenting) .diapo .diapo__liste li,
-html:not(.is-presenting) .diapo .diapo__transition { font-size: var(--step-0); }
+/* Sans JS : toutes les diapos restent empilées et consultables */
+.deck__slide + .deck__slide { margin-block-start: var(--space-8); }
+/* Avec JS : une diapo à la fois */
+html.deck-ready .deck__slide { display: none; }
+html.deck-ready .deck__slide.is-current { display: block; }
+html.deck-ready .deck__slide + .deck__slide { margin-block-start: 0; }
+.deck__slide:focus { outline: none; }
+.deck__slide:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 4px; border-radius: var(--radius-lg); }
 
-/* Compteur de diapositive (consultation). Sur petits/moyens écrans, le numéro est
-   déjà porté par le « kicker » de chaque diapo ; le compteur flottant n'apparaît
-   donc que sur grand écran (coin bas-droit, dans la gouttière), pour éviter tout
-   recouvrement du texte. */
-.deck-counter {
-  display: none;
-  position: fixed;
-  inset-block-end: var(--space-4);
-  inset-inline-end: var(--space-4);
-  z-index: 210;
-  width: max-content;
+/* Barre de navigation */
+.deck__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-block-start: var(--space-5);
+}
+html:not(.js) .deck__bar { display: none; }
+.deck__counter {
   font-family: var(--font-mono);
+  min-width: 4ch;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  color: var(--c-ink);
+}
+.deck__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font: inherit;
   font-size: var(--step--1);
   color: var(--c-ink);
   background: var(--c-surface);
   border: 1px solid var(--c-border-2);
   border-radius: 999px;
-  padding: var(--space-1) var(--space-3);
-  box-shadow: 0 1px 2px rgb(0 0 0 / 6%);
-}
-
-/* Grandes flèches de navigation – par défaut en bas (la carte occupe la largeur) */
-.present__arrow {
-  display: none;
-  position: fixed;
-  inset-block-end: var(--space-4);
-  z-index: 210;
-  align-items: center;
-  justify-content: center;
-  width: 56px; height: 56px;
-  border: 1px solid var(--c-border-2);
-  border-radius: 999px;
-  background: var(--c-surface);
-  color: var(--c-ink);
+  padding: var(--space-2) var(--space-4);
   cursor: pointer;
 }
-.present__arrow--prev { inset-inline-start: var(--space-4); }
-.present__arrow--next { inset-inline-end: var(--space-4); }
-.present__arrow:hover { background: var(--c-surface-2); border-color: var(--c-accent); }
-.present__arrow:disabled { opacity: .35; cursor: not-allowed; }
-html.deck-active .present__arrow,
-html.is-presenting .present__arrow { display: inline-flex; }
+.deck__btn:hover { background: var(--c-surface-2); border-color: var(--c-accent); }
+.deck__btn:disabled { opacity: .4; cursor: not-allowed; }
+.deck__btn svg { flex: none; }
 
-/* En présentation (overlay), flèches au milieu des bords (façon diaporama) */
-html.is-presenting .present__arrow {
-  inset-block-start: 50%;
-  inset-block-end: auto;
-  transform: translateY(-50%);
-}
-
-/* Écrans larges : la carte est centrée avec des gouttières → flèches sur les côtés,
-   compteur dans le coin bas-droit, moins de réserve en bas. */
-@media (min-width: 75rem) {
-  html:not(.is-presenting) .present__arrow {
-    inset-block-start: 50%;
-    inset-block-end: auto;
-    transform: translateY(-50%);
-  }
-  html.deck-active:not(.is-presenting) .deck-counter { display: block; }
-  html:not(.is-presenting) .diapo { padding-block-end: var(--space-12); }
-}
-.todo {
-  border-inline-start: 3px solid var(--c-ia-sans);
-  background: var(--c-surface-2);
-  padding: var(--space-3) var(--space-4);
-  border-radius: var(--radius);
-  max-width: var(--measure);
-}
-
-/* Contrôles de présentation : masqués en consultation */
-.present__bar { display: none; }
-.present__progress { font-family: var(--font-mono); }
-
-/* ----- Mode présentation (overlay plein écran) ----- */
-html.is-presenting { overflow: hidden; }
-html.is-presenting .diapos {
-  position: fixed;
-  inset: 0;
-  z-index: 200;
+/* Plein écran : la diapo courante occupe l'écran, barre en bas */
+.deck:fullscreen {
   background: var(--c-bg);
   display: flex;
   flex-direction: column;
-}
-html.is-presenting .present__stage {
-  flex: 1;
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-html.is-presenting .diapo.is-current { width: 100%; }
-html.is-presenting .diapo__inner {
-  max-width: 60rem;
-  margin-inline: auto;
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
   padding: 0;
 }
-html.is-presenting .diapo.is-current h2 { font-size: var(--step-4); }
-html.is-presenting .diapo.is-current .diapo__bloc h3 { font-size: var(--step-2); }
-html.is-presenting .diapo.is-current li,
-html.is-presenting .diapo.is-current p { font-size: var(--step-1); }
-html.is-presenting .present__bar {
+.deck:fullscreen .deck__viewport {
+  flex: 1;
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3);
   align-items: center;
   justify-content: center;
+  padding: var(--space-6);
+  min-height: 0;
+}
+.deck:fullscreen .deck__art {
+  max-width: none;
+  width: min(94vw, calc((100vh - 7rem) * 1.7));
+  width: min(94vw, calc((100dvh - 7rem) * 1.7));
+}
+.deck:fullscreen .deck__bar {
+  margin: 0;
   padding: var(--space-4);
   border-block-start: 1px solid var(--c-border);
-}
-.diapo:focus:not(:focus-visible) { outline: none; }
-.diapo__inner:focus { outline: none; }
-@media (prefers-reduced-motion: no-preference) {
-  html:has(.diapos) { scroll-behavior: smooth; }
-  html.is-presenting .diapo.is-current { animation: diapo-in var(--dur) var(--ease); }
-  @keyframes diapo-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
-}
-/* Petits écrans : flèches plus compactes, typographie de diapo resserrée */
-@media (max-width: 40rem) {
-  .present__arrow { width: 48px; height: 48px; }
-  .present__arrow svg { width: 30px; height: 30px; }
-  html:not(.is-presenting) .diapo h2 { font-size: var(--step-2); }
-  html:not(.is-presenting) .diapo .diapo__soustitre { font-size: var(--step-1); }
-  html:not(.is-presenting) .diapo .diapo__bloc h3 { font-size: var(--step-0); }
-  html:not(.is-presenting) .diapo .diapo__liste li,
-  html:not(.is-presenting) .diapo .diapo__transition { font-size: var(--step-0); }
-  html:not(.is-presenting) .diapo .signature li { font-size: var(--step-0); }
-  /* Resserrer les diapos denses pour limiter le débordement sur petit écran */
-  html:not(.is-presenting) .diapo .diapo__bloc { margin-block-start: var(--space-4); }
-  html:not(.is-presenting) .diapo .diapo__identite { margin-block-start: var(--space-4); }
-  html:not(.is-presenting) .diapo .diapo__transition { margin-block: var(--space-3); }
 }
 
 /* ============================================================

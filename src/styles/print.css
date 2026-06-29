@@ -40,26 +40,16 @@
   .cq-deck { grid-template-columns: 1fr 1fr !important; }
   .cq-card--static { break-inside: avoid; border: 1px solid #000 !important; }
 
-  /* Soutenance : 1 diapo par page, même si le mode présentation est ouvert */
-  .present__bar, .present__arrow, .deck-counter, [data-present-open], [data-present-live] { display: none !important; }
-  .diapos { position: static !important; }
-  .present__stage { display: block !important; }
-  .diapo, .diapo[hidden] {
+  /* Soutenance : toutes les diapos, 1 par page (les SVG s'impriment) */
+  .deck__bar { display: none !important; }
+  .deck__slide, .deck__slide[hidden] {
     display: block !important;
-    min-height: 0 !important;
-    padding: 0 !important;
-    border: 0 !important;
     break-before: page;
     break-inside: avoid;
   }
-  .diapo:first-of-type { break-before: auto; }
-  .diapo__inner {
-    max-width: none !important;
-    padding: 0 !important;
-    border: 0 !important;
-    box-shadow: none !important;
-    background: transparent !important;
-  }
+  .deck__slide:first-of-type { break-before: auto; }
+  .deck__art { max-width: none !important; }
+  .deck__art svg { box-shadow: none !important; }
 
   /* Corpus : imprimer TOUS les parcours, en vue « changements » complète */
   .corpus-selecteur, .diff-toggle, .diff-legende { display: none !important; }
