@@ -89,7 +89,7 @@
         "on corrige et on reformule, on ne réécrit pas encore"
       ] },
       { "soustitre": "", "items": [
-        "→ littératie en construction : l'IA reste secondaire, la médiation décide"
+        "→ littératie en construction : l'IA reste secondaire, la médiation reste décisive"
       ] },
       { "soustitre": "Hypothèses", "items": ["H1 ✓ · H2 ✓ · H3 partiellement"] }
     ]
@@ -101,8 +101,8 @@
     "blocs": [
       { "soustitre": "Apports (au regard de la commande de stage)", "items": [
         "un scénario opérationnel & transférable",
-        "de l'enseignement à la conception",
-        "rendre visibles les impensés de l'enseignement de la PE – la voix, le registre, la réécriture"
+        "le passage de l'enseignement à la conception",
+        "la mise au jour des impensés de ce scénario (voix, registre, réécriture)"
       ] },
       { "soustitre": "Limites", "items": [
         "étude qualitative & située",
@@ -117,7 +117,7 @@
         "générer une remédiation validée",
         "déplacer l'IA vers la réécriture & la voix",
         "former les enseignant·es à concevoir des outils dédiés",
-        "explorer l'adhésion au projet d'écriture"
+        "susciter l'adhésion au projet d'écriture"
       ] },
       { "soustitre": "", "items": [
         "Moins une démonstration qu'une enquête à poursuivre – ailleurs, sur d'autres niveaux et d'autres langues."
@@ -129,7 +129,7 @@
     "numero": 8,
     "titre": "Conclusion",
     "blocs": [
-      { "soustitre": "Révélateur", "items": ["l'IA ne crée rien : elle révèle nos impensés"] },
+      { "soustitre": "Révélateur", "items": ["l'IA ne crée rien : elle révèle nos angles morts"] },
       { "soustitre": "Instrument secondaire", "items": ["elle propose, l'apprenant·e décide"] },
       { "soustitre": "Autonomie à construire", "items": ["non un état, mais une compétence"] },
       { "soustitre": "", "items": ["rester auteur·rice d'un texte que plusieurs voix produisent"] }

@@ -101,7 +101,7 @@ export const diaposSvg: string[] = [
 <text x="340" y="190" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#9A988F">ce qui n'apparaît pas</text>
 <text x="340" y="218" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#9A988F">réécriture   ·   réorganisation   ·   rejet</text>
 <text x="340" y="258" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-style="italic" fill="#1B1B1A">on corrige et on reformule, on ne réécrit pas encore</text>
-<text x="340" y="286" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#1F5C63">→ littératie en construction : l'IA reste secondaire, la médiation décide</text>
+<text x="340" y="286" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#1F5C63">→ littératie en construction : l'IA reste secondaire, la médiation reste décisive</text>
 <line x1="44" y1="312" x2="636" y2="312" stroke="#E4DFD2"/>
 <text x="340" y="344" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#262624">H1 <tspan font-weight="600" fill="#1F5C63">✓</tspan>   ·   H2 <tspan font-weight="600" fill="#1F5C63">✓</tspan>   ·   H3 partiellement</text>
 </svg>`,
@@ -111,11 +111,13 @@ export const diaposSvg: string[] = [
 <line x1="238" y1="62" x2="238" y2="322" stroke="#E4DFD2"/><line x1="446" y1="62" x2="446" y2="322" stroke="#E4DFD2"/>
 <text x="40" y="84" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1F5C63">Apports</text>
 <text x="40" y="98" font-family="system-ui,sans-serif" font-size="10.5" font-style="italic" fill="#8A8A82">au regard de la commande</text>
-<circle cx="42" cy="120" r="2" fill="#1F5C63"/><text x="50" y="124" font-family="system-ui,sans-serif" font-size="11" fill="#333330">scénario opérationnel &amp; transférable</text>
-<circle cx="42" cy="146" r="2" fill="#1F5C63"/><text x="50" y="150" font-family="system-ui,sans-serif" font-size="11" fill="#333330">de l'enseignement à la conception</text>
-<circle cx="42" cy="174" r="2" fill="#1F5C63"/><text x="50" y="178" font-family="system-ui,sans-serif" font-size="11" fill="#333330">rendre visibles les impensés</text>
-<text x="50" y="191" font-family="system-ui,sans-serif" font-size="11" fill="#333330">de l'enseignement de l'écriture</text>
-<text x="50" y="205" font-family="system-ui,sans-serif" font-size="10" font-style="italic" fill="#9A988F">voix, registre, réécriture</text>
+<circle cx="42" cy="120" r="2" fill="#1F5C63"/><text x="50" y="124" font-family="system-ui,sans-serif" font-size="11" fill="#333330">un scénario opérationnel</text>
+<text x="50" y="137" font-family="system-ui,sans-serif" font-size="11" fill="#333330">&amp; transférable</text>
+<circle cx="42" cy="159" r="2" fill="#1F5C63"/><text x="50" y="163" font-family="system-ui,sans-serif" font-size="11" fill="#333330">le passage de l'enseignement</text>
+<text x="50" y="176" font-family="system-ui,sans-serif" font-size="11" fill="#333330">à la conception</text>
+<circle cx="42" cy="198" r="2" fill="#1F5C63"/><text x="50" y="202" font-family="system-ui,sans-serif" font-size="11" fill="#333330">la mise au jour des impensés</text>
+<text x="50" y="215" font-family="system-ui,sans-serif" font-size="11" fill="#333330">de ce scénario</text>
+<text x="50" y="228" font-family="system-ui,sans-serif" font-size="10" font-style="italic" fill="#9A988F">(voix, registre, réécriture)</text>
 <text x="250" y="84" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1F5C63">Limites</text>
 <circle cx="252" cy="110" r="2" fill="#1F5C63"/><text x="260" y="114" font-family="system-ui,sans-serif" font-size="11" fill="#333330">étude qualitative &amp; située</text>
 <circle cx="252" cy="132" r="2" fill="#1F5C63"/><text x="260" y="136" font-family="system-ui,sans-serif" font-size="11" fill="#333330">effet non isolable du cadrage</text>
@@ -131,14 +133,15 @@ export const diaposSvg: string[] = [
 <circle cx="460" cy="200" r="2" fill="#1F5C63"/><text x="468" y="204" font-family="system-ui,sans-serif" font-size="11" fill="#333330">déplacer vers réécriture &amp; voix</text>
 <circle cx="460" cy="222" r="2" fill="#1F5C63"/><text x="468" y="226" font-family="system-ui,sans-serif" font-size="11" fill="#333330">former les enseignant·es</text>
 <text x="468" y="239" font-family="system-ui,sans-serif" font-size="11" fill="#333330">à concevoir des outils</text>
-<circle cx="460" cy="259" r="2" fill="#1F5C63"/><text x="468" y="263" font-family="system-ui,sans-serif" font-size="11" fill="#333330">explorer l'adhésion au projet</text>
+<circle cx="460" cy="259" r="2" fill="#1F5C63"/><text x="468" y="263" font-family="system-ui,sans-serif" font-size="11" fill="#333330">susciter l'adhésion au projet</text>
+<text x="468" y="276" font-family="system-ui,sans-serif" font-size="11" fill="#333330">d'écriture</text>
 <line x1="40" y1="344" x2="640" y2="344" stroke="#E4DFD2"/>
 <text x="340" y="370" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-style="italic" fill="#5A7A78">Moins une démonstration qu'une enquête à poursuivre – ailleurs, sur d'autres niveaux et d'autres langues.</text>
 </svg>`,
   `<svg viewBox="0 0 680 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diapo 8, conclusion, les trois concepts">
 <rect x="4" y="4" width="672" height="392" rx="14" fill="#0F2E33" stroke="#2C4D51"/>
 <text x="340" y="98" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" letter-spacing="1.5" fill="#79C3B0">RÉVÉLATEUR</text>
-<text x="340" y="122" text-anchor="middle" font-family="Georgia,serif" font-size="17" fill="#EFF5F3">l'IA ne crée rien : elle révèle nos impensés</text>
+<text x="340" y="122" text-anchor="middle" font-family="Georgia,serif" font-size="17" fill="#EFF5F3">l'IA ne crée rien : elle révèle nos angles morts</text>
 <text x="340" y="170" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" letter-spacing="1.5" fill="#79C3B0">INSTRUMENT SECONDAIRE</text>
 <text x="340" y="194" text-anchor="middle" font-family="Georgia,serif" font-size="17" fill="#EFF5F3">elle propose, l'apprenant·e décide</text>
 <text x="340" y="242" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" letter-spacing="1.5" fill="#79C3B0">AUTONOMIE À CONSTRUIRE</text>
