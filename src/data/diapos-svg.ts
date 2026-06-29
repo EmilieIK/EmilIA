@@ -130,11 +130,12 @@ export const diaposSvg: string[] = [
 <circle cx="460" cy="141" r="2" fill="#1F5C63"/><text x="468" y="145" font-family="system-ui,sans-serif" font-size="11" fill="#333330">entraîner au prompting</text>
 <text x="468" y="158" font-family="system-ui,sans-serif" font-size="11" fill="#333330">&amp; à l'évaluation</text>
 <circle cx="460" cy="178" r="2" fill="#1F5C63"/><text x="468" y="182" font-family="system-ui,sans-serif" font-size="11" fill="#333330">générer une remédiation validée</text>
-<circle cx="460" cy="200" r="2" fill="#1F5C63"/><text x="468" y="204" font-family="system-ui,sans-serif" font-size="11" fill="#333330">déplacer vers réécriture &amp; voix</text>
-<circle cx="460" cy="222" r="2" fill="#1F5C63"/><text x="468" y="226" font-family="system-ui,sans-serif" font-size="11" fill="#333330">former les enseignant·es</text>
-<text x="468" y="239" font-family="system-ui,sans-serif" font-size="11" fill="#333330">à concevoir des outils</text>
-<circle cx="460" cy="259" r="2" fill="#1F5C63"/><text x="468" y="263" font-family="system-ui,sans-serif" font-size="11" fill="#333330">susciter l'adhésion au projet</text>
-<text x="468" y="276" font-family="system-ui,sans-serif" font-size="11" fill="#333330">d'écriture</text>
+<circle cx="460" cy="200" r="2" fill="#1F5C63"/><text x="468" y="204" font-family="system-ui,sans-serif" font-size="11" fill="#333330">déplacer l'IA de la correction</text>
+<text x="468" y="217" font-family="system-ui,sans-serif" font-size="11" fill="#333330">vers le discours</text>
+<circle cx="460" cy="237" r="2" fill="#1F5C63"/><text x="468" y="241" font-family="system-ui,sans-serif" font-size="11" fill="#333330">former les enseignant·es</text>
+<text x="468" y="254" font-family="system-ui,sans-serif" font-size="11" fill="#333330">à concevoir des outils</text>
+<circle cx="460" cy="274" r="2" fill="#1F5C63"/><text x="468" y="278" font-family="system-ui,sans-serif" font-size="11" fill="#333330">susciter l'adhésion au projet</text>
+<text x="468" y="291" font-family="system-ui,sans-serif" font-size="11" fill="#333330">d'écriture</text>
 <line x1="40" y1="344" x2="640" y2="344" stroke="#E4DFD2"/>
 <text x="340" y="370" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-style="italic" fill="#5A7A78">Moins une démonstration qu'une enquête à poursuivre – ailleurs, sur d'autres niveaux et d'autres langues.</text>
 </svg>`,
