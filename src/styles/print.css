@@ -51,14 +51,11 @@
   .deck__art { max-width: none !important; }
   .deck__art svg { box-shadow: none !important; }
 
-  /* Corpus : imprimer TOUS les parcours, en vue « changements » complète */
-  .corpus-selecteur, .diff-toggle, .diff-legende { display: none !important; }
+  /* Corpus : imprimer TOUS les parcours, un par page */
+  .corpus-selecteur { display: none !important; }
   .cas { display: block !important; break-before: page; break-inside: avoid; }
   .cas:first-of-type { break-before: auto; }
-  .corpus-diff .seg--egal, .corpus-diff .seg--ajout, .corpus-diff .seg--apres,
-  .corpus-diff .seg--suppr, .corpus-diff .seg--avant { display: inline !important; }
-  .corpus-diff .seg--suppr, .corpus-diff .seg--avant { text-decoration: line-through; }
-  .corpus-diff .seg--ajout, .corpus-diff .seg--apres { text-decoration: underline; }
-  .grille-codee { break-inside: avoid; }
-  .table-wrap { overflow: visible !important; }
+  .corpus-sujet[open] summary { list-style: none; }
+  .corpus-sujet p { display: block !important; }
+  .grille-etape, .ia-echange { break-inside: avoid; }
 }

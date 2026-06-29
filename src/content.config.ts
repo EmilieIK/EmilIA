@@ -83,50 +83,29 @@ const soutenance = defineCollection({
   }),
 });
 
-// Corpus anonymisé – parcours d'écriture d'étudiant·es. Données de DÉMONSTRATION
-// FICTIVES (fictif:true). TODO Émilie : remplacer par le corpus vierge anonymisé
-// (jamais de prénom ni d'élément ré-identifiant ; identifiants neutres B1-01…).
+// Corpus anonymisé – parcours d'écriture de 15 étudiant·es (annexe 3 du mémoire).
+// Identifiants NEUTRES (B1-01…B2-08), aucun prénom ni élément ré-identifiant.
+// Les productions manuscrites (1er jet, réécritures) sont des images non transcriptibles ;
+// on présente donc, par parcours, l'analyse de synthèse, la grille codée et un extrait
+// d'échange avec l'IA recentré sur la langue.
 const corpus = defineCollection({
   loader: file('src/data/corpus.json'),
   schema: z.object({
     niveau: z.enum(['B1', 'B2']),
-    fictif: z.literal(true),
-    tache: z.string(),
-    synthese_tete: z.object({
-      nb_reecritures: z.number(),
-      nb_interactions: z.number(),
-      type_progres: z.string(),
-    }),
-    premier_jet: z.string(),
-    reecriture: z.array(
-      z.object({
-        t: z.enum(['egal', 'ajout', 'suppr', 'modif']),
-        texte: z.string().optional(),
-        avant: z.string().optional(),
-        apres: z.string().optional(),
-        origine: z.enum(['humain', 'ia-reprise', 'ia-refus']).optional(),
-        ref_ia: z.string().nullable().optional(),
-      })
-    ),
-    versions_intermediaires: z.array(z.object({ label: z.string(), texte: z.string() })).default([]),
-    interactions: z.array(
-      z.object({
-        id: z.string(),
-        prompt: z.string(),
-        reponse: z.string(),
-        reprise: z.enum(['reprise', 'adaptee', 'ignoree', 'refusee']),
-        commentaire: z.string(),
-      })
-    ),
+    synthese: z.string(),
     grille: z.array(
       z.object({
-        dimension: z.string(),
-        code: z.string(),
-        niveau: z.enum(['fort', 'moyen', 'faible', 'na']),
-        observation: z.string(),
+        etape: z.string(),
+        points: z.array(z.string()),
       })
     ),
-    synthese: z.string(),
+    echangeIA: z
+      .object({
+        contexte: z.string(),
+        etudiant: z.string(),
+        ia: z.string(),
+      })
+      .nullable(),
   }),
 });
 
