@@ -1,7 +1,7 @@
 import { defineCollection, z } from 'astro:content';
 import { file } from 'astro/loaders';
 
-// Glossaire — source unique, réutilisable site-wide (page Mémoire + usage inline).
+// Glossaire – source unique, réutilisable site-wide (page Mémoire + usage inline).
 const glossaire = defineCollection({
   loader: file('src/data/glossaire.json'),
   schema: z.object({
@@ -10,7 +10,7 @@ const glossaire = defineCollection({
   }),
 });
 
-// Plan du mémoire — 3 parties, chacune avec ses chapitres et sections (niveau 3).
+// Plan du mémoire – 3 parties, chacune avec ses chapitres et sections (niveau 3).
 const plan = defineCollection({
   loader: file('src/data/plan.json'),
   schema: z.object({
@@ -26,7 +26,7 @@ const plan = defineCollection({
   }),
 });
 
-// Kit pédagogique — 8 étapes (carte à 6 composantes).
+// Kit pédagogique – 8 étapes (carte à 6 composantes).
 const etapes = defineCollection({
   loader: file('src/data/etapes.json'),
   schema: z.object({
@@ -46,7 +46,7 @@ const etapes = defineCollection({
   }),
 });
 
-// Fabrique à prompts — 6 fonctions / prompts types.
+// Fabrique à prompts – 6 fonctions / prompts types.
 const prompts = defineCollection({
   loader: file('src/data/prompts.json'),
   schema: z.object({
@@ -55,7 +55,7 @@ const prompts = defineCollection({
   }),
 });
 
-// Jeu de cartes-questions — 10 questions de bilan.
+// Jeu de cartes-questions – 10 questions de bilan.
 const questions = defineCollection({
   loader: file('src/data/questions.json'),
   schema: z.object({
@@ -63,47 +63,27 @@ const questions = defineCollection({
   }),
 });
 
-// Aiguiser son regard — texte(s) d'exercice avec erreurs annotées par jeton.
-// Données de DÉMONSTRATION FICTIVES (fictif:true) — à remplacer par Émilie.
-const exercicesAiguiser = defineCollection({
-  loader: file('src/data/aiguiser-exemples.json'),
-  schema: z.object({
-    titre: z.string(),
-    fictif: z.literal(true),
-    consigne_niveau: z.string(),
-    jetons: z.array(
-      z.object({
-        texte: z.string(),
-        candidat: z.boolean().optional(),
-        erreur: z
-          .object({
-            categorie: z.enum(['accord', 'conjugaison', 'lexique', 'connecteur', 'syntaxe']),
-            correction: z.string(),
-            explication: z.string(),
-          })
-          .nullable()
-          .optional(),
-      })
-    ),
-  }),
-});
-
-// Soutenance — 7 diapos/sections (talking points), bi-mode consultable + présentation.
+// Soutenance – 7 diapos/sections (talking points), bi-mode consultable + présentation.
 const soutenance = defineCollection({
   loader: file('src/data/soutenance.json'),
   schema: z.object({
     numero: z.number(),
     titre: z.string(),
-    blocs: z.array(
-      z.object({
-        soustitre: z.string(),
-        items: z.array(z.string()),
-      })
-    ),
+    sousTitre: z.string().optional(),
+    meta: z.array(z.string()).default([]),
+    signature: z.array(z.string()).default([]),
+    blocs: z
+      .array(
+        z.object({
+          soustitre: z.string().default(''),
+          items: z.array(z.string()).default([]),
+        })
+      )
+      .default([]),
   }),
 });
 
-// Corpus anonymisé — parcours d'écriture d'étudiant·es. Données de DÉMONSTRATION
+// Corpus anonymisé – parcours d'écriture d'étudiant·es. Données de DÉMONSTRATION
 // FICTIVES (fictif:true). TODO Émilie : remplacer par le corpus vierge anonymisé
 // (jamais de prénom ni d'élément ré-identifiant ; identifiants neutres B1-01…).
 const corpus = defineCollection({
@@ -150,4 +130,4 @@ const corpus = defineCollection({
   }),
 });
 
-export const collections = { glossaire, plan, etapes, prompts, questions, exercicesAiguiser, soutenance, corpus };
+export const collections = { glossaire, plan, etapes, prompts, questions, soutenance, corpus };

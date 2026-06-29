@@ -30,7 +30,7 @@
       { "dimension": "Littératie de l'IA", "code": "emergente", "niveau": "moyen", "observation": "Le prompt est vague mais une question de règle apparaît." },
       { "dimension": "Autonomie du geste", "code": "assistee", "niveau": "moyen", "observation": "Décide de demander une explication : geste d'auteur·rice naissant." }
     ],
-    "synthese": "Cas typique d'un progrès surtout local : l'IA corrige, le texte se stabilise, mais l'appropriation reste partielle — l'IA agit ici comme révélateur d'un besoin de cadrage."
+    "synthese": "Cas typique d'un progrès surtout local : l'IA corrige, le texte se stabilise, mais l'appropriation reste partielle – l'IA agit ici comme révélateur d'un besoin de cadrage."
   },
   {
     "id": "B2-01",
@@ -68,6 +68,6 @@
       { "dimension": "Littératie de l'IA", "code": "consolidee", "niveau": "fort", "observation": "Prompts précis et ciblés (registre, sens d'un mot)." },
       { "dimension": "Autonomie du geste", "code": "assistee-non-deleguee", "niveau": "fort", "observation": "L'IA propose, l'étudiant·e décide : autonomie assistée mais non déléguée." }
     ],
-    "synthese": "Cas où l'IA lisse le texte et menace la voix : la valeur pédagogique tient au geste de refus et de sélection — l'IA reste seconde, un appui qui propose sans décider."
+    "synthese": "Cas où l'IA lisse le texte et menace la voix : la valeur pédagogique tient au geste de refus et de sélection – l'IA reste seconde, un appui qui propose sans décider."
   }
 ]

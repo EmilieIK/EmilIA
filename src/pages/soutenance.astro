@@ -5,14 +5,10 @@ import { getCollection } from 'astro:content';
 const diapos = (await getCollection('soutenance')).sort((a, b) => a.data.numero - b.data.numero);
 const total = diapos.length;
 ---
-<Base title="La soutenance" description="La soutenance de master 2 FLES : trame, sept diapositives et un mode présentation projetable au clavier.">
+<Base title="La soutenance" description="La soutenance de master 2 FLES : les diapositives, consultables et projetables en mode présentation au clavier.">
   <section class="section container" id="intro-soutenance">
     <h1>La soutenance</h1>
-    <p class="prose">
-      La soutenance dure environ une heure : 15 à 20 minutes d'exposé, puis près de 45 minutes
-      d'échange avec le jury. Elle ne résume pas le mémoire : elle en propose une synthèse
-      réflexive, en {total} diapositives, selon la trame attendue.
-    </p>
+    <p class="prose">Les {total} diapositives de la présentation orale, consultables ci-dessous et projetables en plein écran.</p>
     <div class="present-actions">
       <button type="button" class="btn btn--primary" data-present-open>Mode présentation</button>
       <span class="kw-label">{total} diapositives · navigation au clavier (← →, Échap, F)</span>
@@ -33,32 +29,40 @@ const total = diapos.length;
         <section class="section container diapo" id={`diapo-${d.data.numero}`} data-slide aria-labelledby={`diapo-${d.data.numero}-h`}>
           <p class="diapo__kicker"><span class="visually-hidden">Diapositive </span>{d.data.numero}<span aria-hidden="true"> / {total}</span></p>
           <h2 id={`diapo-${d.data.numero}-h`}>{d.data.titre}</h2>
-          {d.data.blocs.map((b) => (
-            <div class="diapo__bloc">
-              <h3>{b.soustitre}</h3>
-              {b.soustitre.includes('mots-fils') ? (
-                <ul class="signature" aria-label="Fil conducteur">
-                  {b.items[0].split(' · ').map((m) => <li>{m}</li>)}
-                </ul>
-              ) : b.soustitre.includes("Si c'était à refaire") ? (
-                <p class="todo"><strong>À compléter :</strong> {b.items[0]}</p>
-              ) : (
-                <ul class="diapo__liste">
-                  {b.items.map((it) => <li>{it}</li>)}
-                </ul>
-              )}
+          {d.data.sousTitre && <p class="diapo__soustitre">{d.data.sousTitre}</p>}
+          {d.data.meta.length > 0 && (
+            <div class="diapo__identite">
+              {d.data.meta.map((m) => <p>{m}</p>)}
             </div>
+          )}
+          {d.data.blocs.map((b) => (
+            b.items.length === 0 && b.soustitre
+              ? <p class="diapo__transition">{b.soustitre}</p>
+              : <div class="diapo__bloc">
+                  {b.soustitre && <h3>{b.soustitre}</h3>}
+                  <ul class="diapo__liste">{b.items.map((i) => <li>{i}</li>)}</ul>
+                </div>
           ))}
+          {d.data.signature.length > 0 && (
+            <ul class="signature" aria-label="Fil conducteur">
+              {d.data.signature.map((s) => <li>{s}</li>)}
+            </ul>
+          )}
         </section>
       ))}
     </div>
 
     <p class="visually-hidden" role="status" aria-live="polite" aria-atomic="true" data-present-live></p>
 
+    <button type="button" class="present__arrow present__arrow--prev" data-present-prev aria-label="Diapositive précédente">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+    </button>
+    <button type="button" class="present__arrow present__arrow--next" data-present-next aria-label="Diapositive suivante">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+    </button>
+
     <div class="present__bar" role="group" aria-label="Contrôles de présentation">
-      <button type="button" class="btn btn--secondary" data-present-prev>Précédent</button>
       <span class="present__progress" data-present-progress aria-hidden="true">1 / {total}</span>
-      <button type="button" class="btn btn--secondary" data-present-next>Suivant</button>
       <button type="button" class="btn btn--secondary" data-present-fs>Plein écran (F)</button>
       <button type="button" class="btn btn--secondary" data-present-quit>Quitter (Échap)</button>
     </div>

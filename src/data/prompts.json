@@ -7,7 +7,7 @@
   {
     "id": "p2",
     "fonction": "Clarifier une règle grammaticale",
-    "prompt": "Peux-tu m'expliquer la différence entre deux temps dans cette phrase ?"
+    "prompt": "Peux-tu m'expliquer la règle de grammaire qui pose problème dans cette phrase, avec un exemple ?"
   },
   {
     "id": "p3",

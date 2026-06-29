@@ -40,8 +40,10 @@ if (wrap && slides.length > 0) {
       if (active) { s.tabIndex = -1; s.focus(); }
     });
     if (progress) progress.textContent = `${current + 1} / ${total}`;
+    wrap!.querySelectorAll<HTMLButtonElement>('[data-present-prev]').forEach((b) => { b.disabled = current === 0; });
+    wrap!.querySelectorAll<HTMLButtonElement>('[data-present-next]').forEach((b) => { b.disabled = current === total - 1; });
     // Position seule : le titre est déjà porté par la section focalisée
-    // (aria-labelledby vers son <h2>) — éviter de l'énoncer deux fois.
+    // (aria-labelledby vers son <h2>) – éviter de l'énoncer deux fois.
     announce(`Diapositive ${current + 1} sur ${total}`);
   }
 
@@ -88,8 +90,8 @@ if (wrap && slides.length > 0) {
   });
 
   openBtn?.addEventListener('click', () => enter(0));
-  wrap.querySelector('[data-present-next]')?.addEventListener('click', next);
-  wrap.querySelector('[data-present-prev]')?.addEventListener('click', prev);
+  wrap.querySelectorAll('[data-present-next]').forEach((b) => b.addEventListener('click', next));
+  wrap.querySelectorAll('[data-present-prev]').forEach((b) => b.addEventListener('click', prev));
   wrap.querySelector('[data-present-quit]')?.addEventListener('click', exit);
   fsBtn?.addEventListener('click', toggleFullscreen);
 

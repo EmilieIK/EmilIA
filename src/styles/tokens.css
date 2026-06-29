@@ -1,5 +1,5 @@
 /* ============================================================
-   Design tokens — charte « sobre, éditoriale, premium »
+   Design tokens – charte « sobre, éditoriale, premium »
    Toutes les valeurs passent par des variables (cf. brief 06).
    Thème : clair par défaut ; sombre via prefers-color-scheme
    et override manuel [data-theme].
@@ -16,10 +16,10 @@
   /* Accent (liens, CTA, focus) */
   --c-accent:    #1F5C63;  /* pétrole / teal profond, sobre */
   --c-accent-ink:#0E3338;
-  --c-on-accent: #FFFFFF;  /* texte sur fond accent (CTA primaire) — AA */
+  --c-on-accent: #FFFFFF;  /* texte sur fond accent (CTA primaire) – AA */
   /* Bordures */
   --c-border:    #E2DDD3;  /* filets décoratifs (séparateurs, non porteurs de sens) */
-  --c-border-2:  #8A8576;  /* bordures de contrôles UI — ≥ 3:1 (WCAG 1.4.11) */
+  --c-border-2:  #8A8576;  /* bordures de contrôles UI – ≥ 3:1 (WCAG 1.4.11) */
   /* Codage IA (toujours doublé d'une icône + d'un label, jamais couleur seule) */
   --c-ia-avec:   #1F5C63;  /* « avec IA » */
   --c-ia-sans:   #9A6B2F;  /* « sans IA » (ocre) */
@@ -55,7 +55,7 @@
   --dur:200ms; --ease:cubic-bezier(.2,.6,.2,1);
 }
 
-/* Thème sombre — appliqué soit par préférence système (sans override clair),
+/* Thème sombre – appliqué soit par préférence système (sans override clair),
    soit par choix manuel [data-theme="dark"]. */
 :root[data-theme="dark"] {
   --c-bg:#14140F; --c-surface:#1C1C18; --c-surface-2:#23231D;

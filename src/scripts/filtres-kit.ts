@@ -51,7 +51,7 @@ if (form) {
     if (resetBtn) resetBtn.disabled = aucunFiltre;
     announce(
       visibles === 0
-        ? 'Aucune étape ne correspond — réinitialisez les filtres.'
+        ? 'Aucune étape ne correspond – réinitialisez les filtres.'
         : `${visibles} étape${visibles > 1 ? 's' : ''} sur ${total} affichée${visibles > 1 ? 's' : ''}.`
     );
     refreshAll();

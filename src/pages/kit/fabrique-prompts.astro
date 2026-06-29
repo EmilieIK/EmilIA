@@ -6,7 +6,7 @@ import BoutonCopier from '../../components/BoutonCopier.astro';
 
 const prompts = (await getCollection('prompts')).sort((a, b) => a.id.localeCompare(b.id));
 ---
-<Base title="La fabrique à prompts" description="Six fonctions et leurs prompts types pour mobiliser l'IA comme outil linguistique ciblé en production écrite FLE.">
+<Base title="La fabrique à prompts" description="Des exemples de prompts par fonction pour mobiliser l'IA comme outil linguistique ciblé en production écrite FLE.">
   <section class="section container">
     <nav aria-label="Fil d'Ariane" class="kw-label">
       <a href={url('/kit')}>Le kit</a> · <a href={url('/kit#etape-boite-a-outils-ia')}>Étape 4</a> · La fabrique à prompts
@@ -14,14 +14,14 @@ const prompts = (await getCollection('prompts')).sort((a, b) => a.id.localeCompa
     <h1>La fabrique à prompts</h1>
     <p class="prose">
       Formulez un prompt clair, ne donnez pas votre texte à corriger, et demandez un soutien sur
-      un point précis. Voici six fonctions utiles et un prompt type pour chacune — à copier, puis
-      à adapter à votre besoin.
+      un point précis. Voici six fonctions utiles et un exemple de prompt pour chacune, à copier
+      puis à adapter à votre besoin.
     </p>
 
     <p class="visually-hidden" role="status" aria-live="polite" aria-atomic="true" data-copie-live></p>
 
     <section aria-labelledby="fonctions-h">
-      <h2 id="fonctions-h">Les 6 fonctions et leurs prompts types</h2>
+      <h2 id="fonctions-h">Exemples de prompts par fonction</h2>
       <ul class="prompts">
         {prompts.map((p) => (
           <li class="prompt">
@@ -43,7 +43,7 @@ const prompts = (await getCollection('prompts')).sort((a, b) => a.id.localeCompa
 
     <section aria-labelledby="fiche-h">
       <h2 id="fiche-h">Fiche imprimable</h2>
-      <p class="prose">Imprimez les six prompts types pour les garder sous la main en classe.</p>
+      <p class="prose">Imprimez les six exemples de prompts pour les garder sous la main en classe.</p>
       <button type="button" class="btn btn--secondary" data-print-fiche>Imprimer la fiche des 6 prompts</button>
     </section>
 

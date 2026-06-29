@@ -2,77 +2,137 @@
   {
     "id": "d1",
     "numero": 1,
-    "titre": "Thématique & accroche",
-    "blocs": [
-      { "soustitre": "Titre du mémoire", "items": ["Production écrite en FLE et intelligence artificielle : un scénario pour une autonomie assistée."] },
-      { "soustitre": "Accroche", "items": ["« Écrire avec un outil n'a jamais signifié apprendre avec lui. »"] },
-      { "soustitre": "Question vive", "items": ["Comment soutenir les apprentissages sans confisquer l'expérience d'apprendre ?"] },
-      { "soustitre": "Trois mots-fils", "items": ["Révélateur · Seconde · Geste"] }
-    ]
+    "titre": "Production écrite en FLE et intelligence artificielle",
+    "sousTitre": "un scénario pour une autonomie assistée",
+    "meta": [
+      "Émilie Icyk",
+      "M2 Didactique des langues – parcours FLES · Université Grenoble Alpes",
+      "Sous la direction de Thierry Soubrié",
+      "Soutenance – 8 juillet 2026"
+    ],
+    "signature": ["Révélateur", "Instrument secondaire", "Autonomie à construire"],
+    "blocs": []
   },
   {
     "id": "d2",
     "numero": 2,
-    "titre": "Pourquoi ce sujet, et avec quelles notions",
+    "titre": "Trois attentes de départ",
     "blocs": [
-      { "soustitre": "Motivations et parcours", "items": ["Vingt ans de fil rouge, des TICE (2001) à l'IA, dans une même logique anthropocentrée."] },
-      { "soustitre": "Terrain", "items": ["DEFI, étudiant·es Erasmus+ de niveaux B1 et B2.", "Une première expérience non encadrée a montré que l'IA, seule, ne forme pas."] },
-      { "soustitre": "Notions-clés du cadre théorique", "items": ["L'écriture comme processus récursif et coûteux en L2.", "L'erreur comme trace d'apprentissage (interlangue).", "La littératie de l'IA.", "La médiation enseignante (Vygotski).", "L'agentivité et la posture d'auteur·rice.", "Le risque du texte lissé.", "Le prompting comme activité langagière et métalinguistique."] }
-    ]
+      { "soustitre": "", "items": [
+        "Que l'IA fasse progresser les écrits",
+        "Qu'un scénario suffise à rendre autonome",
+        "Que se développe une littératie de l'IA"
+      ] },
+      { "soustitre": "… et trois démentis", "items": [] }
+    ],
+    "signature": ["littératie de l'IA", "agentivité", "médiation", "interlangue", "texte lissé"]
   },
   {
     "id": "d3",
     "numero": 3,
-    "titre": "Problématique, sous-questions et hypothèses",
+    "titre": "Problématique",
     "blocs": [
-      { "soustitre": "Problématique", "items": ["Comment mobiliser l'IA sans qu'elle se substitue au travail d'écriture, tout en développant une littératie de l'IA ?"] },
-      { "soustitre": "Trois sous-questions", "items": ["La médiation enseignante.", "Les connaissances mobilisées (linguistiques, textuelles, discursives).", "Les évolutions observées dans les productions."] },
-      { "soustitre": "Trois hypothèses", "items": ["Un apprentissage spécifique est requis.", "Un scénario structuré est nécessaire.", "Les compétences scripturales peuvent évoluer."] }
+      { "soustitre": "", "items": [
+        "Comment les outils d'intelligence artificielle peuvent-ils être mobilisés sans se substituer au travail d'écriture des apprenant·es, tout en participant au développement d'une littératie de l'IA ?"
+      ] },
+      { "soustitre": "Hypothèses", "items": [
+        "H1 – l'usage de l'IA s'apprend : fonctions, limites, conditions d'usage",
+        "H2 – un scénario structuré est une condition nécessaire",
+        "H3 – l'IA peut faire évoluer les compétences scripturales"
+      ] }
     ]
   },
   {
     "id": "d4",
     "numero": 4,
-    "titre": "Dispositif & méthodologie",
+    "titre": "Un scénario en 8 étapes",
     "blocs": [
-      { "soustitre": "Le scénario (le kit)", "items": ["Un parcours en 8 étapes, alternant phases sans IA et recours ciblé, sous médiation."] },
-      { "soustitre": "Type de recherche", "items": ["Une recherche-action (cycles action, observation, ajustement)."] },
-      { "soustitre": "Corpus de traces", "items": ["Premiers jets, prompts, réponses de l'IA, réécritures successives, versions finales."] },
-      { "soustitre": "Triangulation", "items": ["Textes et interactions, questionnaire étudiant, entretien enseignant."] },
-      { "soustitre": "Analyse", "items": ["Qualitative et inductive ; grille codée construite progressivement ; codage manuel et lecture interprétative."] },
-      { "soustitre": "Difficultés et ajustements", "items": ["Guidage différencié entre groupes (B1 : erreurs signalées dès le premier jet ; B2 : repérage par les pairs).", "Traduction d'interactions en japonais, entre autres."] }
+      { "soustitre": "Les 8 étapes", "items": [
+        "1 Tempête d'idées · 2 Premier jet · 3 Regards croisés – sans IA",
+        "4 Boîte à outils IA · 5 Réécriture autonome · 6 Regard critique IA · 7 Le dernier mot – avec IA",
+        "8 Cap sur le bilan – sans IA"
+      ] },
+      { "soustitre": "Méthode", "items": [
+        "recherche-action · 15 parcours · triangulation (traces · questionnaire · entretien) · codage inductif"
+      ] },
+      { "soustitre": "Recherche-action : un scénario ajusté en cours de route", "items": [
+        "code d'annotation des erreurs · travail préparatoire renforcé"
+      ] }
     ]
   },
   {
     "id": "d5",
     "numero": 5,
-    "titre": "Résultats & regard distancié",
+    "titre": "Ce que le terrain a démenti (1 & 2)",
     "blocs": [
-      { "soustitre": "Réponse à la problématique", "items": ["L'IA est utile si elle reste seconde.", "Le rôle central de la médiation enseignante est un résultat, pas seulement un préalable."] },
-      { "soustitre": "Sort des hypothèses", "items": ["H1 confirmée.", "H2 confirmée.", "H3 partiellement (l'amélioration du texte n'est pas l'apprentissage)."] },
-      { "soustitre": "Nuances", "items": ["Des progrès surtout locaux (correction efficace, explication fragile).", "Une amélioration non linéaire.", "Le cas du texte lissé."] },
-      { "soustitre": "Regard distancié", "items": ["L'IA agit comme révélateur des compétences et des implicites de l'enseignement.", "L'autonomie devient un geste."] }
+      { "soustitre": "Démenti 1 – L'effet de l'IA n'est pas isolable du cadrage", "items": [
+        "même outil, même scénario → usages opposés",
+        "B1, erreurs signalées en amont → l'IA sert à corriger",
+        "B2, diagnostic confié → l'effort va à la formulation de la demande",
+        "ce que le cadrage met en avant détermine ce que l'outil prend en charge"
+      ] },
+      { "soustitre": "Démenti 2 – L'autonomie : une compétence à construire, pas un état", "items": [
+        "usage en surface : correction 15/15 · organisation 2/15",
+        "10/15 reprise directe · 11/15 acceptation peu critique · 0/15 rejet dans les traces",
+        "Bélen tient sa nuance / Miriam s'efface"
+      ] }
     ]
   },
   {
     "id": "d6",
     "numero": 6,
-    "titre": "Auto-évaluation & prolongements",
+    "titre": "Ce que le terrain a démenti (3)",
     "blocs": [
-      { "soustitre": "Au regard de la commande de stage", "items": ["De l'enseignement à l'ingénierie pédagogique (conception du kit).", "Ce qui a fonctionné, ce qui a résisté."] },
-      { "soustitre": "Limites", "items": ["Méthodologiques (échelle, durée).", "Didactiques.", "Instrumentales, éthiques et évaluatives."] },
-      { "soustitre": "Prolongements", "items": ["Mieux former au prompting et à l'évaluation des réponses de l'IA.", "Générer des activités de remédiation à partir des erreurs.", "Déplacer l'IA vers la réécriture, la voix et le discours."] },
-      { "soustitre": "Si c'était à refaire", "items": ["À compléter par Émilie : deux ou trois ajustements concrets."] }
+      { "soustitre": "Un plafond dans les usages observés", "items": [
+        "correction 15/15 · reformulation 14/15",
+        "réécriture · réorganisation · rejet : absents des grilles",
+        "on corrige et on reformule, on ne réécrit pas encore"
+      ] },
+      { "soustitre": "", "items": [
+        "→ littératie en construction : l'IA reste secondaire, la médiation décide"
+      ] },
+      { "soustitre": "Hypothèses", "items": ["H1 ✓ · H2 ✓ · H3 partiellement"] }
     ]
   },
   {
     "id": "d7",
     "numero": 7,
-    "titre": "Conclusion : les apports",
+    "titre": "Recul, limites & « si c'était à refaire »",
     "blocs": [
-      { "soustitre": "Apports professionnels", "items": ["Une posture d'ingénieure pédagogique.", "La conception d'un dispositif transférable.", "Une médiation outillée."] },
-      { "soustitre": "Apports de la recherche", "items": ["Les conditions d'un usage didactique de l'IA.", "Le prompting comme compétence.", "La sobriété didactique (coût environnemental de l'IA)."] },
-      { "soustitre": "Clôture", "items": ["« Est-ce encore mon texte ? » — rester auteur·rice d'un texte que plusieurs voix contribuent à produire."] }
+      { "soustitre": "Apports (au regard de la commande de stage)", "items": [
+        "un scénario opérationnel & transférable",
+        "de l'enseignement à la conception",
+        "rendre visibles les impensés de l'enseignement de la PE – la voix, le registre, la réécriture"
+      ] },
+      { "soustitre": "Limites", "items": [
+        "étude qualitative & située",
+        "effet de l'IA non isolable du cadrage",
+        "une mesure à un seul moment (comprendre ≠ déjà appliquer)",
+        "des modèles qui évoluent vite",
+        "empreinte écologique des modèles"
+      ] },
+      { "soustitre": "Si c'était à refaire / prolongements", "items": [
+        "interroger les apprenant·es à plusieurs étapes",
+        "entraîner au prompting & à l'évaluation des réponses",
+        "générer une remédiation validée",
+        "déplacer l'IA vers la réécriture & la voix",
+        "former les enseignant·es à concevoir des outils dédiés",
+        "explorer l'adhésion au projet d'écriture"
+      ] },
+      { "soustitre": "", "items": [
+        "Moins une démonstration qu'une enquête à poursuivre – ailleurs, sur d'autres niveaux et d'autres langues."
+      ] }
+    ]
+  },
+  {
+    "id": "d8",
+    "numero": 8,
+    "titre": "Conclusion",
+    "blocs": [
+      { "soustitre": "Révélateur", "items": ["l'IA ne crée rien : elle révèle nos impensés"] },
+      { "soustitre": "Instrument secondaire", "items": ["elle propose, l'apprenant·e décide"] },
+      { "soustitre": "Autonomie à construire", "items": ["non un état, mais une compétence"] },
+      { "soustitre": "", "items": ["rester auteur·rice d'un texte que plusieurs voix produisent"] }
     ]
   }
 ]

@@ -1,5 +1,5 @@
 /* ============================================================
-   Impression — sobre, lisible, N&B. (cf. brief 06 § print)
+   Impression – sobre, lisible, N&B. (cf. brief 06 § print)
    Masquer nav/boutons/animations ; contenu en noir sur blanc.
    ============================================================ */
 @media print {
@@ -32,21 +32,16 @@
   .badge-ia, .badge--modulable { border-color: #000 !important; color: #000 !important; }
   .badge-ia__icon { color: #000 !important; }
 
-  /* Outils interactifs — masquer les contrôles, garder le contenu de référence */
-  [data-copier], [data-print-fiche], [data-cq-print],
-  .cq-controls, .cq-status, .ar, .ar-timer { display: none !important; }
+  /* Outils interactifs – masquer les contrôles, garder le contenu de référence */
+  [data-copier], [data-print-fiche], [data-cq-print] { display: none !important; }
   .prompt { break-inside: avoid; }
 
-  /* Aiguiser son regard : afficher le texte + corrigé (repli papier) */
-  .ar-fallback { display: block !important; }
-
   /* Cartes-questions : imprimer le jeu complet en planche à découper */
-  .section--tirage, .cq-scene { display: none !important; }
   .cq-deck { grid-template-columns: 1fr 1fr !important; }
   .cq-card--static { break-inside: avoid; border: 1px solid #000 !important; }
 
   /* Soutenance : 1 diapo par page, même si le mode présentation est ouvert */
-  .present__bar, [data-present-open], [data-present-live] { display: none !important; }
+  .present__bar, .present__arrow, [data-present-open], [data-present-live] { display: none !important; }
   .diapos { position: static !important; }
   .present__stage { display: block !important; }
   .diapo, .diapo[hidden] { display: block !important; break-before: page; break-inside: avoid; }

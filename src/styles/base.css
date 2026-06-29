@@ -1,5 +1,5 @@
 /* ============================================================
-   Base — reset léger, typographie, layout, composants de socle.
+   Base – reset léger, typographie, layout, composants de socle.
    Mobile-first ; tout est fluide. Accessibilité native (cf. 07).
    ============================================================ */
 
@@ -54,7 +54,7 @@ img, picture, svg { max-width: 100%; height: auto; display: block; }
   border-radius: 4px;
 }
 
-/* Skip-link — premier élément focusable */
+/* Skip-link – premier élément focusable */
 .skip-link {
   position: absolute;
   left: var(--space-2);
@@ -134,7 +134,7 @@ main { flex: 1 0 auto; }
   background: var(--c-surface-2);
 }
 
-/* Boutons-icônes carrés (hamburger, bascule de thème) — cible ≥ 44px */
+/* Boutons-icônes carrés (hamburger, bascule de thème) – cible ≥ 44px */
 .icon-btn {
   align-items: center;
   justify-content: center;
@@ -210,7 +210,7 @@ html:not(.js) .theme-toggle { display: none; }
 .prose > * + * { margin-top: var(--space-4); }
 
 /* ============================================================
-   Accueil — hero, chips, cartes piliers, encart.
+   Accueil – hero, chips, cartes piliers, encart.
    Composants réutilisables ailleurs (kit…). Tout en tokens.
    ============================================================ */
 
@@ -332,7 +332,7 @@ html:not(.js) .theme-toggle { display: none; }
 .callout p { max-width: var(--measure); }
 
 /* ============================================================
-   Page Mémoire — chiffres-clés, plan (Disclosure), fil rouge,
+   Page Mémoire – chiffres-clés, plan (Disclosure), fil rouge,
    glossaire, quick-nav. Composants réutilisables, tout en tokens.
    ============================================================ */
 
@@ -497,7 +497,7 @@ html:not(.js) .disclosure__chevron { display: none; }
 .sigles li { max-width: none; }
 
 /* ============================================================
-   Page Kit — méta, badge IA, repères, composantes, timeline, filtres.
+   Page Kit – méta, badge IA, repères, composantes, timeline, filtres.
    ============================================================ */
 
 /* ----- Méta de l'en-tête kit ----- */
@@ -630,7 +630,7 @@ html:not(.js) .quicknav__item--filtres { display: none; }
 }
 
 /* ============================================================
-   Outils interactifs — communs + fabrique à prompts.
+   Outils interactifs – communs + fabrique à prompts.
    ============================================================ */
 
 /* Sans JS : masquer les contrôles sans effet (fallback honnête) */
@@ -667,37 +667,8 @@ html:not(.js) [data-cq-print] { display: none; }
 }
 
 /* ----- Cartes-questions ----- */
-html:not(.js) .section--tirage { display: none; }
-.cq-scene { perspective: 1000px; max-width: 24rem; margin-block: var(--space-6); }
-.cq-card--flip { position: relative; }
-.cq-card__inner {
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform var(--dur) var(--ease);
-  min-height: 12rem;
-}
-.cq-card--flip.is-flipped .cq-card__inner { transform: rotateY(180deg); }
-.cq-card__face {
-  position: absolute;
-  inset: 0;
-  backface-visibility: hidden;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: var(--space-6);
-  border: 1px solid var(--c-border-2);
-  border-radius: var(--radius-lg);
-  background: var(--c-surface);
-}
-.cq-card__face--dos { color: var(--c-ink-soft); font-family: var(--font-mono); }
-.cq-card__face--avant { transform: rotateY(180deg); }
 .cq-card__num { font-family: var(--font-mono); color: var(--c-ink-soft); font-size: var(--step--1); }
 .cq-card__q { font-family: var(--font-serif); font-size: var(--step-1); max-width: none; }
-.cq-controls { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
-.cq-status { margin-block-start: var(--space-3); font-weight: 700; color: var(--c-ink); }
 .cq-deck {
   list-style: none;
   padding: 0;
@@ -718,43 +689,8 @@ html:not(.js) .section--tirage { display: none; }
 }
 .cq-card--static .cq-card__q { font-family: var(--font-serif); font-size: var(--step-0); }
 
-/* ----- Aiguiser son regard ----- */
-html.js .ar { display: block; }
-html.js .ar-fallback { display: none; }
-html.js .ar-fallback.is-revealed { display: block; }
-.ar-cats { border: 1px solid var(--c-border); border-radius: var(--radius); padding: var(--space-2) var(--space-3); display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-3); }
-.ar-cats legend { font-weight: 700; padding-inline: var(--space-2); }
-.ar-timer { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; margin-block: var(--space-4); }
-.ar-chrono { font-family: var(--font-mono); font-size: var(--step-1); color: var(--c-ink); }
-.ar-text {
-  font-size: var(--step-0);
-  line-height: 2.1;
-  max-width: var(--measure);
-  margin-block: var(--space-4);
-}
-.ar-token {
-  font: inherit;
-  color: var(--c-ink);
-  background: var(--c-surface-2);
-  border: 1px solid var(--c-border-2);
-  border-radius: 6px;
-  padding: 0 var(--space-1);
-  cursor: pointer;
-}
-.ar-token:hover { border-color: var(--c-accent); }
-.ar-token[data-state="juste"] { border-color: var(--c-ia-avec); border-width: 2px; }
-.ar-token[data-state="juste"]::after { content: " ✓"; }
-.ar-token[data-state="rate"] { border-color: var(--c-ia-sans); border-style: dashed; border-width: 2px; }
-.ar-token[data-state="rate"]::after { content: " ✗"; }
-.ar-token[aria-disabled="true"] { cursor: default; }
-.ar-statut, .ar-score { color: var(--c-ink); font-weight: 700; margin-block: var(--space-2); min-height: 1.5em; }
-.ar-bingo { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); }
-.ar-bingo li { max-width: none; }
-.ar-bingo li[data-found="true"] { color: var(--c-accent-ink); font-weight: 700; }
-.ar-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-block-start: var(--space-4); }
-
 /* ============================================================
-   Page Soutenance — consultable + mode présentation.
+   Page Soutenance – consultable + mode présentation.
    ============================================================ */
 .present-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; margin-block: var(--space-6); }
 html:not(.js) [data-present-open] { display: none; }
@@ -762,6 +698,32 @@ html:not(.js) [data-present-open] { display: none; }
 .diapo__bloc { margin-block-start: var(--space-6); }
 .diapo__bloc h3 { font-size: var(--step-1); }
 .diapo__liste { color: var(--c-ink); }
+.diapo__soustitre { font-family: var(--font-serif); font-style: italic; font-size: var(--step-2); color: var(--c-ink-soft); margin-block-start: var(--space-3); max-width: var(--measure); }
+.diapo__identite { margin-block-start: var(--space-6); color: var(--c-ink-soft); }
+.diapo__identite p { margin: 0; max-width: none; }
+.diapo__transition { font-family: var(--font-serif); font-style: italic; font-size: var(--step-1); color: var(--c-ink-soft); margin-block: var(--space-4); }
+
+/* Grandes flèches de navigation (mode présentation) */
+.present__arrow {
+  display: none;
+  position: fixed;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  z-index: 210;
+  align-items: center;
+  justify-content: center;
+  width: 56px; height: 56px;
+  border: 1px solid var(--c-border-2);
+  border-radius: 999px;
+  background: var(--c-surface);
+  color: var(--c-ink);
+  cursor: pointer;
+}
+.present__arrow--prev { inset-inline-start: var(--space-4); }
+.present__arrow--next { inset-inline-end: var(--space-4); }
+.present__arrow:hover { background: var(--c-surface-2); border-color: var(--c-accent); }
+.present__arrow:disabled { opacity: .35; cursor: not-allowed; }
+html.is-presenting .present__arrow { display: inline-flex; }
 .todo {
   border-inline-start: 3px solid var(--c-ia-sans);
   background: var(--c-surface-2);
@@ -812,7 +774,7 @@ html.is-presenting .present__bar {
 }
 
 /* ============================================================
-   Page Corpus — sélecteur, étude de cas, diff avant/après.
+   Page Corpus – sélecteur, étude de cas, diff avant/après.
    ============================================================ */
 html:not(.js) .corpus-selecteur,
 html:not(.js) .diff-toggle { display: none; }

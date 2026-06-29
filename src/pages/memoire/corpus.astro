@@ -41,7 +41,7 @@ const niveauLabel: Record<string, string> = { fort: 'fort', moyen: 'moyen', faib
       <p class="corpus-selecteur__row">
         <label for="cas-select">Étudiant·e anonymisé·e</label>
         <select id="cas-select" data-cas-select>
-          {parcours.map((p) => <option value={p.id}>{p.id} — niveau {p.data.niveau}</option>)}
+          {parcours.map((p) => <option value={p.id}>{p.id} – niveau {p.data.niveau}</option>)}
         </select>
       </p>
       <p class="corpus-selecteur__note">Identifiants neutres, sans prénom (anonymisation).</p>

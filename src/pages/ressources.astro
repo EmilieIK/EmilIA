@@ -37,16 +37,28 @@ const fiches = [
 
     <section aria-labelledby="docs-h">
       <h2 id="docs-h">Documents à télécharger</h2>
-      {/* TODO Émilie : ajouter les fichiers (kit en PDF, diaporama de soutenance, PDF du mémoire)
-          dans public/ puis remplacer cette note par les liens de téléchargement. */}
-      <p class="prose">Le kit en PDF, le diaporama de la soutenance et le PDF du mémoire seront mis à disposition prochainement.</p>
+      <ul class="cards">
+        <li>
+          <a class="card" href={url('/kit-pedagogique-ia-fle.pdf')} download>
+            <h3 class="card__title">Le kit pédagogique (PDF)</h3>
+            <p class="card__desc">Le parcours complet en 8 étapes, à imprimer ou à partager (PDF).</p>
+          </a>
+        </li>
+      </ul>
+      <p class="prose">Le PDF du mémoire sera ajouté ultérieurement.</p>
+    </section>
+
+    <section aria-labelledby="video-h">
+      <h2 id="video-h">Vidéo : Emil'IA, la genèse du projet</h2>
+      {/* TODO Émilie : intégrer ici le lecteur de la vidéo une fois hébergée (YouTube/Vimeo) ; lien à fournir. */}
+      <p class="prose">La vidéo de présentation du projet sera bientôt disponible.</p>
     </section>
 
     <section aria-labelledby="citer-h">
       <h2 id="citer-h">Comment citer ce kit</h2>
       <aside class="callout">
         <p class="prose">
-          Icyk, É. <em>Production écrite avec l’IA — 8 étapes clés pour gagner en autonomie
+          Icyk, É. <em>Production écrite avec l’IA – 8 étapes clés pour gagner en autonomie
           rédactionnelle.</em> Université Grenoble Alpes, 2025-2026. Sous licence CC&nbsp;BY-SA&nbsp;4.0.
         </p>
       </aside>

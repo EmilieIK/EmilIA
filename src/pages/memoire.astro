@@ -79,17 +79,17 @@ const sigles = [
           Que devient le travail d'écriture lorsque l'IA peut corriger, reformuler et suggérer
           d'un simple clic ? Ce mémoire répond à partir du terrain : un scénario pédagogique de
           production écrite en FLE, conçu dans une démarche de recherche-action auprès
-          d'étudiant·es Erasmus+ de niveaux B1 et B2. Quinze parcours complets ont été analysés —
-          premiers jets, interactions avec l'IA, réécritures, versions finales — puis croisés avec
+          d'étudiant·es Erasmus+ de niveaux B1 et B2. Quinze parcours complets ont été analysés
+          (premiers jets, interactions avec l'IA, réécritures, versions finales), puis croisés avec
           un questionnaire étudiant et un entretien enseignant. Les résultats montrent moins un
           impact direct et isolable de l'IA qu'un déplacement du travail d'écriture : les textes se
           stabilisent, mais l'appropriation reste inégale ; les suggestions sont souvent reprises,
-          tandis que le recul critique demeure fragile. L'IA y apparaît alors comme le révélateur
+          tandis que le recul critique demeure fragile. L'IA apparaît ainsi comme un révélateur
           des compétences des apprenant·es et des implicites de l'enseignement. Elle ne devient
-          formatrice qu'à une condition : rester seconde, un appui qui propose sans décider.
-          L'autonomie, dès lors, n'est plus un état mais un geste. Révélateur, seconde, geste : ces
-          trois termes disent une même exigence, celle de rester auteur·rice d'un texte que
-          plusieurs voix contribuent désormais à produire.
+          formatrice qu'à condition de rester secondaire : un appui qui propose sans décider.
+          L'autonomie, dès lors, ne relève pas d'un état déjà acquis, mais d'une compétence à
+          construire. Dans cette écriture désormais traversée par plusieurs voix, l'enjeu demeure
+          le même : permettre à l'apprenant·e de rester auteur·rice de son texte.
         </p>
       </div>
 
@@ -101,6 +101,26 @@ const sigles = [
       <ul class="chips" lang="en" aria-labelledby="keywords-label">
         {keywords.map((k) => <li class="chip">{k}</li>)}
       </ul>
+
+      <p class="kw-label" id="abstract-label" lang="en">Abstract</p>
+      <div class="prose" lang="en" aria-labelledby="abstract-label">
+        <p>
+          What happens to the writing process when AI can correct, rephrase, and make suggestions
+          with a single click? This study addresses this question through practical experience: an
+          educational scenario for written production in French as a Foreign Language (FLE),
+          designed as part of an action-research project with Erasmus+ students at the B1 and B2
+          levels. Fifteen complete writing processes were analyzed (first drafts, interactions with
+          AI, rewrites, and final versions) and then cross-referenced with a student questionnaire
+          and a teacher interview. The results reveal not so much a direct, isolable impact of AI as
+          a shift in the writing process: the texts stabilize, but ownership remains uneven;
+          suggestions are often adopted, while critical distance remains fragile. AI thus appears as
+          a revealer of learners' skills and the implicit aspects of teaching. It becomes formative
+          only under one condition: remaining secondary, a support that suggests without deciding.
+          Autonomy, therefore, is not a state that has already been attained, but a skill to be
+          developed. In this writing process, now shaped by multiple voices, the challenge remains
+          the same: to enable the learner to remain the author of their own text.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -139,9 +159,9 @@ const sigles = [
       <p class="kw-label">Introduction</p>
 
       {parties.map((p) => (
-        <Disclosure anchor={p.id} level={3} label={`Partie ${p.data.numero} — ${p.data.titre}`}>
+        <Disclosure anchor={p.id} level={3} label={`Partie ${p.data.numero} – ${p.data.titre}`}>
           {p.data.chapitres.map((ch) => (
-            <Disclosure anchor={`ch-${ch.num}`} level={4} label={`Chapitre ${ch.num} — ${ch.titre}`}>
+            <Disclosure anchor={`ch-${ch.num}`} level={4} label={`Chapitre ${ch.num} – ${ch.titre}`}>
               <ul class="disclosure__sections">
                 {ch.sections.map((sec) => <li>{sec}</li>)}
               </ul>

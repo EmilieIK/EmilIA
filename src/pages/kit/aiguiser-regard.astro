@@ -1,105 +1,49 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { getCollection } from 'astro:content';
 import { url } from '../../lib/paths';
-
-const exos = await getCollection('exercicesAiguiser');
-const exo = exos[0];
-const jetons = exo.data.jetons;
-
-const cats = [
-  { v: 'accord', l: 'Accord' },
-  { v: 'conjugaison', l: 'Conjugaison' },
-  { v: 'lexique', l: 'Lexique' },
-  { v: 'connecteur', l: 'Connecteur' },
-  { v: 'syntaxe', l: 'Syntaxe' },
-];
-const isPunct = (t: string) => /^[,.;:!?…]$/.test(t);
-const espace = (i: number, t: string) => (i > 0 && !isPunct(t) ? ' ' : '');
-const corriges = jetons.filter((j) => j.candidat && j.erreur);
 ---
-<Base title="Aiguiser son regard" description="Un exercice interactif pour développer l'auto-correction et la lecture critique en repérant des erreurs fréquentes.">
+<Base title="Aiguiser son regard" description="La méthodologie pour développer l'auto-correction et la lecture critique en repérant des erreurs fréquentes (préparation à l'étape 3 du kit).">
   <section class="section container">
     <nav aria-label="Fil d'Ariane" class="kw-label">
       <a href={url('/kit')}>Le kit</a> · <a href={url('/kit#etape-regards-croises')}>Étape 3</a> · Aiguiser son regard
     </nav>
-    <h1>Aiguiser son regard <span class="badge--modulable">exemple fictif</span></h1>
+    <h1>Aiguiser son regard</h1>
     <p class="prose">
-      Avant de relire le texte d'un·e camarade (étape 3), entraînez-vous à repérer des erreurs
-      fréquentes. Le texte ci-dessous est un <strong>exemple fictif</strong> ;
-      {/* TODO Émilie : remplacer par un ou des textes-exemples réels adaptés au niveau B1-B2. */}
-      il contient plusieurs erreurs à débusquer, réparties en cinq catégories.
+      Avant de relire le texte d'un·e camarade (étape 3), cette activité développe
+      l'auto-correction et la lecture critique en apprenant à repérer des erreurs fréquentes.
     </p>
 
-    <h2>Comment faire</h2>
-    <ul class="prose">
-      <li>Choisissez une catégorie d'erreur, puis cliquez (ou validez au clavier) sur un mot suspect pour le classer.</li>
-      <li>Au clavier : <kbd>Tab</kbd> pour atteindre un mot, <kbd>Entrée</kbd> ou <kbd>Espace</kbd> pour le classer dans la catégorie choisie.</li>
-      <li>Le statut (juste, à revoir) s'affiche en toutes lettres. Vous pouvez reclasser un mot tant que vous n'avez pas révélé les réponses.</li>
-    </ul>
-
-    <div class="ar" data-ar hidden>
-      <fieldset class="ar-cats">
-        <legend>Catégorie à appliquer</legend>
-        {cats.map((c, i) => (
-          <label class="filtre"><input type="radio" name="ar-cat" value={c.v} checked={i === 0} /> <span>{c.l}</span></label>
-        ))}
-        <label class="filtre"><input type="radio" name="ar-cat" value="correct" /> <span>Mot correct</span></label>
-      </fieldset>
-
-      <div class="ar-timer">
-        <label>Minuteur (défi chrono) :
-          <select data-ar-duree>
-            <option value="0">désactivé</option>
-            <option value="300">5 minutes</option>
-            <option value="600">10 minutes</option>
-          </select>
-        </label>
-        <button type="button" class="btn btn--secondary" data-ar-start>Démarrer</button>
-        <button type="button" class="btn btn--secondary" data-ar-pause hidden>Pause</button>
-        <button type="button" class="btn btn--secondary" data-ar-treset>Réinitialiser le minuteur</button>
-        <output class="ar-chrono" data-ar-chrono aria-live="off">--:--</output>
-      </div>
-
-      <p class="ar-text" data-ar-text>
-        {jetons.map((j, i) => (
-          <>{espace(i, j.texte)}{j.candidat
-            ? <button type="button" class="ar-token" data-ar-token data-answer={j.erreur ? j.erreur.categorie : 'correct'} aria-pressed="false" aria-label={`${j.texte}, classer dans la catégorie choisie`}>{j.texte}</button>
-            : <span>{j.texte}</span>}</>
-        ))}
+    <h2>La méthodologie</h2>
+    <div class="prose">
+      <p>
+        On travaille à partir d'un texte comportant des erreurs, à repérer puis à classer par
+        catégories :
       </p>
-
-      <p class="ar-statut" id="ar-statut" role="status" aria-live="polite" aria-atomic="true"></p>
-      <p class="ar-score" data-ar-score></p>
-
-      <h3>Bingo des erreurs</h3>
-      <ul class="ar-bingo" data-ar-bingo>
-        {cats.map((c) => (
-          <li data-bingo={c.v}>{c.l} : <span class="ar-bingo__state" data-bingo-state>pas encore</span></li>
-        ))}
+      <ul>
+        <li><strong>accords</strong> (sujet / verbe, nom / adjectif)</li>
+        <li><strong>conjugaisons</strong></li>
+        <li><strong>lexique</strong></li>
+        <li><strong>connecteurs logiques</strong></li>
+        <li><strong>syntaxe</strong></li>
       </ul>
-
-      <div class="ar-actions">
-        <button type="button" class="btn btn--primary" data-ar-reveal>Révéler les réponses</button>
-        <button type="button" class="btn btn--secondary" data-ar-restart>Recommencer</button>
-      </div>
+      <p>
+        Le repérage se fait en binôme, à l'aide d'une grille simplifiée (cocher, annoter), suivi
+        d'une mise en commun : quelles erreurs ont été les plus repérées ? lesquelles sont passées
+        inaperçues ?
+      </p>
     </div>
 
-    <section class="ar-fallback" aria-labelledby="ar-fb-h">
-      <h2 id="ar-fb-h">Texte et corrigé</h2>
-      <p class="prose ar-fallback__texte">{jetons.map((j, i) => `${espace(i, j.texte)}${j.texte}`).join('')}</p>
-      <h3>Corrigé</h3>
-      <ol class="prose">
-        {corriges.map((j) => (
-          <li><strong>« {j.texte} »</strong> — {j.erreur!.categorie} : {j.erreur!.correction}. {j.erreur!.explication}</li>
-        ))}
-      </ol>
-    </section>
+    <aside class="callout" aria-labelledby="variantes-h">
+      <h2 id="variantes-h" class="callout__title">Variantes ludiques</h2>
+      <ul class="prose">
+        <li><strong>Bingo des erreurs</strong> : une grille à cocher, on lève la main quand une ligne est complète.</li>
+        <li><strong>Défi chrono</strong> : cinq minutes pour repérer un maximum d'erreurs, cinq minutes pour les classer.</li>
+      </ul>
+      <p>À proposer juste avant l'étape 3 (Regards croisés).</p>
+    </aside>
+
+    <p class="kw-label">L'outil interactif de repérage sera complété ultérieurement.</p>
 
     <p class="prose"><a href={url('/kit#etape-regards-croises')}>Revenir à l'étape 3 du kit</a></p>
   </section>
 </Base>
-
-<script>
-  import '../../scripts/aiguiser-regard.ts';
-</script>
