@@ -26,33 +26,36 @@ const total = diapos.length;
   <div id="diapos" class="diapos">
     <div class="present__stage" data-stage>
       {diapos.map((d) => (
-        <section class="section container diapo" id={`diapo-${d.data.numero}`} data-slide aria-labelledby={`diapo-${d.data.numero}-h`}>
-          <p class="diapo__kicker"><span class="visually-hidden">Diapositive </span>{d.data.numero}<span aria-hidden="true"> / {total}</span></p>
-          <h2 id={`diapo-${d.data.numero}-h`}>{d.data.titre}</h2>
-          {d.data.sousTitre && <p class="diapo__soustitre">{d.data.sousTitre}</p>}
-          {d.data.meta.length > 0 && (
-            <div class="diapo__identite">
-              {d.data.meta.map((m) => <p>{m}</p>)}
-            </div>
-          )}
-          {d.data.blocs.map((b) => (
-            b.items.length === 0 && b.soustitre
-              ? <p class="diapo__transition">{b.soustitre}</p>
-              : <div class="diapo__bloc">
-                  {b.soustitre && <h3>{b.soustitre}</h3>}
-                  <ul class="diapo__liste">{b.items.map((i) => <li>{i}</li>)}</ul>
-                </div>
-          ))}
-          {d.data.signature.length > 0 && (
-            <ul class="signature" aria-label="Fil conducteur">
-              {d.data.signature.map((s) => <li>{s}</li>)}
-            </ul>
-          )}
+        <section class="diapo" id={`diapo-${d.data.numero}`} data-slide aria-labelledby={`diapo-${d.data.numero}-h`}>
+          <div class="diapo__inner">
+            <p class="diapo__kicker"><span class="visually-hidden">Diapositive </span>{d.data.numero}<span aria-hidden="true"> / {total}</span></p>
+            <h2 id={`diapo-${d.data.numero}-h`}>{d.data.titre}</h2>
+            {d.data.sousTitre && <p class="diapo__soustitre">{d.data.sousTitre}</p>}
+            {d.data.meta.length > 0 && (
+              <div class="diapo__identite">
+                {d.data.meta.map((m) => <p>{m}</p>)}
+              </div>
+            )}
+            {d.data.blocs.map((b) => (
+              b.items.length === 0 && b.soustitre
+                ? <p class="diapo__transition">{b.soustitre}</p>
+                : <div class="diapo__bloc">
+                    {b.soustitre && <h3>{b.soustitre}</h3>}
+                    <ul class="diapo__liste">{b.items.map((i) => <li>{i}</li>)}</ul>
+                  </div>
+            ))}
+            {d.data.signature.length > 0 && (
+              <ul class="signature" aria-label="Fil conducteur">
+                {d.data.signature.map((s) => <li>{s}</li>)}
+              </ul>
+            )}
+          </div>
         </section>
       ))}
     </div>
 
     <p class="visually-hidden" role="status" aria-live="polite" aria-atomic="true" data-present-live></p>
+    <p class="deck-counter" data-deck-counter aria-hidden="true"><span data-deck-now>1</span> / {total}</p>
 
     <button type="button" class="present__arrow present__arrow--prev" data-present-prev aria-label="Diapositive précédente">
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
