@@ -83,30 +83,4 @@ const soutenance = defineCollection({
   }),
 });
 
-// Corpus anonymisé – parcours d'écriture de 15 étudiant·es (annexe 3 du mémoire).
-// Identifiants NEUTRES (B1-01…B2-08), aucun prénom ni élément ré-identifiant.
-// Les productions manuscrites (1er jet, réécritures) sont des images non transcriptibles ;
-// on présente donc, par parcours, l'analyse de synthèse, la grille codée et un extrait
-// d'échange avec l'IA recentré sur la langue.
-const corpus = defineCollection({
-  loader: file('src/data/corpus.json'),
-  schema: z.object({
-    niveau: z.enum(['B1', 'B2']),
-    synthese: z.string(),
-    grille: z.array(
-      z.object({
-        etape: z.string(),
-        points: z.array(z.string()),
-      })
-    ),
-    echangeIA: z
-      .object({
-        contexte: z.string(),
-        etudiant: z.string(),
-        ia: z.string(),
-      })
-      .nullable(),
-  }),
-});
-
-export const collections = { glossaire, plan, etapes, prompts, questions, soutenance, corpus };
+export const collections = { glossaire, plan, etapes, prompts, questions, soutenance };

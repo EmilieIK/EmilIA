@@ -798,48 +798,44 @@ html:not(.js) .deck__bar { display: none; }
 }
 
 /* ============================================================
-   Page Corpus – sélecteur, étude de cas, diff avant/après.
+   Page Résultats clés – synthèse agrégée du corpus (données anonymes).
    ============================================================ */
-html:not(.js) .corpus-selecteur { display: none; }
-/* Avec JS : un seul cas visible (évite le flash de tous les parcours au chargement) */
-html.js [data-cas-panel] { display: none; }
-html.js [data-cas-panel].is-active { display: block; }
+.table-wrap { overflow-x: auto; }
 
-.corpus-selecteur { background: var(--c-surface-2); border-radius: var(--radius-lg); padding: var(--space-6); margin-block: var(--space-6); }
-.corpus-selecteur__row { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-3); align-items: center; }
-.corpus-selecteur__row label { font-weight: 700; }
-.corpus-selecteur select {
-  font: inherit;
-  min-height: 44px;
-  padding: var(--space-2) var(--space-3);
+/* Groupes de chiffres (stat-callouts) */
+.res-groupe { margin-block-start: var(--space-8); }
+.res-groupe__titre { font-size: var(--step-0); color: var(--c-accent); margin-block-end: var(--space-3); }
+.res-fleche { color: var(--c-accent-ink); }
+
+/* Cartes sobres (statiques – pas d'effet cliquable, contrairement à .card) */
+.res-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  height: 100%;
+  max-width: none;
+  padding: var(--space-6);
+  background: var(--c-surface);
   border: 1px solid var(--c-border-2);
   border-radius: var(--radius);
-  background: var(--c-surface);
-  color: var(--c-ink);
 }
-.corpus-selecteur__note { color: var(--c-ink-soft); font-size: var(--step--1); margin-block-start: var(--space-2); }
+@media (min-width: 1024px) { .cards--3 { grid-template-columns: repeat(3, 1fr); } }
 
-.cas-entete .card__index { font-size: var(--step-1); }
-.cas-niveau { font-family: var(--font-sans); font-size: var(--step--1); font-weight: 400; color: var(--c-ink-soft); }
-.cas-souslabel { font-family: var(--font-sans); font-size: var(--step--1); font-weight: 400; font-style: italic; color: var(--c-ink-soft); }
+/* Concepts de clôture */
+.concepts-fin { list-style: none; padding: 0; display: grid; gap: var(--space-6); margin-block-start: var(--space-6); }
+.concepts-fin__item { max-width: none; border-inline-start: 3px solid var(--c-accent); padding-inline-start: var(--space-4); }
+.concepts-fin__nom { font-family: var(--font-mono); font-size: var(--step--1); letter-spacing: .08em; text-transform: uppercase; color: var(--c-accent-ink); margin: 0; max-width: none; }
+.concepts-fin__desc { font-family: var(--font-serif); font-size: var(--step-1); color: var(--c-ink); margin-block-start: var(--space-1); }
 
-/* Sujet d'écriture (repliable) */
-.corpus-sujet { margin-block-start: var(--space-3); max-width: var(--measure); border: 1px solid var(--c-border); border-radius: var(--radius); background: var(--c-surface-2); padding: var(--space-2) var(--space-4); }
-.corpus-sujet summary { cursor: pointer; font-family: var(--font-mono); font-size: var(--step--1); color: var(--c-ink); }
-.corpus-sujet p { margin-block-start: var(--space-3); }
-
-/* Grille d'analyse codée (par étape) */
-.grille-codee-v2 { display: grid; gap: var(--space-5); margin-block-start: var(--space-2); }
-.grille-etape__titre { font-size: var(--step-0); color: var(--c-accent); margin-block-end: var(--space-2); }
-.grille-points { list-style: none; padding: 0; display: grid; gap: var(--space-2); }
-.grille-points li { max-width: var(--measure); }
-.grille-points code { font-family: var(--font-mono); font-size: var(--step--1); color: var(--c-ink); background: var(--c-surface-2); border: 1px solid var(--c-border); border-radius: 6px; padding: 0 var(--space-1); margin-inline-end: var(--space-1); white-space: nowrap; }
-
-/* Échange avec l'IA */
-.table-wrap { overflow-x: auto; }
-.ia-echange { padding: var(--space-4); border: 1px solid var(--c-border); border-radius: var(--radius); background: var(--c-surface); max-width: none; margin-block-start: var(--space-2); }
-.ia-echange p { max-width: none; margin-block: var(--space-2); }
-.ia-echange__role { font-weight: 700; color: var(--c-accent); }
+/* Note RGPD (pied de page) */
+.res-note {
+  font-size: var(--step--1);
+  color: var(--c-ink-soft);
+  max-width: var(--measure);
+  border-inline-start: 3px solid var(--c-border-2);
+  padding-inline-start: var(--space-4);
+  margin-block-end: var(--space-6);
+}
 
 /* ----- Nav mobile ----- */
 @media (max-width: 767px) {

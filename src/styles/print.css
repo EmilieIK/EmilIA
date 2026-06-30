@@ -51,11 +51,6 @@
   .deck__art { max-width: none !important; }
   .deck__art svg { box-shadow: none !important; }
 
-  /* Corpus : imprimer TOUS les parcours, un par page */
-  .corpus-selecteur { display: none !important; }
-  .cas { display: block !important; break-before: page; break-inside: avoid; }
-  .cas:first-of-type { break-before: auto; }
-  .corpus-sujet[open] summary { list-style: none; }
-  .corpus-sujet p { display: block !important; }
-  .grille-etape, .ia-echange { break-inside: avoid; }
+  /* Résultats clés : cartes et concepts non coupés */
+  .res-card, .concepts-fin__item, .stat { break-inside: avoid; }
 }

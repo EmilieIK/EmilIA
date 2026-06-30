@@ -1,112 +1,155 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { getCollection } from 'astro:content';
 import { url } from '../../lib/paths';
 
-const parcours = (await getCollection('corpus')).sort((a, b) => a.id.localeCompare(b.id));
+// Synthèse agrégée du corpus. AUCUNE donnée individuelle : pas de prénom ni
+// d'identifiant de parcours, pas de métadonnée (langue, nationalité, ville, statut),
+// pas de verbatim attribuable. Le corpus détaillé reste dans le mémoire (non publié).
 
-const tacheTitre: Record<string, string> = {
-  B1: 'Sujet · niveau B1.2 · 180 à 220 mots',
-  B2: 'Sujet · niveau B2.1 (Erasmus+) · 230 à 260 mots',
-};
-const tache: Record<string, string> = {
-  B1: "Racontez une expérience importante de votre vie récente, vécue dans un contexte différent de celui de votre pays ou de votre environnement habituel (études, travail, mobilité, séjour à l'étranger, voyage long, etc.). Vous expliquerez comment cette expérience s'est construite au quotidien, en évoquant par exemple votre parcours d'études ou professionnel, votre manière de vivre et de vous loger, les relations sociales développées, votre rapport à la nourriture et aux habitudes culturelles, ou encore les déplacements qui ont marqué cette période.",
-  B2: "Racontez votre expérience Erasmus en évoquant les moments marquants de votre séjour, vos attentes avant le départ, les difficultés rencontrées ainsi que ce que cette expérience vous a apporté sur le plan linguistique et personnel. Votre texte devra être clair, organisé et utiliser des connecteurs logiques variés.",
-};
+const chiffres = [
+  {
+    titre: "Ce que l'IA a pris en charge",
+    stats: [
+      { label: 'correction demandée', num: '15/15' },
+      { label: 'reformulation', num: '14/15' },
+      { label: 'organisation du texte', num: '2/15' },
+    ],
+  },
+  {
+    titre: 'Comment les suggestions ont été reçues',
+    stats: [
+      { label: 'reprise directe', num: '10/15' },
+      { label: 'acceptation peu critique', num: '11/15' },
+      { label: 'rejet dans les traces', num: '0/15' },
+    ],
+  },
+  {
+    titre: 'La qualité des demandes (prompts)',
+    stats: [
+      { label: 'prompt précis & contextualisé', num: 'B1 1/7 · B2 7/8' },
+      { label: 'prompt élaboré observé', num: '0/15' },
+    ],
+  },
+];
 
-const splitParas = (s: string) => s.split('\n\n').map((p) => p.trim()).filter(Boolean);
-const splitPoint = (pt: string): [string, string] => {
-  const i = pt.indexOf(' : ');
-  return i === -1 ? ['', pt] : [pt.slice(0, i), pt.slice(i + 3)];
-};
+const dementis = [
+  {
+    num: 'Démenti 1',
+    titre: "L'effet de l'IA n'est pas isolable du cadrage",
+    desc: "Même outil, même scénario, deux groupes : des usages opposés, selon ce que l'enseignant·e met au premier plan.",
+  },
+  {
+    num: 'Démenti 2',
+    titre: "L'autonomie : une compétence à construire, pas un état",
+    desc: 'Usage de surface, reprises fréquentes, rares mises à distance.',
+  },
+  {
+    num: 'Démenti 3',
+    titre: 'Un plafond dans les usages observés',
+    desc: "On corrige et on reformule, on ne réécrit pas encore : la littératie de l'IA reste en construction.",
+  },
+];
+
+const phenomenes = [
+  {
+    titre: 'La forme plausible mais fausse',
+    desc: "Interrogée sur un mot inexistant, l'IA propose une correction utile mais affirme à tort que le mot existe : elle produit de la forme sans comprendre.",
+  },
+  {
+    titre: 'Le « dialogue de sourds »',
+    desc: "Sans les mots pour nommer sa difficulté (le métalangage), l'échange avec l'IA tourne court.",
+  },
+  {
+    titre: 'Le « texte lissé »',
+    desc: "Un texte devient plus correct, mais perd une formulation personnelle, une voix : l'amélioration peut aussi appauvrir.",
+  },
+];
+
+const concepts = [
+  { nom: 'Révélateur', desc: "l'IA ne crée rien : elle révèle nos angles morts." },
+  { nom: 'Instrument secondaire', desc: "l'IA propose, l'enseignant·e accompagne, l'apprenant·e décide." },
+  { nom: 'Autonomie à construire', desc: 'non un état, mais une compétence.' },
+];
 ---
-<Base title="Exploration du corpus" description="Le corpus du mémoire : 15 parcours d'écriture anonymisés (B1 et B2), avec l'analyse de synthèse, la grille d'analyse codée et un échange avec l'IA.">
+<Base title="Résultats clés" description="La synthèse du corpus : ce que l'IA a pris en charge, comment les suggestions ont été reçues, trois démentis, trois phénomènes et trois concepts. Données agrégées et anonymes.">
   <section class="section container">
     <nav aria-label="Fil d'Ariane" class="kw-label">
-      <a href={url('/memoire')}>Le mémoire</a> · Exploration du corpus
+      <a href={url('/memoire')}>Le mémoire</a> · Résultats clés
     </nav>
-    <h1>Exploration du corpus</h1>
-
-    <aside class="callout" role="note" aria-labelledby="corpus-note-h">
-      <p id="corpus-note-h" class="callout__title">15 parcours, deux groupes, des données anonymisées</p>
-      <p class="prose">
-        Ce corpus rassemble les parcours d'écriture de quinze étudiant·es – sept de niveau B1, huit de
-        niveau B2 – recueillis lors de l'expérimentation du kit, dans le cadre d'une recherche-action.
-        Il permet de comparer deux degrés de guidage enseignant : dans le groupe B1, les erreurs ont été
-        codées et signalées par l'enseignante dès le premier jet ; dans le groupe B2, le repérage reposait
-        surtout sur la correction entre pairs avant le recours à l'IA.
-      </p>
-      <p class="prose">
-        Les productions manuscrites ne sont pas reproduites. Pour chaque parcours – désigné par un
-        <strong>identifiant neutre, sans prénom</strong> – on présente l'<strong>analyse de synthèse</strong>,
-        la <strong>grille d'analyse codée</strong> et un <strong>extrait d'échange avec l'IA</strong> recentré
-        sur la langue. Les codes de la grille renvoient aux étapes du kit pédagogique.
-      </p>
-    </aside>
-
-    <div class="corpus-selecteur" role="region" aria-labelledby="sel-h">
-      <h2 id="sel-h">Choisir un parcours à explorer</h2>
-      <p class="corpus-selecteur__row">
-        <label for="cas-select">Parcours anonymisé</label>
-        <select id="cas-select" data-cas-select>
-          {parcours.map((p) => <option value={p.id}>{p.id} – niveau {p.data.niveau}</option>)}
-        </select>
-      </p>
-      <p class="corpus-selecteur__note">Identifiants neutres, sans prénom (anonymisation).</p>
-      <p class="visually-hidden" role="status" aria-live="polite" aria-atomic="true" data-cas-live></p>
-    </div>
+    <h1>Résultats clés</h1>
+    <p class="prose">
+      15 parcours d'écriture complets (7 en B1, 8 en B2), une même tâche déclinée selon le niveau,
+      analysés en recherche-action et triangulés (traces écrites + questionnaire + entretien
+      enseignant). Cette page en présente la synthèse ; le corpus détaillé figure dans le mémoire.
+    </p>
   </section>
 
-  {parcours.map((p) => (
-    <article class="section container cas" data-cas-panel data-cas-id={p.id} aria-labelledby={`cas-${p.id}-h`}>
-      <header class="cas-entete">
-        <p class="card__index" aria-hidden="true">{p.id}</p>
-        <h2 id={`cas-${p.id}-h`} tabindex="-1">Parcours {p.id} <span class="cas-niveau">niveau {p.data.niveau}</span></h2>
-        <details class="corpus-sujet">
-          <summary>{tacheTitre[p.data.niveau]}</summary>
-          <p class="prose">{tache[p.data.niveau]}</p>
-        </details>
-      </header>
-
-      <section aria-labelledby={`syn-${p.id}-h`}>
-        <h3 id={`syn-${p.id}-h`}>Analyse de synthèse</h3>
-        {splitParas(p.data.synthese).map((para) => <p class="prose">{para}</p>)}
-      </section>
-
-      <section aria-labelledby={`gr-${p.id}-h`}>
-        <h3 id={`gr-${p.id}-h`}>Grille d'analyse codée</h3>
-        <div class="grille-codee-v2">
-          {p.data.grille.map((g) => (
-            <div class="grille-etape">
-              <h4 class="grille-etape__titre">{g.etape}</h4>
-              <ul class="grille-points">
-                {g.points.map((pt) => {
-                  const [code, reste] = splitPoint(pt);
-                  return <li>{code && <code>{code}</code>} {reste}</li>;
-                })}
-              </ul>
-            </div>
+  <section class="section container" aria-labelledby="chiffres-h">
+    <h2 id="chiffres-h">Les chiffres</h2>
+    {chiffres.map((g) => (
+      <div class="res-groupe">
+        <h3 class="res-groupe__titre">{g.titre}</h3>
+        <dl class="stats">
+          {g.stats.map((s) => (
+            <div class="stat"><dt class="stat__label">{s.label}</dt><dd class="stat__num">{s.num}</dd></div>
           ))}
-        </div>
-      </section>
+        </dl>
+      </div>
+    ))}
 
-      {p.data.echangeIA && (
-        <section aria-labelledby={`ia-${p.id}-h`}>
-          <h3 id={`ia-${p.id}-h`}>Un échange avec l'IA <span class="cas-souslabel">{p.data.echangeIA.contexte}</span></h3>
-          <div class="ia-echange">
-            <p class="ia-echange__prompt"><span class="ia-echange__role">Étudiant·e :</span> {p.data.echangeIA.etudiant}</p>
-            <p class="ia-echange__reponse"><span class="ia-echange__role">IA :</span> {p.data.echangeIA.ia}</p>
-          </div>
-        </section>
-      )}
-    </article>
-  ))}
+    <aside class="callout" aria-labelledby="declare-h">
+      <p id="declare-h" class="callout__title">Déclaré vs observé</p>
+      <p class="prose">
+        <strong>16/18</strong> déclarent savoir formuler des demandes efficaces  ≠  <strong>0</strong>
+        prompt élaboré dans les traces.
+      </p>
+      <p class="prose res-fleche"><em>→ le sentiment de compétence devance la pratique.</em></p>
+    </aside>
+  </section>
+
+  <section class="section container" aria-labelledby="dementis-h">
+    <h2 id="dementis-h">Les trois démentis</h2>
+    <ul class="cards cards--3">
+      {dementis.map((d) => (
+        <li class="res-card">
+          <span class="card__index" aria-hidden="true">{d.num}</span>
+          <h3 class="card__title">{d.titre}</h3>
+          <p class="card__desc">{d.desc}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="section container" aria-labelledby="phenomenes-h">
+    <h2 id="phenomenes-h">Trois phénomènes observés</h2>
+    <ul class="cards cards--3">
+      {phenomenes.map((p) => (
+        <li class="res-card">
+          <h3 class="card__title">{p.titre}</h3>
+          <p class="card__desc">{p.desc}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="section container" aria-labelledby="concepts-h">
+    <h2 id="concepts-h">Les trois concepts</h2>
+    <ul class="concepts-fin">
+      {concepts.map((c) => (
+        <li class="concepts-fin__item">
+          <p class="concepts-fin__nom">{c.nom}</p>
+          <p class="concepts-fin__desc">{c.desc}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
 
   <section class="section container">
+    <p class="res-note">
+      Les productions des étudiant·es ne sont pas reproduites. Le corpus complet et son analyse
+      figurent dans le mémoire, non publié, conformément au RGPD et au consentement recueilli pour un
+      usage de recherche.
+    </p>
     <p class="prose"><a href={url('/memoire')}>Revenir au mémoire</a></p>
   </section>
 </Base>
-
-<script>
-  import '../../scripts/corpus.ts';
-</script>
