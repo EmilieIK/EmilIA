@@ -495,7 +495,6 @@ html:not(.js) .disclosure__chevron { display: none; }
 }
 .fil-rouge__text { display: flex; flex-direction: column; gap: var(--space-1); }
 .fil-rouge__name { font-weight: 700; }
-.fil-rouge__detail { font-size: var(--step--1); color: var(--c-ink-soft); }
 .fil-rouge__note { color: var(--c-ink-soft); font-size: var(--step--1); margin-block-start: var(--space-3); }
 @media (min-width: 768px) {
   .fil-rouge { flex-direction: row; flex-wrap: wrap; align-items: stretch; }

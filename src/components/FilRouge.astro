@@ -4,12 +4,12 @@
 // ancres natives (le JS de Disclosure ne fait qu'ouvrir le panneau cible).
 // TODO Émilie : valider le rattachement de chaque jalon au chapitre.
 const jalons = [
-  { nom: 'Terrain', detail: 'DEFI, B1/B2, 1re expérience', ch: 2 },
-  { nom: 'Problématisation', detail: 'usages hétérogènes, absence de cadre', ch: 3 },
-  { nom: 'Cadre théorique', detail: "écriture en FLE · littératie de l'IA · agentivité · médiation", ch: 5 },
-  { nom: 'Expérimentation', detail: 'kit 8 étapes, recherche-action', ch: 4 },
-  { nom: 'Résultats', detail: 'révélateur · seconde · geste', ch: 11 },
-  { nom: 'Recul', detail: 'limites, sobriété, prolongements', ch: 14 },
+  { nom: 'Terrain', ch: 2 },
+  { nom: 'Problématisation', ch: 3 },
+  { nom: 'Cadre théorique', ch: 5 },
+  { nom: 'Expérimentation', ch: 4 },
+  { nom: 'Résultats', ch: 11 },
+  { nom: 'Recul', ch: 14 },
 ];
 ---
 <nav class="fil-rouge-wrap" aria-label="Fil rouge du mémoire" id="fil-rouge">
@@ -20,7 +20,6 @@ const jalons = [
           <span class="fil-rouge__rank" aria-hidden="true">{i + 1}</span>
           <span class="fil-rouge__text">
             <span class="fil-rouge__name">{j.nom}</span>
-            <span class="fil-rouge__detail">{j.detail}</span>
             <span class="visually-hidden"> – aller au chapitre {j.ch}</span>
           </span>
         </a>
