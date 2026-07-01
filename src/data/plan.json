@@ -63,15 +63,15 @@
         "sections": [
           "De la littératie numérique à l'appropriation de l'IA",
           "Définir une littératie de l'IA pour l'écriture",
-          "Prompter en FLE (activité langagière et métalinguistique)"
+          "Prompter en FLE : une activité langagière et métalinguistique"
         ]
       },
       {
         "num": 7,
         "titre": "Écrire avec l'IA : apports, limites et tensions",
         "sections": [
-          "Apports dans le processus d'écriture",
-          "Performance textuelle vs apprentissage réel",
+          "Identifier les apports de l'IA dans le processus d'écriture",
+          "Distinguer performance textuelle et apprentissage réel",
           "Préserver l'agentivité et la voix"
         ]
       },
@@ -79,7 +79,7 @@
         "num": 8,
         "titre": "Encadrer l'IA : de la médiation à l'autonomie assistée",
         "sections": [
-          "La médiation enseignante comme condition",
+          "Faire de la médiation enseignante une condition",
           "Scénariser les usages et rendre le processus visible",
           "Évaluer le processus, construire une autonomie assistée"
         ]
@@ -111,7 +111,7 @@
         "num": 11,
         "titre": "Ce que l'IA améliore, ce qu'elle déplace",
         "sections": [
-          "Des progrès surtout locaux",
+          "Des progrès visibles, mais surtout locaux",
           "Les limites de l'amélioration"
         ]
       },
@@ -120,7 +120,7 @@
         "titre": "Formuler, sélectionner, refuser",
         "sections": [
           "La formulation de requêtes comme activité langagière",
-          "Rester auteur·rice (agentivité)",
+          "Rester auteur·rice : vers une agentivité dans l'écriture",
           "Une littératie de l'IA en construction"
         ]
       },
@@ -138,7 +138,7 @@
         "sections": [
           "Limites de l'expérience",
           "Prolongements et perspectives",
-          "Synthèse (l'IA comme révélateur)",
+          "Synthèse : l'IA comme révélateur",
           "Portée"
         ]
       }
