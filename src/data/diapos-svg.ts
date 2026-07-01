@@ -82,7 +82,7 @@ export const diaposSvg: string[] = [
 <text x="58" y="226" font-family="system-ui,sans-serif" font-size="12" font-weight="700" letter-spacing="1" fill="#1F5C63">DÉMENTI 2 · AUTONOMIE À CONSTRUIRE</text>
 <text x="58" y="256" font-family="Georgia,serif" font-size="17" fill="#1B1B1A">Une compétence à construire, pas un état</text>
 <text x="58" y="284" font-family="system-ui,sans-serif" font-size="13" fill="#333330">usage en surface : correction <tspan font-weight="700" fill="#1F5C63">15/15</tspan> · organisation <tspan font-weight="700" fill="#1F5C63">2/15</tspan></text>
-<text x="58" y="306" font-family="system-ui,sans-serif" font-size="13" fill="#333330"><tspan font-weight="700" fill="#1F5C63">10/15</tspan> reprise directe · <tspan font-weight="700" fill="#1F5C63">11/15</tspan> sans recul · <tspan font-weight="700" fill="#1F5C63">0/15</tspan> rejet</text>
+<text x="58" y="306" font-family="system-ui,sans-serif" font-size="13" fill="#333330"><tspan font-weight="700" fill="#1F5C63">10/15</tspan> reprise directe · <tspan font-weight="700" fill="#1F5C63">11/15</tspan> acceptation peu critique · <tspan font-weight="700" fill="#1F5C63">0/15</tspan> rejet</text>
 <text x="58" y="328" font-family="system-ui,sans-serif" font-size="13" fill="#333330">Bélen <tspan font-weight="600" fill="#1F5C63">tient sa nuance</tspan> · Miriam <tspan font-weight="600" fill="#1F5C63">s'efface</tspan></text>
 <text x="58" y="356" font-family="Georgia,serif" font-size="13.5" font-style="italic" fill="#5A7A78">→ une autonomie fragile, étayée par l'enseignant·e</text>
 </svg>`,
