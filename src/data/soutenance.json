@@ -97,27 +97,27 @@
   {
     "id": "d7",
     "numero": 7,
-    "titre": "Recul, limites & « si c'était à refaire »",
+    "titre": "Apports, limites & « si c'était à refaire »",
     "blocs": [
-      { "soustitre": "Apports (au regard de la commande de stage)", "items": [
-        "un scénario opérationnel & transférable",
-        "le passage de l'enseignement à la conception",
-        "la mise au jour des impensés de ce scénario (voix, registre, réécriture)"
+      { "soustitre": "Apports (au regard de la commande)", "items": [
+        "scénario opérationnel & transférable",
+        "passage de l'enseignement à la conception",
+        "mise au jour des impensés de ce scénario (voix, registre, réécriture)"
       ] },
       { "soustitre": "Limites", "items": [
         "étude qualitative & située",
-        "effet de l'IA non isolable du cadrage",
-        "une mesure à un seul moment (comprendre ≠ déjà appliquer)",
-        "des modèles qui évoluent vite",
-        "empreinte écologique des modèles"
+        "effet non isolable du cadrage",
+        "mesure à un seul moment",
+        "modèles qui évoluent vite",
+        "empreinte écologique de l'IA"
       ] },
-      { "soustitre": "Si c'était à refaire / prolongements", "items": [
-        "interroger les apprenant·es à plusieurs étapes",
-        "entraîner au prompting & à l'évaluation des réponses",
-        "générer une remédiation validée",
-        "déplacer l'IA de la correction vers le discours",
-        "former les enseignant·es à concevoir des outils dédiés",
-        "susciter l'adhésion au projet d'écriture"
+      { "soustitre": "Si c'était à refaire", "items": [
+        "suivre l'évolution des représentations",
+        "former au prompting et au recul critique",
+        "générer une remédiation personnalisée",
+        "enseigner explicitement le discursif",
+        "former les enseignant·es à concevoir des outils",
+        "susciter l'adhésion au projet"
       ] },
       { "soustitre": "", "items": [
         "Moins une démonstration qu'une enquête à poursuivre – ailleurs, sur d'autres niveaux et d'autres langues."

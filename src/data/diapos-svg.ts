@@ -104,37 +104,37 @@ export const diaposSvg: string[] = [
 <line x1="44" y1="312" x2="636" y2="312" stroke="#E4DFD2"/>
 <text x="340" y="344" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#262624">H1 <tspan font-weight="600" fill="#1F5C63">✓</tspan>   ·   H2 <tspan font-weight="600" fill="#1F5C63">✓</tspan>   ·   H3 partiellement</text>
 </svg>`,
-  `<svg viewBox="0 0 680 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diapo 7, recul, limites et prolongements">
+  `<svg viewBox="0 0 680 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diapo 7, apports, limites et prolongements">
 <rect x="4" y="4" width="672" height="392" rx="14" fill="#F6F4EE" stroke="#DAD5C8"/>
-<text x="40" y="44" font-family="Georgia,serif" font-size="17" fill="#1B1B1A">Recul, limites &amp; « si c'était à refaire »</text>
+<text x="40" y="44" font-family="Georgia,serif" font-size="17" fill="#1B1B1A">Apports, limites &amp; « si c'était à refaire »</text>
 <line x1="238" y1="62" x2="238" y2="322" stroke="#E4DFD2"/><line x1="446" y1="62" x2="446" y2="322" stroke="#E4DFD2"/>
 <text x="40" y="84" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1F5C63">Apports</text>
 <text x="40" y="98" font-family="system-ui,sans-serif" font-size="10.5" font-style="italic" fill="#8A8A82">au regard de la commande</text>
-<circle cx="42" cy="120" r="2" fill="#1F5C63"/><text x="50" y="124" font-family="system-ui,sans-serif" font-size="11" fill="#333330">un scénario opérationnel</text>
+<circle cx="42" cy="120" r="2" fill="#1F5C63"/><text x="50" y="124" font-family="system-ui,sans-serif" font-size="11" fill="#333330">scénario opérationnel</text>
 <text x="50" y="137" font-family="system-ui,sans-serif" font-size="11" fill="#333330">&amp; transférable</text>
-<circle cx="42" cy="159" r="2" fill="#1F5C63"/><text x="50" y="163" font-family="system-ui,sans-serif" font-size="11" fill="#333330">le passage de l'enseignement</text>
+<circle cx="42" cy="159" r="2" fill="#1F5C63"/><text x="50" y="163" font-family="system-ui,sans-serif" font-size="11" fill="#333330">passage de l'enseignement</text>
 <text x="50" y="176" font-family="system-ui,sans-serif" font-size="11" fill="#333330">à la conception</text>
-<circle cx="42" cy="198" r="2" fill="#1F5C63"/><text x="50" y="202" font-family="system-ui,sans-serif" font-size="11" fill="#333330">la mise au jour des impensés</text>
+<circle cx="42" cy="198" r="2" fill="#1F5C63"/><text x="50" y="202" font-family="system-ui,sans-serif" font-size="11" fill="#333330">mise au jour des impensés</text>
 <text x="50" y="215" font-family="system-ui,sans-serif" font-size="11" fill="#333330">de ce scénario</text>
-<text x="50" y="228" font-family="system-ui,sans-serif" font-size="10" font-style="italic" fill="#9A988F">(voix, registre, réécriture)</text>
+<text x="50" y="228" font-family="system-ui,sans-serif" font-size="10" font-style="italic" fill="#9A988F">voix, registre, réécriture</text>
 <text x="250" y="84" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1F5C63">Limites</text>
 <circle cx="252" cy="110" r="2" fill="#1F5C63"/><text x="260" y="114" font-family="system-ui,sans-serif" font-size="11" fill="#333330">étude qualitative &amp; située</text>
 <circle cx="252" cy="132" r="2" fill="#1F5C63"/><text x="260" y="136" font-family="system-ui,sans-serif" font-size="11" fill="#333330">effet non isolable du cadrage</text>
-<circle cx="252" cy="154" r="2" fill="#1F5C63"/><text x="260" y="158" font-family="system-ui,sans-serif" font-size="11" fill="#333330">une mesure à un seul moment</text>
-<circle cx="252" cy="176" r="2" fill="#1F5C63"/><text x="260" y="180" font-family="system-ui,sans-serif" font-size="11" fill="#333330">des modèles qui évoluent vite</text>
-<circle cx="252" cy="198" r="2" fill="#1F5C63"/><text x="260" y="202" font-family="system-ui,sans-serif" font-size="11" fill="#333330">empreinte écologique des modèles</text>
+<circle cx="252" cy="154" r="2" fill="#1F5C63"/><text x="260" y="158" font-family="system-ui,sans-serif" font-size="11" fill="#333330">mesure à un seul moment</text>
+<circle cx="252" cy="176" r="2" fill="#1F5C63"/><text x="260" y="180" font-family="system-ui,sans-serif" font-size="11" fill="#333330">modèles qui évoluent vite</text>
+<circle cx="252" cy="198" r="2" fill="#1F5C63"/><text x="260" y="202" font-family="system-ui,sans-serif" font-size="11" fill="#333330">empreinte écologique de l'IA</text>
 <text x="458" y="84" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#1F5C63">Si c'était à refaire</text>
-<circle cx="460" cy="104" r="2" fill="#1F5C63"/><text x="468" y="108" font-family="system-ui,sans-serif" font-size="11" fill="#333330">interroger les apprenant·es</text>
-<text x="468" y="121" font-family="system-ui,sans-serif" font-size="11" fill="#333330">à plusieurs étapes</text>
-<circle cx="460" cy="141" r="2" fill="#1F5C63"/><text x="468" y="145" font-family="system-ui,sans-serif" font-size="11" fill="#333330">entraîner au prompting</text>
-<text x="468" y="158" font-family="system-ui,sans-serif" font-size="11" fill="#333330">&amp; à l'évaluation</text>
-<circle cx="460" cy="178" r="2" fill="#1F5C63"/><text x="468" y="182" font-family="system-ui,sans-serif" font-size="11" fill="#333330">générer une remédiation validée</text>
-<circle cx="460" cy="200" r="2" fill="#1F5C63"/><text x="468" y="204" font-family="system-ui,sans-serif" font-size="11" fill="#333330">déplacer l'IA de la correction</text>
-<text x="468" y="217" font-family="system-ui,sans-serif" font-size="11" fill="#333330">vers le discours</text>
-<circle cx="460" cy="237" r="2" fill="#1F5C63"/><text x="468" y="241" font-family="system-ui,sans-serif" font-size="11" fill="#333330">former les enseignant·es</text>
-<text x="468" y="254" font-family="system-ui,sans-serif" font-size="11" fill="#333330">à concevoir des outils</text>
-<circle cx="460" cy="274" r="2" fill="#1F5C63"/><text x="468" y="278" font-family="system-ui,sans-serif" font-size="11" fill="#333330">susciter l'adhésion au projet</text>
-<text x="468" y="291" font-family="system-ui,sans-serif" font-size="11" fill="#333330">d'écriture</text>
+<circle cx="460" cy="108" r="2" fill="#1F5C63"/><text x="468" y="112" font-family="system-ui,sans-serif" font-size="11" fill="#333330">suivre l'évolution des</text>
+<text x="468" y="125" font-family="system-ui,sans-serif" font-size="11" fill="#333330">représentations</text>
+<circle cx="460" cy="145" r="2" fill="#1F5C63"/><text x="468" y="149" font-family="system-ui,sans-serif" font-size="11" fill="#333330">former au prompting</text>
+<text x="468" y="162" font-family="system-ui,sans-serif" font-size="11" fill="#333330">et au recul critique</text>
+<circle cx="460" cy="182" r="2" fill="#1F5C63"/><text x="468" y="186" font-family="system-ui,sans-serif" font-size="11" fill="#333330">générer une remédiation</text>
+<text x="468" y="199" font-family="system-ui,sans-serif" font-size="11" fill="#333330">personnalisée</text>
+<circle cx="460" cy="219" r="2" fill="#1F5C63"/><text x="468" y="223" font-family="system-ui,sans-serif" font-size="11" fill="#333330">enseigner explicitement</text>
+<text x="468" y="236" font-family="system-ui,sans-serif" font-size="11" fill="#333330">le discursif</text>
+<circle cx="460" cy="256" r="2" fill="#1F5C63"/><text x="468" y="260" font-family="system-ui,sans-serif" font-size="11" fill="#333330">former les enseignant·es</text>
+<text x="468" y="273" font-family="system-ui,sans-serif" font-size="11" fill="#333330">à concevoir des outils</text>
+<circle cx="460" cy="293" r="2" fill="#1F5C63"/><text x="468" y="297" font-family="system-ui,sans-serif" font-size="11" fill="#333330">susciter l'adhésion au projet</text>
 <line x1="40" y1="344" x2="640" y2="344" stroke="#E4DFD2"/>
 <text x="340" y="370" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-style="italic" fill="#5A7A78">Moins une démonstration qu'une enquête à poursuivre – ailleurs, sur d'autres niveaux et d'autres langues.</text>
 </svg>`,
