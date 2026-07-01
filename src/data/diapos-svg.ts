@@ -27,20 +27,19 @@ export const diaposSvg: string[] = [
 <line x1="44" y1="344" x2="636" y2="344" stroke="#E4DFD2"/>
 <text x="340" y="372" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12.5" letter-spacing="0.6" fill="#6E6E68">littératie de l'IA · agentivité · médiation · interlangue · texte lissé</text>
 </svg>`,
-  `<svg viewBox="0 0 680 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diapo 3, problématique et hypothèses">
+  `<svg viewBox="0 0 680 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diapo 3, problématique, axes d'analyse et hypothèses">
 <rect x="4" y="4" width="672" height="392" rx="14" fill="#F6F4EE" stroke="#DAD5C8"/>
-<text x="44" y="46" font-family="system-ui,sans-serif" font-size="13" letter-spacing="0.5" fill="#1F5C63">Problématique</text>
-<rect x="40" y="58" width="600" height="104" rx="10" fill="#ECE7DB"/>
-<text x="58" y="90" font-family="Georgia,serif" font-size="16" fill="#232321">Comment les outils d'intelligence artificielle peuvent-ils être</text>
-<text x="58" y="116" font-family="Georgia,serif" font-size="16" fill="#232321">mobilisés sans se substituer au travail d'écriture des apprenant·es,</text>
-<text x="58" y="142" font-family="Georgia,serif" font-size="16" fill="#232321">tout en participant au développement d'une littératie de l'IA ?</text>
-<text x="44" y="198" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#1F5C63">Hypothèses</text>
-<rect x="44" y="212" width="40" height="24" rx="6" fill="#1F5C63"/><text x="64" y="229" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#F6F4EE">H1</text>
-<text x="96" y="229" font-family="system-ui,sans-serif" font-size="15" fill="#262624">l'usage de l'IA s'apprend : fonctions, limites, conditions d'usage</text>
-<rect x="44" y="252" width="40" height="24" rx="6" fill="#1F5C63"/><text x="64" y="269" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#F6F4EE">H2</text>
-<text x="96" y="269" font-family="system-ui,sans-serif" font-size="15" fill="#262624">un scénario structuré est une condition nécessaire</text>
-<rect x="44" y="292" width="40" height="24" rx="6" fill="#1F5C63"/><text x="64" y="309" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#F6F4EE">H3</text>
-<text x="96" y="309" font-family="system-ui,sans-serif" font-size="15" fill="#262624">l'IA peut faire évoluer les compétences scripturales</text>
+<text x="44" y="44" font-family="system-ui,sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" fill="#1F5C63">PROBLÉMATIQUE</text>
+<text x="44" y="82" font-family="Georgia,serif" font-size="18" fill="#232321">Comment les outils d'IA peuvent-ils être mobilisés sans se</text>
+<text x="44" y="110" font-family="Georgia,serif" font-size="18" fill="#232321">substituer au travail d'écriture des apprenant·es, tout en</text>
+<text x="44" y="138" font-family="Georgia,serif" font-size="18" fill="#232321">participant au développement d'une littératie de l'IA ?</text>
+<rect x="44" y="160" width="90" height="3" rx="1.5" fill="#2A7D74"/>
+<text x="44" y="198" font-family="system-ui,sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" fill="#1F5C63">TROIS AXES D'ANALYSE</text>
+<text x="44" y="224" font-family="system-ui,sans-serif" font-size="15" fill="#333330">médiation · connaissances (langue · texte · discours) · évolutions</text>
+<text x="44" y="262" font-family="system-ui,sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" fill="#1F5C63">HYPOTHÈSES</text>
+<text x="44" y="292" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#1F5C63">H1</text><text x="76" y="292" font-family="system-ui,sans-serif" font-size="15" fill="#333330">l'usage de l'IA s'apprend : fonctions, limites, conditions</text>
+<text x="44" y="322" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#1F5C63">H2</text><text x="76" y="322" font-family="system-ui,sans-serif" font-size="15" fill="#333330">un scénario structuré est une condition nécessaire</text>
+<text x="44" y="352" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#1F5C63">H3</text><text x="76" y="352" font-family="system-ui,sans-serif" font-size="15" fill="#333330">l'IA peut faire évoluer les compétences scripturales</text>
 </svg>`,
   `<svg viewBox="0 0 680 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diapo 4, scénario en huit étapes">
 <rect x="4" y="4" width="672" height="392" rx="14" fill="#F6F4EE" stroke="#DAD5C8"/>

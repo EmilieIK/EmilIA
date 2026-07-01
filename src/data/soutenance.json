@@ -33,10 +33,13 @@
     "titre": "Problématique",
     "blocs": [
       { "soustitre": "", "items": [
-        "Comment les outils d'intelligence artificielle peuvent-ils être mobilisés sans se substituer au travail d'écriture des apprenant·es, tout en participant au développement d'une littératie de l'IA ?"
+        "Comment les outils d'IA peuvent-ils être mobilisés sans se substituer au travail d'écriture des apprenant·es, tout en participant au développement d'une littératie de l'IA ?"
+      ] },
+      { "soustitre": "Trois axes d'analyse", "items": [
+        "médiation · connaissances (langue · texte · discours) · évolutions"
       ] },
       { "soustitre": "Hypothèses", "items": [
-        "H1 – l'usage de l'IA s'apprend : fonctions, limites, conditions d'usage",
+        "H1 – l'usage de l'IA s'apprend : fonctions, limites, conditions",
         "H2 – un scénario structuré est une condition nécessaire",
         "H3 – l'IA peut faire évoluer les compétences scripturales"
       ] }
