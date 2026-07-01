@@ -71,25 +71,20 @@ export const diaposSvg: string[] = [
 </svg>`,
   `<svg viewBox="0 0 680 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diapo 5, démentis un et deux">
 <rect x="4" y="4" width="672" height="392" rx="14" fill="#F6F4EE" stroke="#DAD5C8"/>
-<line x1="340" y1="40" x2="340" y2="304" stroke="#DAD5C8"/>
-<text x="40" y="44" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#1F5C63">Démenti 1 · Révélateur</text>
-<text x="40" y="72" font-family="Georgia,serif" font-size="15" fill="#1B1B1A">L'effet de l'IA n'est pas</text>
-<text x="40" y="91" font-family="Georgia,serif" font-size="15" fill="#1B1B1A">isolable du cadrage</text>
-<circle cx="44" cy="115" r="2.5" fill="#1F5C63"/><text x="54" y="119" font-family="system-ui,sans-serif" font-size="12" fill="#333330">même scénario, deux groupes → usages opposés</text>
-<circle cx="44" cy="139" r="2.5" fill="#1F5C63"/><text x="54" y="143" font-family="system-ui,sans-serif" font-size="12" fill="#333330">B1 : erreurs signalées → corrige</text>
-<circle cx="44" cy="163" r="2.5" fill="#1F5C63"/><text x="54" y="167" font-family="system-ui,sans-serif" font-size="12" fill="#333330">B2 : diagnostic à l'apprenant·e → formule</text>
-<text x="40" y="196" font-family="Georgia,serif" font-size="11.5" font-style="italic" fill="#5A7A78">→ le cadrage décide de ce que</text>
-<text x="40" y="211" font-family="Georgia,serif" font-size="11.5" font-style="italic" fill="#5A7A78">l'outil prend en charge</text>
-<text x="358" y="44" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#1F5C63">Démenti 2 · Autonomie à construire</text>
-<text x="358" y="72" font-family="Georgia,serif" font-size="15" fill="#1B1B1A">Une compétence à construire,</text>
-<text x="358" y="91" font-family="Georgia,serif" font-size="15" fill="#1B1B1A">pas un état</text>
-<text x="358" y="118" font-family="system-ui,sans-serif" font-size="12" font-style="italic" fill="#8A8A82">usage en surface :</text>
-<text x="358" y="138" font-family="system-ui,sans-serif" font-size="12.5" fill="#333330">correction <tspan font-weight="600" fill="#1F5C63">15/15</tspan> · organisation <tspan font-weight="600" fill="#1F5C63">2/15</tspan></text>
-<text x="358" y="162" font-family="system-ui,sans-serif" font-size="12.5" fill="#333330"><tspan font-weight="600" fill="#1F5C63">10/15</tspan> reprise directe · <tspan font-weight="600" fill="#1F5C63">11/15</tspan> sans recul</text>
-<text x="358" y="180" font-family="system-ui,sans-serif" font-size="12.5" fill="#333330"><tspan font-weight="600" fill="#1F5C63">0/15</tspan> rejet</text>
-<text x="358" y="204" font-family="system-ui,sans-serif" font-size="12.5" fill="#333330">Bélen tient sa nuance · Miriam s'efface</text>
-<text x="358" y="230" font-family="Georgia,serif" font-size="11.5" font-style="italic" fill="#5A7A78">→ une autonomie fragile,</text>
-<text x="358" y="245" font-family="Georgia,serif" font-size="11.5" font-style="italic" fill="#5A7A78">étayée par l'enseignant·e</text>
+<rect x="40" y="42" width="3" height="126" rx="1.5" fill="#1F5C63"/>
+<text x="58" y="56" font-family="system-ui,sans-serif" font-size="12" font-weight="700" letter-spacing="1" fill="#1F5C63">DÉMENTI 1 · RÉVÉLATEUR</text>
+<text x="58" y="86" font-family="Georgia,serif" font-size="17" fill="#1B1B1A">L'effet de l'IA n'est pas isolable du cadrage</text>
+<text x="58" y="114" font-family="system-ui,sans-serif" font-size="13" fill="#333330">même scénario, deux groupes → <tspan font-weight="600" fill="#1F5C63">usages opposés</tspan></text>
+<text x="58" y="136" font-family="system-ui,sans-serif" font-size="13" fill="#333330">B1 : erreurs signalées → <tspan font-weight="600" fill="#1F5C63">corrige</tspan>   ·   B2 : diagnostic à l'apprenant·e → <tspan font-weight="600" fill="#1F5C63">formule</tspan></text>
+<text x="58" y="164" font-family="Georgia,serif" font-size="13.5" font-style="italic" fill="#5A7A78">→ le cadrage décide de ce que l'outil prend en charge</text>
+<line x1="40" y1="192" x2="640" y2="192" stroke="#E4DFD2" stroke-width="1"/>
+<rect x="40" y="212" width="3" height="150" rx="1.5" fill="#1F5C63"/>
+<text x="58" y="226" font-family="system-ui,sans-serif" font-size="12" font-weight="700" letter-spacing="1" fill="#1F5C63">DÉMENTI 2 · AUTONOMIE À CONSTRUIRE</text>
+<text x="58" y="256" font-family="Georgia,serif" font-size="17" fill="#1B1B1A">Une compétence à construire, pas un état</text>
+<text x="58" y="284" font-family="system-ui,sans-serif" font-size="13" fill="#333330">usage en surface : correction <tspan font-weight="700" fill="#1F5C63">15/15</tspan> · organisation <tspan font-weight="700" fill="#1F5C63">2/15</tspan></text>
+<text x="58" y="306" font-family="system-ui,sans-serif" font-size="13" fill="#333330"><tspan font-weight="700" fill="#1F5C63">10/15</tspan> reprise directe · <tspan font-weight="700" fill="#1F5C63">11/15</tspan> sans recul · <tspan font-weight="700" fill="#1F5C63">0/15</tspan> rejet</text>
+<text x="58" y="328" font-family="system-ui,sans-serif" font-size="13" fill="#333330">Bélen <tspan font-weight="600" fill="#1F5C63">tient sa nuance</tspan> · Miriam <tspan font-weight="600" fill="#1F5C63">s'efface</tspan></text>
+<text x="58" y="356" font-family="Georgia,serif" font-size="13.5" font-style="italic" fill="#5A7A78">→ une autonomie fragile, étayée par l'enseignant·e</text>
 </svg>`,
   `<svg viewBox="0 0 680 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diapo 6, un plafond dans les usages observés">
 <rect x="4" y="4" width="672" height="392" rx="14" fill="#F6F4EE" stroke="#DAD5C8"/>
