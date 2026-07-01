@@ -136,7 +136,7 @@ export const diaposSvg: string[] = [
 <text x="468" y="273" font-family="system-ui,sans-serif" font-size="11" fill="#333330">à concevoir des outils</text>
 <circle cx="460" cy="293" r="2" fill="#1F5C63"/><text x="468" y="297" font-family="system-ui,sans-serif" font-size="11" fill="#333330">susciter l'adhésion au projet</text>
 <line x1="40" y1="344" x2="640" y2="344" stroke="#E4DFD2"/>
-<text x="340" y="370" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-style="italic" fill="#5A7A78">Moins une démonstration qu'une enquête à poursuivre – ailleurs, sur d'autres niveaux et d'autres langues.</text>
+<text x="340" y="370" text-anchor="middle" font-family="Georgia,serif" font-size="12" font-style="italic" fill="#5A7A78">Une enquête à poursuivre – ailleurs, sur d'autres niveaux et d'autres langues.</text>
 </svg>`,
   `<svg viewBox="0 0 680 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diapo 8, conclusion, les trois concepts">
 <rect x="4" y="4" width="672" height="392" rx="14" fill="#0F2E33" stroke="#2C4D51"/>
