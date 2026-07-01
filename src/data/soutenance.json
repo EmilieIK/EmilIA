@@ -86,15 +86,15 @@
     "numero": 6,
     "titre": "Ce que le terrain a démenti (3)",
     "blocs": [
-      { "soustitre": "Un plafond dans les usages observés", "items": [
-        "correction 15/15 · reformulation 14/15",
-        "réécriture · réorganisation · rejet : absents des grilles",
+      { "soustitre": "Démenti 3 · Un plafond dans les usages observés", "items": [
+        "ce qu'on observe : correction 15/15 · reformulation 14/15",
+        "ce qui n'apparaît pas : réécriture · réorganisation · rejet",
         "on corrige et on reformule, on ne réécrit pas encore"
       ] },
       { "soustitre": "", "items": [
         "→ littératie en construction : l'IA reste secondaire, la médiation reste décisive"
       ] },
-      { "soustitre": "Hypothèses", "items": ["H1 ✓ · H2 ✓ · H3 partiellement"] }
+      { "soustitre": "Retour sur les hypothèses", "items": ["H1 confirmée · H2 confirmée · H3 partiellement"] }
     ]
   },
   {
