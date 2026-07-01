@@ -12,13 +12,13 @@ Site statique, accessible (WCAG 2.2 AA), sans base de données.
 Ce dépôt est sous **double licence** :
 
 - **Contenus** (textes, kit, ressources pédagogiques) — Ressource Éducative
-  Libre sous licence **CC BY-SA 4.0**. Voir [`LICENSE`](LICENSE).
+  Libre sous licence **CC BY-NC-SA 4.0**. Voir [`LICENSE`](LICENSE).
 - **Code source** du site — licence **MIT**. Voir [`LICENSE-CODE`](LICENSE-CODE).
 
 ### Comment citer le kit
 
 > Icyk, É. *Production écrite avec l'IA — 8 étapes clés pour gagner en autonomie
-> rédactionnelle.* Sous licence CC BY-SA 4.0.
+> rédactionnelle.* Sous licence CC BY-NC-SA 4.0.
 
 ## Auteure
 
