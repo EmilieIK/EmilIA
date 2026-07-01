@@ -10,7 +10,7 @@
         "sections": [
           "Le numérique éducatif post-COVID : une généralisation porteuse d'inégalités",
           "De la culture de l'écrit à la littératie numérique",
-          "L'IA en production écrite : enjeux et émergence d'une littératie de l'IA"
+          "L'intelligence artificielle en production écrite : enjeux et émergence d'une littératie de l'IA"
         ]
       },
       {
@@ -29,15 +29,15 @@
           "Missions réalisées",
           "Première expérience et constats",
           "Émergence du problème",
-          "Problématique et sous-questions"
+          "Problématique et sous-questions de recherche"
         ]
       },
       {
         "num": 4,
-        "titre": "Conception d'un scénario pédagogique pour la PE assistée par l'IA",
+        "titre": "Conception d'un scénario pédagogique pour la production écrite assistée par l'IA",
         "sections": [
           "Nature du projet",
-          "Planification",
+          "Planification du projet",
           "Démarche méthodologique"
         ]
       }
@@ -54,7 +54,7 @@
         "sections": [
           "Situer l'écriture en FLE",
           "Penser l'erreur comme trace d'apprentissage",
-          "Préserver le genre, la voix, la posture d'auteur·rice"
+          "Préserver le genre, la voix et la posture d'auteur·rice"
         ]
       },
       {
@@ -72,7 +72,7 @@
         "sections": [
           "Identifier les apports de l'IA dans le processus d'écriture",
           "Distinguer performance textuelle et apprentissage réel",
-          "Préserver l'agentivité et la voix"
+          "Préserver l'agentivité et la voix de l'apprenant·e"
         ]
       },
       {
@@ -81,7 +81,7 @@
         "sections": [
           "Faire de la médiation enseignante une condition",
           "Scénariser les usages et rendre le processus visible",
-          "Évaluer le processus, construire une autonomie assistée"
+          "Évaluer le processus et construire une autonomie assistée"
         ]
       }
     ]
@@ -95,7 +95,7 @@
         "num": 9,
         "titre": "Démarche d'analyse du corpus",
         "sections": [
-          "Un corpus de traces",
+          "Un corpus de traces pour suivre le processus d'écriture",
           "Une analyse qualitative et inductive"
         ]
       },
@@ -104,7 +104,7 @@
         "titre": "Du scénario prévu aux usages réels",
         "sections": [
           "Un scénario conçu pour éviter la substitution",
-          "Des appropriations contrastées selon niveaux et profils"
+          "Des appropriations contrastées selon les niveaux et les profils"
         ]
       },
       {
@@ -117,27 +117,27 @@
       },
       {
         "num": 12,
-        "titre": "Formuler, sélectionner, refuser",
+        "titre": "Formuler, sélectionner, refuser : l'apprenant·e face aux suggestions de l'IA",
         "sections": [
           "La formulation de requêtes comme activité langagière",
           "Rester auteur·rice : vers une agentivité dans l'écriture",
-          "Une littératie de l'IA en construction"
+          "Une littératie de l'IA encore en construction"
         ]
       },
       {
         "num": 13,
         "titre": "Une IA secondaire : réponse à la problématique",
         "sections": [
-          "Réponse à la problématique et aux sous-questions",
+          "Réponse à la problématique et aux sous-questions de recherche",
           "Retour sur les hypothèses"
         ]
       },
       {
         "num": 14,
-        "titre": "Limites, prolongements et portée",
+        "titre": "Limites, prolongements et portée de la recherche",
         "sections": [
           "Limites de l'expérience",
-          "Prolongements et perspectives",
+          "Prolongements didactiques et perspectives",
           "Synthèse : l'IA comme révélateur",
           "Portée"
         ]
