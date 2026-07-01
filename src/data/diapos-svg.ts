@@ -75,19 +75,21 @@ export const diaposSvg: string[] = [
 <text x="40" y="44" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#1F5C63">Démenti 1 · Révélateur</text>
 <text x="40" y="72" font-family="Georgia,serif" font-size="15" fill="#1B1B1A">L'effet de l'IA n'est pas</text>
 <text x="40" y="91" font-family="Georgia,serif" font-size="15" fill="#1B1B1A">isolable du cadrage</text>
-<circle cx="44" cy="116" r="2.5" fill="#1F5C63"/><text x="54" y="120" font-family="system-ui,sans-serif" font-size="12" fill="#333330">même outil, même scénario → usages opposés</text>
-<circle cx="44" cy="144" r="2.5" fill="#1F5C63"/><text x="54" y="148" font-family="system-ui,sans-serif" font-size="12" fill="#333330">B1, erreurs signalées → corriger</text>
-<circle cx="44" cy="172" r="2.5" fill="#1F5C63"/><text x="54" y="176" font-family="system-ui,sans-serif" font-size="12" fill="#333330">B2, diagnostic laissé à l'apprenant·e</text>
-<text x="54" y="189" font-family="system-ui,sans-serif" font-size="12" fill="#333330">→ formuler la demande</text>
-<text x="40" y="210" font-family="Georgia,serif" font-size="11.5" font-style="italic" fill="#5A7A78">ce que le cadrage met en avant décide de l'usage</text>
+<circle cx="44" cy="115" r="2.5" fill="#1F5C63"/><text x="54" y="119" font-family="system-ui,sans-serif" font-size="12" fill="#333330">même scénario, deux groupes → usages opposés</text>
+<circle cx="44" cy="139" r="2.5" fill="#1F5C63"/><text x="54" y="143" font-family="system-ui,sans-serif" font-size="12" fill="#333330">B1 : erreurs signalées → corrige</text>
+<circle cx="44" cy="163" r="2.5" fill="#1F5C63"/><text x="54" y="167" font-family="system-ui,sans-serif" font-size="12" fill="#333330">B2 : diagnostic à l'apprenant·e → formule</text>
+<text x="40" y="196" font-family="Georgia,serif" font-size="11.5" font-style="italic" fill="#5A7A78">→ le cadrage décide de ce que</text>
+<text x="40" y="211" font-family="Georgia,serif" font-size="11.5" font-style="italic" fill="#5A7A78">l'outil prend en charge</text>
 <text x="358" y="44" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#1F5C63">Démenti 2 · Autonomie à construire</text>
-<text x="358" y="72" font-family="Georgia,serif" font-size="15" fill="#1B1B1A">L'autonomie : une compétence</text>
-<text x="358" y="91" font-family="Georgia,serif" font-size="15" fill="#1B1B1A">à construire, pas un état</text>
-<text x="358" y="124" font-family="system-ui,sans-serif" font-size="12.5" fill="#333330">correction <tspan font-weight="600" fill="#1F5C63">15/15</tspan> · organisation <tspan font-weight="600" fill="#1F5C63">2/15</tspan></text>
-<text x="358" y="152" font-family="system-ui,sans-serif" font-size="12.5" fill="#333330"><tspan font-weight="600" fill="#1F5C63">10/15</tspan> reprise directe</text>
-<text x="358" y="170" font-family="system-ui,sans-serif" font-size="12.5" fill="#333330"><tspan font-weight="600" fill="#1F5C63">11/15</tspan> acceptation peu critique</text>
-<text x="358" y="188" font-family="system-ui,sans-serif" font-size="12.5" fill="#333330"><tspan font-weight="600" fill="#1F5C63">0/15</tspan> rejet dans les traces</text>
-<text x="358" y="218" font-family="system-ui,sans-serif" font-size="12.5" fill="#333330">Bélen tient sa nuance · Miriam s'efface</text>
+<text x="358" y="72" font-family="Georgia,serif" font-size="15" fill="#1B1B1A">Une compétence à construire,</text>
+<text x="358" y="91" font-family="Georgia,serif" font-size="15" fill="#1B1B1A">pas un état</text>
+<text x="358" y="118" font-family="system-ui,sans-serif" font-size="12" font-style="italic" fill="#8A8A82">usage en surface :</text>
+<text x="358" y="138" font-family="system-ui,sans-serif" font-size="12.5" fill="#333330">correction <tspan font-weight="600" fill="#1F5C63">15/15</tspan> · organisation <tspan font-weight="600" fill="#1F5C63">2/15</tspan></text>
+<text x="358" y="162" font-family="system-ui,sans-serif" font-size="12.5" fill="#333330"><tspan font-weight="600" fill="#1F5C63">10/15</tspan> reprise directe · <tspan font-weight="600" fill="#1F5C63">11/15</tspan> sans recul</text>
+<text x="358" y="180" font-family="system-ui,sans-serif" font-size="12.5" fill="#333330"><tspan font-weight="600" fill="#1F5C63">0/15</tspan> rejet</text>
+<text x="358" y="204" font-family="system-ui,sans-serif" font-size="12.5" fill="#333330">Bélen tient sa nuance · Miriam s'efface</text>
+<text x="358" y="230" font-family="Georgia,serif" font-size="11.5" font-style="italic" fill="#5A7A78">→ une autonomie fragile,</text>
+<text x="358" y="245" font-family="Georgia,serif" font-size="11.5" font-style="italic" fill="#5A7A78">étayée par l'enseignant·e</text>
 </svg>`,
   `<svg viewBox="0 0 680 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diapo 6, un plafond dans les usages observés">
 <rect x="4" y="4" width="672" height="392" rx="14" fill="#F6F4EE" stroke="#DAD5C8"/>

@@ -68,16 +68,16 @@
     "numero": 5,
     "titre": "Ce que le terrain a démenti (1 & 2)",
     "blocs": [
-      { "soustitre": "Démenti 1 – L'effet de l'IA n'est pas isolable du cadrage", "items": [
-        "même outil, même scénario → usages opposés",
-        "B1, erreurs signalées en amont → l'IA sert à corriger",
-        "B2, diagnostic laissé à l'apprenant·e → l'effort va à la formulation de la demande",
-        "ce que le cadrage met en avant détermine ce que l'outil prend en charge"
+      { "soustitre": "Démenti 1 · Révélateur — L'effet de l'IA n'est pas isolable du cadrage", "items": [
+        "même scénario, deux groupes → usages opposés",
+        "B1 : erreurs signalées → corrige · B2 : diagnostic à l'apprenant·e → formule",
+        "→ le cadrage décide de ce que l'outil prend en charge"
       ] },
-      { "soustitre": "Démenti 2 – L'autonomie : une compétence à construire, pas un état", "items": [
+      { "soustitre": "Démenti 2 · Autonomie à construire — Une compétence à construire, pas un état", "items": [
         "usage en surface : correction 15/15 · organisation 2/15",
-        "10/15 reprise directe · 11/15 acceptation peu critique · 0/15 rejet dans les traces",
-        "Bélen tient sa nuance / Miriam s'efface"
+        "10/15 reprise directe · 11/15 sans recul · 0/15 rejet",
+        "Bélen tient sa nuance · Miriam s'efface",
+        "→ une autonomie fragile, étayée par l'enseignant·e"
       ] }
     ]
   },
