@@ -88,17 +88,17 @@ export const diaposSvg: string[] = [
 </svg>`,
   `<svg viewBox="0 0 680 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diapo 6, un plafond dans les usages observés">
 <rect x="4" y="4" width="672" height="392" rx="14" fill="#F6F4EE" stroke="#DAD5C8"/>
-<rect x="40" y="42" width="3" height="162" rx="1.5" fill="#1F5C63"/>
-<text x="58" y="56" font-family="system-ui,sans-serif" font-size="12" font-weight="700" letter-spacing="1" fill="#1F5C63">DÉMENTI 3 · UN PLAFOND</text>
+<rect x="40" y="42" width="3" height="124" rx="1.5" fill="#1F5C63"/>
+<text x="58" y="56" font-family="system-ui,sans-serif" font-size="12" font-weight="700" letter-spacing="1" fill="#1F5C63">DÉMENTI 3 · INSTRUMENT SECONDAIRE</text>
 <text x="58" y="86" font-family="Georgia,serif" font-size="17" fill="#1B1B1A">Un plafond dans les usages observés</text>
-<text x="58" y="116" font-family="system-ui,sans-serif" font-size="13" fill="#333330">ce qu'on observe : correction <tspan font-weight="700" fill="#1F5C63">15/15</tspan> · reformulation <tspan font-weight="700" fill="#1F5C63">14/15</tspan></text>
-<text x="58" y="142" font-family="system-ui,sans-serif" font-size="13" fill="#333330">ce qui n'apparaît pas : <tspan fill="#9A988F">réécriture · réorganisation · rejet</tspan></text>
-<text x="58" y="172" font-family="Georgia,serif" font-size="13.5" font-style="italic" fill="#1B1B1A">on corrige et on reformule, on ne réécrit pas encore</text>
-<text x="58" y="200" font-family="Georgia,serif" font-size="13" font-style="italic" fill="#5A7A78">→ littératie en construction : l'IA reste secondaire, la médiation reste décisive</text>
-<line x1="40" y1="228" x2="640" y2="228" stroke="#E4DFD2"/>
-<rect x="40" y="248" width="3" height="50" rx="1.5" fill="#1F5C63"/>
-<text x="58" y="262" font-family="system-ui,sans-serif" font-size="12" font-weight="700" letter-spacing="1" fill="#1F5C63">RETOUR SUR LES HYPOTHÈSES</text>
-<text x="58" y="292" font-family="system-ui,sans-serif" font-size="15" fill="#262624">H1 <tspan font-weight="700" fill="#1F5C63">✓</tspan> · H2 <tspan font-weight="700" fill="#1F5C63">✓</tspan> · H3 partiellement</text>
+<text x="58" y="114" font-family="system-ui,sans-serif" font-size="13" fill="#333330">on corrige, on reformule : correction <tspan font-weight="700" fill="#1F5C63">15/15</tspan> · reformulation <tspan font-weight="700" fill="#1F5C63">14/15</tspan></text>
+<text x="58" y="136" font-family="system-ui,sans-serif" font-size="13" fill="#333330">réécrire, réorganiser, rejeter → <tspan font-weight="600" fill="#1F5C63">absents des grilles</tspan></text>
+<text x="58" y="164" font-family="Georgia,serif" font-size="13.5" font-style="italic" fill="#5A7A78">→ on ne réécrit pas encore : la littératie reste en construction</text>
+<line x1="40" y1="196" x2="640" y2="196" stroke="#E4DFD2" stroke-width="1"/>
+<text x="58" y="224" font-family="system-ui,sans-serif" font-size="11.5" font-weight="700" letter-spacing="1" fill="#1F5C63">RÉPONSE À LA PROBLÉMATIQUE</text>
+<text x="58" y="250" font-family="Georgia,serif" font-size="15.5" fill="#1B1B1A">L'IA reste secondaire · la médiation reste décisive</text>
+<text x="58" y="286" font-family="system-ui,sans-serif" font-size="11.5" font-weight="700" letter-spacing="1" fill="#1F5C63">HYPOTHÈSES</text>
+<text x="58" y="312" font-family="system-ui,sans-serif" font-size="14.5" fill="#1B1B1A">H1 <tspan font-weight="700" fill="#1F5C63">✓</tspan> · H2 <tspan font-weight="700" fill="#1F5C63">✓</tspan> · H3 <tspan font-weight="600" fill="#1F5C63">partiellement</tspan></text>
 </svg>`,
   `<svg viewBox="0 0 680 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diapo 7, apports, limites et prolongements">
 <rect x="4" y="4" width="672" height="392" rx="14" fill="#F6F4EE" stroke="#DAD5C8"/>

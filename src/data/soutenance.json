@@ -68,12 +68,12 @@
     "numero": 5,
     "titre": "Ce que le terrain a démenti (1 & 2)",
     "blocs": [
-      { "soustitre": "Démenti 1 · Révélateur — L'effet de l'IA n'est pas isolable du cadrage", "items": [
+      { "soustitre": "Démenti 1 · Révélateur – L'effet de l'IA n'est pas isolable du cadrage", "items": [
         "même scénario, deux groupes → usages opposés",
         "B1 : erreurs signalées → corrige · B2 : diagnostic à l'apprenant·e → formule",
         "→ le cadrage décide de ce que l'outil prend en charge"
       ] },
-      { "soustitre": "Démenti 2 · Autonomie à construire — Une compétence à construire, pas un état", "items": [
+      { "soustitre": "Démenti 2 · Autonomie à construire – Une compétence à construire, pas un état", "items": [
         "usage en surface : correction 15/15 · organisation 2/15",
         "10/15 reprise directe · 11/15 acceptation peu critique · 0/15 rejet",
         "Bélen tient sa nuance · Miriam s'efface",
@@ -86,15 +86,15 @@
     "numero": 6,
     "titre": "Ce que le terrain a démenti (3)",
     "blocs": [
-      { "soustitre": "Démenti 3 · Un plafond dans les usages observés", "items": [
-        "ce qu'on observe : correction 15/15 · reformulation 14/15",
-        "ce qui n'apparaît pas : réécriture · réorganisation · rejet",
-        "on corrige et on reformule, on ne réécrit pas encore"
+      { "soustitre": "Démenti 3 · Instrument secondaire – Un plafond dans les usages observés", "items": [
+        "on corrige, on reformule : correction 15/15 · reformulation 14/15",
+        "réécrire, réorganiser, rejeter → absents des grilles",
+        "→ on ne réécrit pas encore : la littératie reste en construction"
       ] },
-      { "soustitre": "", "items": [
-        "→ littératie en construction : l'IA reste secondaire, la médiation reste décisive"
+      { "soustitre": "Réponse à la problématique", "items": [
+        "l'IA reste secondaire · la médiation reste décisive"
       ] },
-      { "soustitre": "Retour sur les hypothèses", "items": ["H1 confirmée · H2 confirmée · H3 partiellement"] }
+      { "soustitre": "Hypothèses", "items": ["H1 confirmée · H2 confirmée · H3 partiellement"] }
     ]
   },
   {
